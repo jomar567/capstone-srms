@@ -27,8 +27,8 @@ Route::prefix('student')->name('student.')->group(function() {
         Route::view('/register', 'auth.Student.register')->name('register');
         Route::view('/login', 'auth.Student.login')->name('login');
 
-        // Route::post('/register', [StudentController::class, 'register'])->name('register');
-        // Route::post('/login',[StudentController::class, 'login'])->name('login');
+        Route::post('/registerStudent', [StudentController::class, 'registerStudent'])->name('registerStudent');
+        Route::post('/loginStudent',[StudentController::class, 'loginStudent'])->name('loginStudent');
     });
     Route::middleware(['auth'])->group(function () {
         Route::view('/dashboard', 'Student.Dashboard')->name('dashboard');
