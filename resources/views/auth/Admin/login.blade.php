@@ -17,12 +17,6 @@
                 <div class="card-header">{{ __('Admin Login') }}</div>
 
                 <div class="card-body">
-                    @if(Session::has('success'))
-                    <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
-                        <span class="font-medium">{{Session::get('success')}}</span>
-                    </div>
-                    @endif
-
                     {{-- ERROR MESSAGE --}}
                     @if(Session::has('error'))
                     <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
@@ -36,7 +30,7 @@
                             <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="number" class="form-control @error('username') is-invalid @enderror" name="username" >
+                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" >
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -50,7 +44,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
