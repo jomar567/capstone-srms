@@ -32,6 +32,6 @@ Route::prefix('student')->name('student.')->group(function() {
     });
     Route::middleware(['auth'])->group(function () {
         Route::view('/dashboard', 'Student.Dashboard')->name('dashboard');
-        // Route::post('/logout', [StudentController::class, 'logout'])->name('logout');
+        Route::post('/logout', [StudentController::class, 'logout'])->name('logout');
     });
 });

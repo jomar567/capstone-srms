@@ -85,6 +85,7 @@
                                 @endif
                             </div>
                         </div>
+                        <p>Don't have an account? <a href={{route('student.register')}}>Register</a></p>
                     </form>
                 </div>
             </div>

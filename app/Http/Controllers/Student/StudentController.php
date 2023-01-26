@@ -46,4 +46,10 @@ class StudentController extends Controller
             return redirect()->back()->with('error', 'Login Failed');
         }
     }
+    //logout student
+    public function logout() {
+        Auth::guard('web')->logout();
+
+        return redirect('/');
+    }
 }

@@ -121,6 +121,7 @@
                             </button>
                         </div>
                     </div>
+                    <p>Already have an account? <a href={{route('student.login')}}>Login</a></p>
                 </form>
                 </div>
             </div>
