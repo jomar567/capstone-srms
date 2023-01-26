@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Student\StudentController;
-
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,17 +21,29 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Student Routes
 Route::prefix('student')->name('student.')->group(function() {
-    Route::middleware(['guest'])->group(function () {
+    Route::middleware(['guest:web'])->group(function () {
         Route::view('/register', 'auth.Student.register')->name('register');
         Route::view('/login', 'auth.Student.login')->name('login');
 
         Route::post('/registerStudent', [StudentController::class, 'registerStudent'])->name('registerStudent');
         Route::post('/loginStudent',[StudentController::class, 'loginStudent'])->name('loginStudent');
     });
-    Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth:web'])->group(function () {
         Route::view('/dashboard', 'Student.Dashboard')->name('dashboard');
         Route::post('/logout', [StudentController::class, 'logout'])->name('logout');
+    });
+});
+
+// Admin Routes
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::middleware(['guest:admin'])->group(function () {
+        Route::view('/login', 'auth.Admin.login')->name('login');
+        Route::post('/loginAdmin',[AdminController::class, 'loginStudent'])->name('loginAdmin');
+    });
+    Route::middleware(['auth:admin'])->group(function () {
+        Route::view('/dashboard', 'Admin.Dashboard')->name('dashboard');
+        Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
 });
