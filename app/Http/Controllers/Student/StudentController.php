@@ -12,6 +12,7 @@ class StudentController extends Controller
     public function registerStudent(Request $request) {
         $request->validate([
             'fullName'=>'required',
+            'student_ID'=>'required|unique:students,student_ID',
             'gender'=>'required',
             'email'=>'required|email|unique:students,email',
             'password'=>'required|min:6|max:15',
@@ -19,14 +20,26 @@ class StudentController extends Controller
         ]);
         $student = new Student();
         $student->fullName = $request->fullName;
+        $student->student_ID = $request->student_ID;
         $student->gender = $request->gender;
         $student->email = $request->email;
         $student->password = Hash::make($request->password);
         $data = $student->save();
         if($data) {
-            return redirect()->back()->with('success', 'You are now succesfully registered!');
+            return redirect()->route('student.login')->with('success', 'You are now succesfully registered!');
         }else {
             return redirect()->back()->with('error', 'Registration Failed!');
         }
+    }
+
+    //login student
+    public function loginStudent(Request $request) {
+        $request->validate([
+            'fullName'=>'required',
+            'gender'=>'required',
+            'email'=>'required|email|unique:students,email',
+            'password'=>'required|min:6|max:15',
+            'password_confirmation'=>'required|same:password'
+        ]);
     }
 }

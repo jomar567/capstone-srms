@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+</head>
+<body>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -7,18 +17,18 @@
 
                 <div class="card-body">
                     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Student Register</h3>
-                @if(Session::has('success'))
-                <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
-                    <span class="font-medium">{{Session::get('success')}}</span>
-                </div>
-                @endif
+                    @if(Session::has('success'))
+                    <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+                        <span class="font-medium">{{Session::get('success')}}</span>
+                    </div>
+                    @endif
 
-                {{-- ERROR MESSAGE --}}
-                @if(Session::has('error'))
-                <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-                    <span class="font-medium">{{Session::get('error')}}</span>
-                </div>
-                @endif
+                    {{-- ERROR MESSAGE --}}
+                    @if(Session::has('error'))
+                    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                        <span class="font-medium">{{Session::get('error')}}</span>
+                    </div>
+                    @endif
                 <form action="{{ route('student.registerStudent') }}" method="POST">
                     @csrf
 
@@ -29,6 +39,20 @@
                             <input id="fullName" type="text" class="form-control" name="fullName" value="{{ old('fullName') }}">
 
                             @error('fullName')
+                                <span class="invalid-feedback">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="student_ID" class="col-md-4 col-form-label text-md-end">{{ __('Student ID') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="student_ID" type="text" class="form-control" name="student_ID" value="{{ old('student_ID') }}">
+
+                            @error('student_ID')
                                 <span class="invalid-feedback">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -103,3 +127,8 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+
+</body>
+</html>
