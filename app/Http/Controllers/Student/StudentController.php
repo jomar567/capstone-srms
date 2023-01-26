@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use Hash;
+use Auth;
 
 class StudentController extends Controller
 {
@@ -35,11 +36,14 @@ class StudentController extends Controller
     //login student
     public function loginStudent(Request $request) {
         $request->validate([
-            'fullName'=>'required',
-            'gender'=>'required',
-            'email'=>'required|email|unique:students,email',
-            'password'=>'required|min:6|max:15',
-            'password_confirmation'=>'required|same:password'
+            'student_ID'=>'required',
+            'password'=>'required|min:6|max:15'
         ]);
+        $check = $request->only('student_ID','password');
+        if(Auth::guard('web')->attempt($check)) {
+            return redirect()->route('student.dashboard')->with('success', 'You are now succesfully Login!');
+        }else {
+            return redirect()->back()->with('error', 'Login Failed');
+        }
     }
 }

@@ -29,16 +29,16 @@
                         <span class="font-medium">{{Session::get('error')}}</span>
                     </div>
                     @endif
-                    <form method="POST" action="{{ route('student.login') }}">
+                    <form method="POST" action="{{ route('student.loginStudent') }}" autocomplete="off">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="student_ID" class="col-md-4 col-form-label text-md-end">{{ __('Student ID') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="student_ID" type="number" class="form-control @error('student_ID') is-invalid @enderror" name="student_ID" >
 
-                                @error('email')
+                                @error('student_ID')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
