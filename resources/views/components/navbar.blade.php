@@ -26,22 +26,22 @@
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                             <!-- Authentication Links -->
                             @guest
-                                @if (Route::has('login'))
+                                @if (Route::has('student.login'))
                                     <li class="nav-item">
                                         <!-- Modal toggle -->
                                         {{-- <a data-modal-target="login-modal" data-modal-toggle="login-modal" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">
                                             Login
                                         </a> --}}
-                                        <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="{{ route('student.login') }}">Login</a>
                                     </li>
                                 @endif
 
-                                @if (Route::has('register'))
+                                @if (Route::has('student.register'))
                                     <li class="nav-item">
                                         {{-- <a data-modal-target="register-modal" data-modal-toggle="register-modal" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">
                                             Register
                                         </a> --}}
-                                        <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        <a class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="{{ route('student.register') }}">Register</a>
                                     </li>
                                 @endif
                             @else

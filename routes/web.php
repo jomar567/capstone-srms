@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Student\StudentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::prefix('student')->name('student.')->group(function() {
+    Route::middleware(['guest'])->group(function () {
+        Route::view('/register', 'auth.Student.register')->name('register');
+        Route::view('/login', 'auth.Student.login')->name('login');
+
+        // Route::post('/register', [StudentController::class, 'register'])->name('register');
+        // Route::post('/login',[StudentController::class, 'login'])->name('login');
+    });
+    Route::middleware(['auth'])->group(function () {
+        Route::view('/dashboard', 'Student.Dashboard')->name('dashboard');
+        // Route::post('/logout', [StudentController::class, 'logout'])->name('logout');
+    });
+});
