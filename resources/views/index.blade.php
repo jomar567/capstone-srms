@@ -1,9 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero">
-        Hero
-    </div>
+    <header class="flex flex-col items-center justify-center h-screen bg-hero bg-center bg-cover bg-no-repeat">
+      <div class="absolute bg-slate-200/[.20] grid place-items-center h-screen w-screen top-0 left-0"></div>
+        <div class="container mx-auto z-10 text-center">
+          <p class="md:text-5xl text-xl font-medium mb-3 tracking-normal md:tracking-wide">STUDENT</p>
+          <p class="md:text-7xl text-2xl font-bold tracking-wide md:tracking-wider mb-3">RESULT</p>
+          <p class="md:text-5xl text-xl font-medium mb-3 tracking-normal md:tracking-wide">MANAGEMENT</p>
+          <p class="md:text-5xl text-xl font-medium mb-3 tracking-normal md:tracking-widest">SYSTEM</p>
+        </div>
+    </header>
 
     <div class="grid container mx-auto md:grid-cols-2">
         <div class="text-4xl mt-8"><strong class="border-l-8 border-red-600">Notice Board</strong><p class="text-xl text-justify mt-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p></div>

@@ -1,5 +1,5 @@
-<nav class="bg-blue px-2 sm:px-12 py-1 absolute w-screen">
-    <div class="container flex flex-wrap justify-between mx-auto">
+<nav class="bg-blue px-2 sm:px-12 py-1 absolute w-screen z-10">
+    <div class="container mx-auto flex flex-wrap justify-between mx-auto">
         <a href="{{ url('/') }}" class="flex items-center">
             <span class="self-center md:hover:text-blue-700 text-xl font-semibold whitespace-nowrap text-white">LOGO</span>
         </a>
@@ -10,14 +10,14 @@
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul class="flex flex-col p-5 mt-5 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm  md:border-0  ">
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white md:hover:text-redpink rounded  md:p-0 dark:text-white" >Home</a>
+                        <a href="#" class="block py-2 pl-3 pr-4 text-white hover:text-redpink rounded  md:p-0 dark:text-white" >Home</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white md:hover:text-blue-700 rounded md:p-0 dark:text-gray-400  ">About</a>
+                        <a href="#" class="block py-2 pl-3 pr-4 text-white hover:text-redpink md:hover:text-blue-700 rounded md:p-0 dark:text-gray-400  ">About</a>
                     </li>
                     <li>
                       <a href="#" >
-                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white">
+                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="hover:text-redpink text-white">
                           Student
                         </button>
                         <!-- Dropdown menu -->
@@ -42,7 +42,7 @@
                       </a>
                     </li>
                     <li>
-                        <a href={{ route('admin.login') }} class="block py-2 pl-3 pr-4 text-white md:hover:text-blue-700 rounded md:p-0 dark:text-gray-400 ">Admin</a>
+                        <a href={{ route('admin.login') }} class="hover:text-redpink block py-2 pl-3 pr-4 text-white md:hover:text-blue-700 rounded md:p-0 dark:text-gray-400 ">Admin</a>
                     </li>
                 </ul>
             </div>
