@@ -3,7 +3,7 @@
 @section('content')
     <header class="flex flex-col items-center justify-center h-screen bg-hero bg-center bg-cover bg-no-repeat">
       <div class="absolute bg-slate-200/[.20] grid place-items-center h-screen w-screen top-0 left-0"></div>
-        <div class="container relative mx-auto z-10 text-center flex flex-col items-center justify-center h-screen">
+        <div class="container relative mx-auto text-center flex flex-col items-center justify-center h-screen">
           <p class="md:text-5xl text-xl font-medium md:mb-3 mb-1 tracking-normal md:tracking-wide">STUDENT</p>
           <p class="md:text-7xl text-2xl font-bold tracking-wide md:tracking-wider md:mb-3 mb-1">RESULT</p>
           <p class="md:text-5xl text-xl font-medium md:mb-3 mb-1 tracking-normal md:tracking-wide">MANAGEMENT</p>
