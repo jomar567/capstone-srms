@@ -3,11 +3,27 @@
 @section('content')
     <header class="flex flex-col items-center justify-center h-screen bg-hero bg-center bg-cover bg-no-repeat">
       <div class="absolute bg-slate-200/[.20] grid place-items-center h-screen w-screen top-0 left-0"></div>
-        <div class="container mx-auto z-10 text-center">
+        <div class="container relative mx-auto z-10 text-center flex flex-col items-center justify-center h-screen">
           <p class="md:text-5xl text-xl font-medium mb-3 tracking-normal md:tracking-wide">STUDENT</p>
           <p class="md:text-7xl text-2xl font-bold tracking-wide md:tracking-wider mb-3">RESULT</p>
           <p class="md:text-5xl text-xl font-medium mb-3 tracking-normal md:tracking-wide">MANAGEMENT</p>
           <p class="md:text-5xl text-xl font-medium mb-3 tracking-normal md:tracking-widest">SYSTEM</p>
+          <button type="button" class="text-white bg-red hover:bg-blue focus:ring-4 focus:outline-none focus:ring-blue font-semibold rounded-lg text-base mt-6 px-10 py-3.5 text-center dark:bg-blue dark:hover:bg-blue dark:focus:ring-blue">
+            Learn More
+          </button>
+          <span class="absolute left-0 flex flex-col ml-4">
+            <a href="#">
+              <i class="fa-brands fa-facebook text-2xl hover:text-redpink cursor-pointer mb-8"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-square-twitter text-2xl hover:text-redpink cursor-pointer mb-8"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-github text-2xl hover:text-redpink cursor-pointer mb-8"></i>
+            </a>
+          </span>
+          <span class="absolute border-l-2 border-2 border-blue h-44 left-0 bottom-0 ml-6">
+          </span>
         </div>
     </header>
 
