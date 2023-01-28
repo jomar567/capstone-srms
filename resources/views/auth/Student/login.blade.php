@@ -14,6 +14,17 @@
       <div class="content flex items-center justify-center h-screen">
         <div class="z-10 bg-blue w-96 p-8 rounded-3xl">
 
+          {{-- SUCCESS MESSAGE --}}
+          @if(Session::has('success'))
+          <div class="flex p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" role="alert">
+            <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+            <span class="sr-only">Info</span>
+            <div>
+              <span class="font-medium">{{Session::get('success')}}
+            </div>
+          </div>
+          @endif
+
           {{-- ERROR MESSAGE --}}
           @if(Session::has('error'))
           <div class="flex p-4 mb-4 text-sm text-redpink border border-redpink rounded-lg" role="alert">
@@ -63,7 +74,7 @@
             <button type="submit" class="block mx-auto text-white bg-redpink focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-8 mb-6 py-2.5 text-center">
               Login
             </button>
-            <p class="text-sm">Don't have an account? <a href={{route('student.register')}} class="text-redpink">Register</a></p>
+            <p class="text-sm text-center">Don't have an account? <a href={{route('student.register')}} class="text-redpink">Register</a></p>
           </form>
         </div>
       </div>
