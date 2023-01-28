@@ -1,4 +1,4 @@
-<nav class="bg-blue px-2 sm:px-12 py-1 absolute w-screen z-10">
+<nav class="bg-blue px-4 py-1 absolute w-screen z-10">
     <div class="container mx-auto flex flex-wrap justify-between mx-auto">
         <a href="{{ url('/') }}" class="flex items-center">
             <span class="self-center md:hover:text-blue-700 text-xl font-semibold whitespace-nowrap text-white">LOGO</span>
