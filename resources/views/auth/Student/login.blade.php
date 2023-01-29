@@ -39,22 +39,22 @@
           <form method="POST" action="{{ route('student.loginStudent') }}" autocomplete="off">
             @csrf
             <div class="mb-6">
-              <label for="student_ID" class="block mb-2 text-sm font-medium text-white dark:text-white">
+              <label for="student_ID" class="block mb-2 text-sm font-medium @error('student_ID') text-redpink @enderror">
                 Student ID <span class="text-base text-redpink">*</span>
               </label>
-              <input type="text" id="student_ID" name="student_ID" class="shadow-sm border text-blue text-sm rounded-lg block w-full p-2.5 dark:shadow-sm-light">
+              <input type="text" id="student_ID" name="student_ID" class="shadow-sm border text-blue text-sm rounded-lg block w-full p-2.5 dark:shadow-sm-light @error('student_ID') bg-red-50 border-redpink @enderror">
               @error('student_ID')
-                <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                <p class="mt-2 text-sm text-redpink">
                   <span class="font-medium">{{ $message }}</span>
                 </p>
               @enderror
             </div>
 
             <div class="mb-6">
-              <label for="password" class="block mb-2 text-sm font-medium text-white dark:text-white">
+              <label for="password" class="block mb-2 text-sm font-medium @error('password') text-redpink @enderror">
                 Password <span class="text-base text-redpink">*</span>
               </label>
-              <input type="password" id="password" name="password" class="shadow-sm border text-blue text-sm rounded-lg block w-full p-2.5 dark:shadow-sm-light" >
+              <input type="password" id="password" name="password" class="shadow-sm border text-blue text-sm rounded-lg block w-full p-2.5 dark:shadow-sm-light @error('password') bg-red-50 border-redpink @enderror" >
               @error('password')
                 <p class="mt-2 text-sm text-red-600 dark:text-red-500">
                   <span class="font-medium">{{ $message }}</span>
