@@ -41,29 +41,6 @@
         <img class="hidden md:block" src="{{URL('images/notice.png')}}" alt="">
     </div>
 
-<div class="container mx-auto">
-    <div>
-        <div class="text-center text-4xl"><strong class="border-l-8 border-red-600">
-            BSIT 3-C Result
-        </strong>
-        </div>
-    </div>
 
-    <div>
-        <div class="text-justify text-xl"><strong class="mt-8">
-            Date Posted:</strong><span class="ml-5">2023-09-29 10:00 AM</span>
-        </div>
-    </div>
-    
-    <hr>
-
-    <hr>
-
-    <div>
-        <div class="text-justify mt-8">
-            <p>Results for BSIT 3 Section C are posted. Check your email or login to your account to view your respective result.</p>
-        </div>
-    </div>
-</div>
 
 @endsection
