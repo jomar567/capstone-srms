@@ -12,7 +12,11 @@ module.exports = {
         'white': '#EFF6EE',
         'redpink': '#d62828',
         'blue': '#0A142F',
-        'gray': '#9ca3af'
+        'gray': '#9ca3af',
+        'student': '#427AA1',
+        'subject': '#ED0131',
+        'class': '#F77F00',
+        'result': '#006D77'
       },
       letterSpacing: {
         'wide': '8px',

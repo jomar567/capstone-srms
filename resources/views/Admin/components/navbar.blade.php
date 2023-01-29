@@ -48,8 +48,8 @@
           <a class="flex justify-center items-center" href="{{ route('admin.logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            <p class="text-base ml-2">Logout</p>
+            <i class="fa-solid text-sm fa-arrow-right-from-bracket"></i>
+            <p class="text-sm ml-2">Logout</p>
             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="hidden">
               @csrf
             </form>
