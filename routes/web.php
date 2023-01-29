@@ -18,6 +18,9 @@ use App\Http\Controllers\Admin\AdminController;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/notice', function () {
+    return view('notice');
+});
 
 
 // Student Routes
