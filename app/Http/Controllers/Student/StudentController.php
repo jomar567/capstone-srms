@@ -35,12 +35,21 @@ class StudentController extends Controller
 
     //login student
     public function loginStudent(Request $request) {
+        $student_ID = $request->input('student_ID');
+        $password = $request->input('password');
+        $student = Student::where('student_ID', '=', $student_ID)->first();
+
         $request->validate([
-            'student_ID'=>'required',
+            'student_ID'=>'required|exists:students,student_ID',
             'password'=>'required|min:6|max:15'
+        ], [
+            'student_ID.exists' => "Student ID doesn't exist!"
         ]);
         $check = $request->only('student_ID','password');
-        if(Auth::guard('web')->attempt($check)) {
+        if (!Hash::check($password, $student->password)) {
+          return redirect()->back()->with('error', 'Login Failed, Please check password');
+        }
+        if(Auth::guard('student')->attempt($check)) {
             return redirect()->route('student.dashboard')->with('success', 'You are now succesfully Login!');
         }else {
             return redirect()->back()->with('error', 'Login Failed');
@@ -48,7 +57,7 @@ class StudentController extends Controller
     }
     //logout student
     public function logout() {
-        Auth::guard('web')->logout();
+        Auth::guard('student')->logout();
 
         return redirect('/');
     }
