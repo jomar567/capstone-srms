@@ -40,4 +40,7 @@
           </div>
         <img class="hidden md:block" src="{{URL('images/notice.png')}}" alt="">
     </div>
+
+
+
 @endsection
