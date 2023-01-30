@@ -40,22 +40,132 @@
           </div>
         </div>
      </div>
-     <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-     </div>
-     <div class="grid grid-cols-2 gap-4">
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-           <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-        </div>
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-           <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-        </div>
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-           <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
-        </div>
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-           <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
+
+     <div class="mt-12">
+        <div class="flex items-center justify-center text-blue">
+          <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
+            <p class="font-semibold text-lg">Recent Declared Results</p>
+
+            {{-- Data Table --}}
+            <div class="relative overflow-x-auto sm:rounded-lg mt-10">
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="recentResult">
+                  <thead class="text-xs text-gray-700 uppercase bg-blue/90 text-white">
+                      <tr>
+                          <th scope="col" class="px-6 py-3">
+                              #
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Student name
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Student ID
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Class
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Registration Date
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
+                          <td class="px-6 py-4">
+                              1
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
+                          <td class="px-6 py-4">
+                              1
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
+                          <td class="px-6 py-4">
+                              1
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
+                          <td class="px-6 py-4">
+                              1
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
+                          <td class="px-6 py-4">
+                              1
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                      </tr>
+
+
+                  </tbody>
+              </table>
+            </div>
+
+          </div>
         </div>
      </div>
 </div>
+
+<script>
+  var dataTable = new DataTable("#recentResult");
+</script>
 @endsection
