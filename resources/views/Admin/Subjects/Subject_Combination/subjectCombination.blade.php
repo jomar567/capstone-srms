@@ -51,7 +51,7 @@
                               #
                           </th>
                           <th scope="col" class="px-6 py-3">
-                              Class and Section
+                              Course Year and Section
                           </th>
                           <th scope="col" class="px-6 py-3">
                               Subject

@@ -57,7 +57,7 @@
                               Student ID
                           </th>
                           <th scope="col" class="px-6 py-3">
-                              Class
+                              Course
                           </th>
                           <th scope="col" class="px-6 py-3">
                               Registration Date

@@ -15,7 +15,7 @@
             <div class="flex items-center">
               <span class="mx-2">/</span>
               <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">
-                Class
+                Course
               </a>
             </div>
           </li>
@@ -23,7 +23,7 @@
             <div class="flex items-center">
               <span class="mx-2">/</span>
               <span class="ml-1 text-sm font-medium">
-                Manage Class
+                Manage Course
               </span>
             </div>
           </li>
@@ -34,11 +34,11 @@
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
-            <p class="font-semibold text-lg">View Classes</p>
+            <p class="font-semibold text-lg">View Courses</p>
 
-            <a href="{{ route('admin.create_class') }}">
+            <a href="{{ route('admin.create_course') }}">
               <button type="button" class="float-right text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-5">
-                Add New Class
+                Add New Course
               </button>
             </a>
 
@@ -51,10 +51,10 @@
                               #
                           </th>
                           <th scope="col" class="px-6 py-3">
-                              Class name
+                              Course name
                           </th>
                           <th scope="col" class="px-6 py-3">
-                              Class Name Numeric
+                              Course Year Numeric
                           </th>
                           <th scope="col" class="px-6 py-3">
                               Section
@@ -85,7 +85,7 @@
                               2022-09-04
                           </td>
                           <td class="flex px-6 py-4 gap-4">
-                              <a href="{{ route('admin.edit_class') }}" class="font-medium text-blue-600 dark:text-blue">
+                              <a href="{{ route('admin.edit_course') }}" class="font-medium text-blue-600 dark:text-blue">
                               <i class="fa-solid fa-file-pen text-lg"></i>
                               </a>
                               <a href="#" class="font-medium text-redpink">
@@ -110,7 +110,7 @@
                           2022-09-05
                         </td>
                         <td class="flex px-6 py-4 gap-4">
-                            <a href="{{ route('admin.edit_student') }}" class="font-medium text-blue-600 dark:text-blue">
+                            <a href="{{ route('admin.edit_course') }}" class="font-medium text-blue-600 dark:text-blue">
                             <i class="fa-solid fa-file-pen text-lg"></i>
                             </a>
                             <a href="#" class="font-medium text-redpink">

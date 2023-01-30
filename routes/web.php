@@ -55,12 +55,12 @@ Route::prefix('admin')->name('admin.')->group(function() {
       //Edit student
       Route::view('/edit_student', 'Admin.Students.editStudent')->name('edit_student');
 
-      //Class Route
-      Route::view('/class_list', 'Admin.Classes.class')->name('class_list');
-      //Add Class
-      Route::view('/create_class', 'Admin.Classes.createClass')->name('create_class');
-      // Edit Class
-      Route::view('/edit_class', 'Admin.Classes.editClass')->name('edit_class');
+      //Course Route
+      Route::view('/course_list', 'Admin.Courses.course')->name('course_list');
+      //Add Course
+      Route::view('/create_course', 'Admin.Courses.createCourse')->name('create_course');
+      // Edit Course
+      Route::view('/edit_course', 'Admin.Courses.editCourse')->name('edit_course');
 
       // Subject Route
       Route::view('/subject_list', 'Admin.Subjects.subject')->name('subject_list');
