@@ -69,6 +69,13 @@ html, body {
   scroll-behavior: smooth;
 }
 
+.sidebar {
+  ul li a {
+    &.active {
+      background-color: $pinkred;
+    }
+  }
+}
 .dataTable-top,
 .dataTable-bottom {
   padding: 8px 0px !important;
@@ -81,8 +88,10 @@ html, body {
 }
 .dataTable-wrapper {
   .dataTable-table {
-    tbody > tr > td {
+    tbody > tr > td,
+    thead > tr > th  {
       padding: 15px 10px;
+      vertical-align: middle;
     }
     th a {
       padding: 5px;

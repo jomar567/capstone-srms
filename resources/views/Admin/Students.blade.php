@@ -36,9 +36,14 @@
           <div class="relative drop-shadow-lg w-full p-6 bg-slate-50 rounded-lg shadow-xl ">
             <p class="font-medium text-lg">View Students</p>
 
-            {{-- Data Table --}}
+            <a href="#">
+              <button type="button" class="float-right text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center ">
+                Add New Student
+              </button>
+            </a>
 
-            <div class="relative overflow-x-auto sm:rounded-lg mt-5">
+            {{-- Data Table --}}
+            <div class="relative overflow-x-auto sm:rounded-lg mt-16">
               <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="studentTable">
                   <thead class="text-xs text-gray-700 uppercase bg-blue/90 text-white">
                       <tr>
@@ -63,7 +68,7 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                           <td class="px-6 py-4">
                               1
                           </td>
@@ -79,15 +84,18 @@
                           <td class="px-6 py-4">
                               2022-09-04
                           </td>
-                          <td class="px-6 py-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                Edit
+                          <td class="flex px-6 py-4 gap-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue">
+                                <i class="fa-solid fa-user-pen text-lg"></i>
+                              </a>
+                              <a href="#" class="font-medium text-redpink">
+                                <i class="fa-solid fa-trash text-lg"></i>
                               </a>
                           </td>
                       </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                           <td class="px-6 py-4">
-                              2
+                              1
                           </td>
                           <td class="px-6 py-4">
                               Jomar Clado
@@ -101,15 +109,18 @@
                           <td class="px-6 py-4">
                               2022-09-04
                           </td>
-                          <td class="px-6 py-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                Edit
+                          <td class="flex px-6 py-4 gap-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue">
+                                <i class="fa-solid fa-user-pen text-lg"></i>
+                              </a>
+                              <a href="#" class="font-medium text-redpink">
+                                <i class="fa-solid fa-trash text-lg"></i>
                               </a>
                           </td>
                       </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                           <td class="px-6 py-4">
-                              3
+                              1
                           </td>
                           <td class="px-6 py-4">
                               Jomar Clado
@@ -123,15 +134,18 @@
                           <td class="px-6 py-4">
                               2022-09-04
                           </td>
-                          <td class="px-6 py-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                Edit
+                          <td class="flex px-6 py-4 gap-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue">
+                                <i class="fa-solid fa-user-pen text-lg"></i>
+                              </a>
+                              <a href="#" class="font-medium text-redpink">
+                                <i class="fa-solid fa-trash text-lg"></i>
                               </a>
                           </td>
                       </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                           <td class="px-6 py-4">
-                              4
+                              1
                           </td>
                           <td class="px-6 py-4">
                               Jomar Clado
@@ -145,15 +159,18 @@
                           <td class="px-6 py-4">
                               2022-09-04
                           </td>
-                          <td class="px-6 py-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                Edit
+                          <td class="flex px-6 py-4 gap-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue">
+                                <i class="fa-solid fa-user-pen text-lg"></i>
+                              </a>
+                              <a href="#" class="font-medium text-redpink">
+                                <i class="fa-solid fa-trash text-lg"></i>
                               </a>
                           </td>
                       </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                           <td class="px-6 py-4">
-                              5
+                              1
                           </td>
                           <td class="px-6 py-4">
                               Jomar Clado
@@ -167,78 +184,16 @@
                           <td class="px-6 py-4">
                               2022-09-04
                           </td>
-                          <td class="px-6 py-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                Edit
+                          <td class="flex px-6 py-4 gap-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue">
+                                <i class="fa-solid fa-user-pen text-lg"></i>
+                              </a>
+                              <a href="#" class="font-medium text-redpink">
+                                <i class="fa-solid fa-trash text-lg"></i>
                               </a>
                           </td>
                       </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
-                          <td class="px-6 py-4">
-                              3
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                          <td class="px-6 py-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                Edit
-                              </a>
-                          </td>
-                      </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
-                          <td class="px-6 py-4">
-                              4
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                          <td class="px-6 py-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                Edit
-                              </a>
-                          </td>
-                      </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
-                          <td class="px-6 py-4">
-                              5
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                          <td class="px-6 py-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                Edit
-                              </a>
-                          </td>
-                      </tr>
+
 
                   </tbody>
               </table>
