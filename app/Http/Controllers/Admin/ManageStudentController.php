@@ -39,4 +39,17 @@ class ManageStudentController extends Controller
 
       return view('Admin.Students.editStudent')->with('student', $student);
     }
+
+    //Update Student
+    public function update(Request $request) {
+      $students = Student::findorFail($request->id);
+      $students->fullName = $request->fullName;
+      $students->student_ID = $request->student_ID;
+      $students->email = $request->email;
+      $students->gender = $request->gender;
+      $students->dob = $request->dob;
+      $students->save();
+
+      return redirect()->route('admin.students_list');
+    }
 }

@@ -36,7 +36,8 @@
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-xl text-center mb-10">Edit Student</p>
 
-            <form class="md:w-4/5 md:mx-auto">
+            <form method="POST" action="{{ route('admin.update_student', $student->id)}}" class="md:w-4/5 md:mx-auto">
+              @csrf
               <div class="grid gap-6 mb-6 md:grid-cols-2">
                   <div>
                       <label for="fullName" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
