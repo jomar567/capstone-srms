@@ -32,4 +32,11 @@ class ManageStudentController extends Controller
 
       return redirect()->route('admin.students_list');
     }
+
+    //Edit Method
+    public function edit($id) {
+      $student = Student::findorFail($id);
+
+      return view('Admin.Students.editStudent')->with('student', $student);
+    }
 }
