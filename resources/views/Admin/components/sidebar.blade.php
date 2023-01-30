@@ -31,7 +31,7 @@
           </button>
           <ul id="subjects" class="hidden py-2 space-y-2">
             <li>
-              <a href="#" class="hover:bg-redpink flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="{{ route('admin.subject_list') }}" class="{{ (request()->is('admin/subject_list', 'admin/create_subject', 'admin/edit_subject')) ? 'active' : '' }} hover:bg-redpink flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 <i class="fa-solid fa-bars-progress text-subIcons justify-center flex"></i>
                 <span class="ml-3">Manage Subjects</span>
               </a>

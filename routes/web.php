@@ -47,6 +47,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::middleware(['auth:admin'])->group(function () {
       //Dashboard route
       Route::view('/dashboard', 'Admin.Dashboard')->name('dashboard');
+
       //Students route
       Route::view('/students_list', 'Admin.Students.student')->name('students_list');
       //Add student
@@ -60,6 +61,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::view('/create_class', 'Admin.Classes.createClass')->name('create_class');
       // Edit Class
       Route::view('/edit_class', 'Admin.Classes.editClass')->name('edit_class');
+
+      // Subject Route
+      Route::view('/subject_list', 'Admin.Subjects.subject')->name('subject_list');
 
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
