@@ -16,7 +16,6 @@
                         <a href="#" class="block py-2 pl-3 pr-4 text-white hover:text-redpink md:hover:text-blue-700 rounded md:p-0 dark:text-gray-400  ">About</a>
                     </li>
                     <li>
-                      <a href="#" >
                         <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="hover:text-redpink text-white">
                           Student
                         </button>
@@ -39,7 +38,6 @@
                                 @endguest
                             </ul>
                         </div>
-                      </a>
                     </li>
                     <li>
                         <a href={{ route('admin.login') }} class="hover:text-redpink block py-2 pl-3 pr-4 text-white md:hover:text-blue-700 rounded md:p-0 dark:text-gray-400 ">Admin</a>

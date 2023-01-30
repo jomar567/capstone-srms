@@ -45,7 +45,14 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::post('/loginAdmin',[AdminController::class, 'loginAdmin'])->name('loginAdmin');
     });
     Route::middleware(['auth:admin'])->group(function () {
-        Route::view('/dashboard', 'Admin.Dashboard')->name('dashboard');
-        Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+      //Dashboard route
+      Route::view('/dashboard', 'Admin.Dashboard')->name('dashboard');
+      //Students route
+      Route::view('/students_list', 'Admin.Students.student')->name('students_list');
+      //Add student
+      Route::view('/create_student', 'Admin.Students.createStudent')->name('create_student');
+      //Edit student
+      Route::view('/edit_student', 'Admin.Students.editStudent')->name('edit_student');
+      Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
 });

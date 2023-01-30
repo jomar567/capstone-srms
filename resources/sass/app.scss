@@ -68,3 +68,44 @@ html, body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
+.sidebar {
+  ul li a {
+    &.active {
+      background-color: $pinkred;
+    }
+  }
+}
+.dataTable-top,
+.dataTable-bottom {
+  padding: 8px 0px !important;
+}
+.dataTable-sorter::before {
+  border-top: 4px solid #fff !important;
+}
+.dataTable-sorter::after {
+  border-bottom: 4px solid #fff !important;
+}
+.dataTable-wrapper {
+  .dataTable-table {
+    tbody > tr > td,
+    thead > tr > th  {
+      padding: 15px 10px;
+      vertical-align: middle;
+    }
+    th a {
+      padding: 5px;
+    }
+  }
+  .dataTable-selector {
+    border-radius: 10px;
+  }
+  .dataTable-search input {
+    border-radius: 10px;
+  }
+  .dataTable-bottom {
+    .dataTable-info {
+      font-size: 14px;
+    }
+  }
+}
