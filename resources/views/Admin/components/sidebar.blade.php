@@ -37,7 +37,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="hover:bg-redpink flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="{{ route('admin.subject_combination_list') }}" class="{{ (request()->is('admin/subject_combination_list', 'admin/create_subject_combination_list', 'admin/edit_subject_combination_list')) ? 'active' : '' }} hover:bg-redpink flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 <i class="fa-solid fa-file-circle-plus text-subIcons justify-center flex"></i>
                 <span class="ml-3">Subjects Combination</span>
              </a>

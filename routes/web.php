@@ -69,6 +69,14 @@ Route::prefix('admin')->name('admin.')->group(function() {
       // Edit Subject
       Route::view('/edit_subject', 'Admin.Subjects.editSubject')->name('edit_subject');
 
+      // Subject Combination Route
+      Route::view('/subject_combination_list', 'Admin.Subjects.Subject_Combination.subjectCombination')
+            ->name('subject_combination_list');
+      //Add Subject
+      // Route::view('/create_subject', 'Admin.Subjects.createSubject')->name('create_subject');
+      // Edit Subject
+      // Route::view('/edit_subject', 'Admin.Subjects.editSubject')->name('edit_subject');
+
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
 });
