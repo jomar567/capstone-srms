@@ -66,6 +66,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::view('/subject_list', 'Admin.Subjects.subject')->name('subject_list');
       //Add Subject
       Route::view('/create_subject', 'Admin.Subjects.createSubject')->name('create_subject');
+      // Edit Subject
+      Route::view('/edit_subject', 'Admin.Subjects.editSubject')->name('edit_subject');
 
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
