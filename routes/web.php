@@ -72,8 +72,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
       // Subject Combination Route
       Route::view('/subject_combination_list', 'Admin.Subjects.Subject_Combination.subjectCombination')
             ->name('subject_combination_list');
-      //Add Subject
-      // Route::view('/create_subject', 'Admin.Subjects.createSubject')->name('create_subject');
+      //Add Subject Combination
+      Route::view('/create_subject_combination', 'Admin.Subjects.Subject_Combination.createSubjectCombination')
+            ->name('create_subject_combination');
       // Edit Subject
       // Route::view('/edit_subject', 'Admin.Subjects.editSubject')->name('edit_subject');
 
