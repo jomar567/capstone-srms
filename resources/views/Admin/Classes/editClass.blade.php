@@ -63,7 +63,4 @@
         </div>
      </div>
 </div>
-<script>
-  var dataTable = new DataTable("#studentTable");
-</script>
 @endsection

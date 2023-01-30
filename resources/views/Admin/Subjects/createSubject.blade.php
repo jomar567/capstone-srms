@@ -15,7 +15,7 @@
             <div class="flex items-center">
               <span class="mx-2">/</span>
               <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">
-                Class
+                Subjects
               </a>
             </div>
           </li>
@@ -23,7 +23,7 @@
             <div class="flex items-center">
               <span class="mx-2">/</span>
               <span class="ml-1 text-sm font-medium">
-                Add Class
+                Add Subject
               </span>
             </div>
           </li>
@@ -34,29 +34,23 @@
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
-            <p class="font-semibold text-xl text-center mb-10">Add New Class</p>
+            <p class="font-semibold text-xl text-center mb-10">Add New Subject</p>
 
             <form class="md:w-4/5 md:mx-auto">
               <div class="mb-6">
                   <label for="className" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    Class Name
+                    Subject Name
                   </label>
                   <input type="text" id="className" name="className" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
               <div class="mb-6">
                   <label for="classNameNumeric" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    Class Name Numeric
+                    Subject Code
                   </label>
                   <input type="number" id="classNameNumeric" name="classNameNumeric" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
-              <div class="mb-6">
-                  <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    Section
-                  </label>
-                  <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-              </div>
               <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
-                Add Class
+                Add Subject
               </button>
             </form>
           </div>
