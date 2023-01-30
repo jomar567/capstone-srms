@@ -51,6 +51,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::view('/students_list', 'Admin.Students.student')->name('students_list');
       //Add student
       Route::view('/create_student', 'Admin.Students.createStudent')->name('create_student');
+      //Edit student
+      Route::view('/edit_student', 'Admin.Students.editStudent')->name('edit_student');
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
 });
