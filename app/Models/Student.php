@@ -25,6 +25,7 @@ class Student extends Authenticatable
         'student_ID',
         'email',
         'gender',
+        'dob',
         'password',
     ];
 

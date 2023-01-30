@@ -15,6 +15,7 @@ class StudentController extends Controller
             'fullName'=>'required',
             'student_ID'=>'required|unique:students,student_ID',
             'gender'=>'required',
+            'dob'=>'required',
             'email'=>'required|email|unique:students,email',
             'password'=>'required|min:6|max:15',
             'password_confirmation'=>'required|same:password'
@@ -23,6 +24,7 @@ class StudentController extends Controller
         $student->fullName = $request->fullName;
         $student->student_ID = $request->student_ID;
         $student->gender = $request->gender;
+        $student->dob = $request->dob;
         $student->email = $request->email;
         $student->password = Hash::make($request->password);
         $data = $student->save();

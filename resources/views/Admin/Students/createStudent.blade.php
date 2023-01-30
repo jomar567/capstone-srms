@@ -36,7 +36,8 @@
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-xl text-center mb-10">Add New Student</p>
 
-            <form class="md:w-4/5 md:mx-auto">
+            <form method="POST" action="{{route('admin.addNewStudent')}}" class="md:w-4/5 md:mx-auto">
+              @csrf
               <div class="grid gap-6 mb-6 md:grid-cols-2">
                   <div>
                       <label for="fullName" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
@@ -72,10 +73,10 @@
                     <label for="dob" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                       Date of Birth
                     </label>
-                    <input type="date" id="dob" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    <input type="date" id="dob" name="dob" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                 </div>
               </div>
-              <div class="mb-6">
+              {{-- <div class="mb-6">
                 <label for="course" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                   Course
                 </label>
@@ -84,9 +85,9 @@
                   <option value="bsit">BSIT</option>
                   <option value="comscie">ComScie</option>
                 </select>
-              </div>
+              </div> --}}
               <div class="mb-6">
-                  <input type="password" id="password" name="password" class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                  <input type="password" id="password" value="Test123" name="password" class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
               <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
                 Add Student

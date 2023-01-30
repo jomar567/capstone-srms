@@ -36,7 +36,7 @@
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-lg">View Students</p>
 
-            <a href="{{ route('admin.create_student') }}">
+            <a href="{{ route('admin.create_studentForm') }}">
               <button type="button" class="float-right text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-5">
                 Add New Student
               </button>
@@ -57,10 +57,13 @@
                               Student ID
                           </th>
                           <th scope="col" class="px-6 py-3">
-                              Course
+                              Email
                           </th>
                           <th scope="col" class="px-6 py-3">
-                              Registration Date
+                              Date of Birth
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Gender
                           </th>
                           <th scope="col" class="px-6 py-3">
                             Action
@@ -68,21 +71,26 @@
                       </tr>
                   </thead>
                   <tbody>
+                    @if(count($students) > 0)
+                    @foreach($students as $student)
                       <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                           <td class="px-6 py-4">
-                              1
+                              {{ $student->id}}
                           </td>
                           <td class="px-6 py-4">
-                              Jomar Clado
+                              {{ $student->fullName}}
                           </td>
                           <td class="px-6 py-4">
-                            2023-01-001
+                            {{ $student->student_ID}}
                           </td>
                           <td class="px-6 py-4">
-                              BSIT-3C
+                            {{ $student->email}}
                           </td>
                           <td class="px-6 py-4">
-                              2022-09-04
+                            {{ $student->dob}}
+                          </td>
+                          <td class="px-6 py-4">
+                            {{ $student->gender}}
                           </td>
                           <td class="flex px-6 py-4 gap-4">
                               <a href="{{ route('admin.edit_student') }}" class="font-medium text-blue-600 dark:text-blue">
@@ -93,107 +101,8 @@
                               </a>
                           </td>
                       </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                          <td class="flex px-6 py-4 gap-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue">
-                                <i class="fa-solid fa-user-pen text-lg"></i>
-                              </a>
-                              <a href="#" class="font-medium text-redpink">
-                                <i class="fa-solid fa-trash text-lg"></i>
-                              </a>
-                          </td>
-                      </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                          <td class="flex px-6 py-4 gap-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue">
-                                <i class="fa-solid fa-user-pen text-lg"></i>
-                              </a>
-                              <a href="#" class="font-medium text-redpink">
-                                <i class="fa-solid fa-trash text-lg"></i>
-                              </a>
-                          </td>
-                      </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                          <td class="flex px-6 py-4 gap-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue">
-                                <i class="fa-solid fa-user-pen text-lg"></i>
-                              </a>
-                              <a href="#" class="font-medium text-redpink">
-                                <i class="fa-solid fa-trash text-lg"></i>
-                              </a>
-                          </td>
-                      </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                          <td class="flex px-6 py-4 gap-4">
-                              <a href="#" class="font-medium text-blue-600 dark:text-blue">
-                                <i class="fa-solid fa-user-pen text-lg"></i>
-                              </a>
-                              <a href="#" class="font-medium text-redpink">
-                                <i class="fa-solid fa-trash text-lg"></i>
-                              </a>
-                          </td>
-                      </tr>
-
+                      @endforeach
+                      @endif
 
                   </tbody>
               </table>

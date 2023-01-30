@@ -96,6 +96,19 @@
               @enderror
             </div>
 
+            {{-- Date of Birth --}}
+            <div class="mb-6">
+              <label for="dob" class="block mb-2 text-sm font-medium text-white dark:text-white">
+                Date of Birth <span class="text-base text-redpink">*</span>
+              </label>
+              <input type="date" id="dob" name="dob" value="{{ old('dob') }}" class="shadow-sm border text-blue text-sm rounded-lg block w-full p-2.5 dark:shadow-sm-light">
+              @error('dob')
+                <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                  <span class="font-medium">{{ $message }}</span>
+                </p>
+              @enderror
+            </div>
+
             {{-- Password --}}
             <div class="mb-6">
               <label for="password" class="block mb-2 text-sm font-medium text-white dark:text-white">

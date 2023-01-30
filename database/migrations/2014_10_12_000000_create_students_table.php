@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('student_ID');
             $table->string('email')->unique();
             $table->string('gender');
-            // $table->date('dob');
+            $table->date('dob');
             // $table->foreignId('course_id')->constrained();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

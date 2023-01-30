@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ManageStudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,9 +50,11 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::view('/dashboard', 'Admin.Dashboard')->name('dashboard');
 
       //Students route
-      Route::view('/students_list', 'Admin.Students.student')->name('students_list');
-      //Add student
-      Route::view('/create_student', 'Admin.Students.createStudent')->name('create_student');
+      Route::get('/students_list', [ManageStudentController::class, 'studentList'])->name('students_list');
+      //Add student Form
+      Route::get('/create_studentForm', [ManageStudentController::class, 'create'])->name('create_studentForm');
+      //Add new Student
+      Route::post('/addNewStudent', [ManageStudentController::class, 'store'])->name('addNewStudent');
       //Edit student
       Route::view('/edit_student', 'Admin.Students.editStudent')->name('edit_student');
 
