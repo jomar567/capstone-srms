@@ -33,17 +33,17 @@
 
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
-          <div class="relative drop-shadow-lg w-full p-6 bg-slate-50 rounded-lg shadow-xl ">
+          <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
             <p class="font-medium text-lg">View Students</p>
 
-            <a href="#">
-              <button type="button" class="float-right text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center ">
+            <a href="{{ route('admin.create_student') }}">
+              <button type="button" class="float-right text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-5">
                 Add New Student
               </button>
             </a>
 
             {{-- Data Table --}}
-            <div class="relative overflow-x-auto sm:rounded-lg mt-16">
+            <div class="relative overflow-x-auto sm:rounded-lg mt-20">
               <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="studentTable">
                   <thead class="text-xs text-gray-700 uppercase bg-blue/90 text-white">
                       <tr>
