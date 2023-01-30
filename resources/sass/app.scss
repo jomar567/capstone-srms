@@ -68,3 +68,35 @@ html, body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
+.dataTable-top,
+.dataTable-bottom {
+  padding: 8px 0px !important;
+}
+.dataTable-sorter::before {
+  border-top: 4px solid #fff !important;
+}
+.dataTable-sorter::after {
+  border-bottom: 4px solid #fff !important;
+}
+.dataTable-wrapper {
+  .dataTable-table {
+    tbody > tr > td {
+      padding: 15px 10px;
+    }
+    th a {
+      padding: 5px;
+    }
+  }
+  .dataTable-selector {
+    border-radius: 10px;
+  }
+  .dataTable-search input {
+    border-radius: 10px;
+  }
+  .dataTable-bottom {
+    .dataTable-info {
+      font-size: 14px;
+    }
+  }
+}

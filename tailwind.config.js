@@ -16,7 +16,8 @@ module.exports = {
         'student': '#427AA1',
         'subject': '#ED0131',
         'class': '#F77F00',
-        'result': '#006D77'
+        'result': '#006D77',
+        'breadcrumb': '#717171'
       },
       letterSpacing: {
         'wide': '8px',

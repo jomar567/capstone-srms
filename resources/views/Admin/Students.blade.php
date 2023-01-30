@@ -1,0 +1,254 @@
+@extends('Admin.layouts.layout')
+
+@section('adminContent')
+<div class="p-4 sm:ml-64 mt-16">
+      {{-- Breadcrumb --}}
+      <nav class="flex my-4 text-breadcrumb" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center justify-center">
+            <a href="#" class="flex items-center justify-center text-sm font-medium">
+              <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <span class="mx-2">/</span>
+              <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">
+                Students
+              </a>
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <span class="mx-2">/</span>
+              <span class="ml-1 text-sm font-medium">
+                Manage Students
+              </span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+      <hr class="mb-12 border border-breadcrumb border-2">
+
+     <div class=" mb-4">
+        <div class="flex items-center justify-center text-blue">
+          <div class="relative drop-shadow-lg w-full p-6 bg-slate-50 rounded-lg shadow-xl ">
+            <p class="font-medium text-lg">View Students</p>
+
+            {{-- Data Table --}}
+
+            <div class="relative overflow-x-auto sm:rounded-lg mt-5">
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="studentTable">
+                  <thead class="text-xs text-gray-700 uppercase bg-blue/90 text-white">
+                      <tr>
+                          <th scope="col" class="px-6 py-3">
+                              #
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Student name
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Student ID
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Class
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Registration Date
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                            Action
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                          <td class="px-6 py-4">
+                              1
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                          <td class="px-6 py-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                Edit
+                              </a>
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                          <td class="px-6 py-4">
+                              2
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                          <td class="px-6 py-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                Edit
+                              </a>
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                          <td class="px-6 py-4">
+                              3
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                          <td class="px-6 py-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                Edit
+                              </a>
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                          <td class="px-6 py-4">
+                              4
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                          <td class="px-6 py-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                Edit
+                              </a>
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                          <td class="px-6 py-4">
+                              5
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                          <td class="px-6 py-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                Edit
+                              </a>
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                          <td class="px-6 py-4">
+                              3
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                          <td class="px-6 py-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                Edit
+                              </a>
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                          <td class="px-6 py-4">
+                              4
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                          <td class="px-6 py-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                Edit
+                              </a>
+                          </td>
+                      </tr>
+                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/70 hover:text-white dark:hover:bg-blue/70">
+                          <td class="px-6 py-4">
+                              5
+                          </td>
+                          <td class="px-6 py-4">
+                              Jomar Clado
+                          </td>
+                          <td class="px-6 py-4">
+                            2023-01-001
+                          </td>
+                          <td class="px-6 py-4">
+                              BSIT-3C
+                          </td>
+                          <td class="px-6 py-4">
+                              2022-09-04
+                          </td>
+                          <td class="px-6 py-4">
+                              <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                Edit
+                              </a>
+                          </td>
+                      </tr>
+
+                  </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+     </div>
+</div>
+<script>
+  var dataTable = new DataTable("#studentTable");
+</script>
+@endsection
