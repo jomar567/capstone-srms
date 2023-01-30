@@ -18,7 +18,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="hover:bg-redpink flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+          <a href="{{ route('admin.class_list') }}" class="{{ (request()->is('admin/class_lis', 'admin/create_class', 'admin/edit_class')) ? 'active' : '' }} hover:bg-redpink flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
               <i class="fa-solid fa-clipboard-list text-icons justify-center flex"></i>
              <span class="ml-3">Students Classes</span>
           </a>
