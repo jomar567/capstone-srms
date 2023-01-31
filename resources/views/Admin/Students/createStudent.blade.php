@@ -33,7 +33,7 @@
 
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
-          <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
+          <div class="relative drop-shadow-lg w-full md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-xl text-center mb-10">Add New Student</p>
 
             <form method="POST" action="{{route('admin.addNewStudent')}}" class="md:w-4/5 md:mx-auto">

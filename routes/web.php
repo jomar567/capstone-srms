@@ -87,6 +87,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
       // Result Route
       Route::view('/result_list', 'Admin.Results.result')->name('result_list');
+      //Add Result
+      Route::view('/create_result', 'Admin.Results.createResult')->name('create_result');
 
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
