@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
     public function course() {
-        return view('Admin.Courses.course');
+        $courses = Course::all();
+        return view('Admin.Courses.course')->with('courses', $courses);
+
     }
 
     public function createCourse(){
