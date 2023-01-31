@@ -65,51 +65,33 @@
                       </tr>
                   </thead>
                   <tbody>
+                    @if(count($subjects) > 0)
+                    @foreach($subjects as $subject)
                       <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                           <td class="px-6 py-4">
-                              1
+                              {{ $subject->id}}
                           </td>
                           <td class="px-6 py-4">
-                              Programming
+                              {{ $subject->subjectName}}
                           </td>
                           <td class="px-6 py-4">
-                            2
+                              {{ $subject->subjectCode}}
                           </td>
                           <td class="px-6 py-4">
-                              2022-09-04
+                              {{ $subject->created_at}}
                           </td>
+                          
                           <td class="flex px-6 py-4 gap-4">
-                              <a href="{{ route('admin.edit_subject') }}" class="font-medium text-blue-600 dark:text-blue">
-                              <i class="fa-solid fa-file-pen text-lg"></i>
+                              <a href="{{ route('admin.edit_subject', $subject->id) }}" class="font-medium text-blue-600 dark:text-blue">
+                                <i class="fa-solid fa-user-pen text-lg"></i>
                               </a>
                               <a href="#" class="font-medium text-redpink">
                                 <i class="fa-solid fa-trash text-lg"></i>
                               </a>
                           </td>
                       </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                        <td class="px-6 py-4">
-                            2
-                        </td>
-                        <td class="px-6 py-4">
-                            English
-                        </td>
-                        <td class="px-6 py-4">
-                          2
-                        </td>
-                        <td class="px-6 py-4">
-                          2022-09-05
-                        </td>
-                        <td class="flex px-6 py-4 gap-4">
-                            <a href="{{ route('admin.edit_subject') }}" class="font-medium text-blue-600 dark:text-blue">
-                            <i class="fa-solid fa-file-pen text-lg"></i>
-                            </a>
-                            <a href="#" class="font-medium text-redpink">
-                              <i class="fa-solid fa-trash text-lg"></i>
-                            </a>
-                        </td>
-                    </tr>
-
+                      @endforeach
+                      @endif
 
                   </tbody>
               </table>

@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ManageStudentController;
+use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\CourseController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -74,11 +74,15 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::post('/update_course/{id}',  [CourseController::class,'update'])->name('update_course');
 
       // Subject Route
-      Route::view('/subject_list', 'Admin.Subjects.subject')->name('subject_list');
-      //Add Subject
-      Route::view('/create_subject', 'Admin.Subjects.createSubject')->name('create_subject');
+      Route::get('/subject_list', [SubjectController::class, 'subjectlist'])->name('subject_list');
+      //Add Subject Form
+      Route::get('/create_subject', [SubjectController::class, 'createsubject'])->name('create_subject');
+      //Add New Subject
+      Route::post('/addNewSubject', [SubjectController::class, 'adding'])->name('addNewSubject');
       // Edit Subject
-      Route::view('/edit_subject', 'Admin.Subjects.editSubject')->name('edit_subject');
+      Route::get('/edit_subject/{id}', [SubjectController::class, 'editor'] )->name('edit_subject');
+      //Update student
+      Route::post('/update_subject/{id}', [SubjectController::class, 'updating'])->name('update_subject');
 
       // Subject Combination Route
       Route::view('/subject_combination_list', 'Admin.Subjects.Subject_Combination.subjectCombination')
