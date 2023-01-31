@@ -23,8 +23,25 @@ class SubjectController extends Controller
         $subject->subjectName = $request->subjectName;
         $subject->subjectCode = $request->subjectCode;
         $subject->save();
-  
+
         return redirect()->route('admin.subject_list');
-      }
-  
+    }
+
+      //Edit Method
+    public function editor($id) {
+    $subject = Subject::findorFail($id);
+
+    return view('Admin.Subjects.editSubject')->with('subject', $subject);
+    }
+
+    //Update Student
+    public function updating(Request $request) {
+        $subjects = Subject::findorFail($request->id);
+        $subjects->subjectName = $request->subjectName;
+        $subjects->subjectCode = $request->subjectCode;
+        $subjects->save();
+
+        return redirect()->route('admin.subject_list');
+    }
+
 }
