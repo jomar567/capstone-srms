@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ManageStudentController;
+use App\Http\Controllers\Admin\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,11 +63,15 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::post('/update_student/{id}', [ManageStudentController::class, 'update'])->name('update_student');
 
       //Course Route
-      Route::view('/course_list', 'Admin.Courses.course')->name('course_list');
+      Route::get('/course_list', [CourseController::class,'course'])->name('course_list');
       //Add Course
-      Route::view('/create_course', 'Admin.Courses.createCourse')->name('create_course');
+      Route::get('/create_courseForm', [CourseController::class,'createCourse'])->name('create_courseForm');
       // Edit Course
-      Route::view('/edit_course', 'Admin.Courses.editCourse')->name('edit_course');
+      Route::get('/edit_course/{id}',  [CourseController::class,'editCourse'])->name('edit_course');
+      //Add course
+      Route::post('/add_newCourse',  [CourseController::class,'addCourse'])->name('add_newCourse');
+     // update
+      Route::post('/update_course/{id}',  [CourseController::class,'update'])->name('update_course');
 
       // Subject Route
       Route::view('/subject_list', 'Admin.Subjects.subject')->name('subject_list');
