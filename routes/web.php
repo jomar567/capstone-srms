@@ -67,7 +67,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       //Add Course
       Route::get('/create_courseForm', [CourseController::class,'createCourse'])->name('create_courseForm');
       // Edit Course
-      Route::view('/edit_course', 'Admin.Courses.editCourse')->name('edit_course');
+      Route::get('/edit_course/{id}',  [CourseController::class,'editCourse'])->name('edit_course');
+      //Add course
       Route::post('/add_newCourse',  [CourseController::class,'addCourse'])->name('add_newCourse');
 
       // Subject Route

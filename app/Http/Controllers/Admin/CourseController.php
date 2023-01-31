@@ -29,4 +29,10 @@ class CourseController extends Controller
     }
 
 
+    public function editCourse($id){
+        $course = Course::findorFail($id);
+        return view('Admin.Courses.editCourse')->with('course', $course);
+    }
+
+
 }

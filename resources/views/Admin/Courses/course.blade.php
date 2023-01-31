@@ -87,7 +87,7 @@
                             {{ $course->created_at }}
                           </td>
                           <td class="flex px-6 py-4 gap-4">
-                              <a href="{{ route('admin.edit_course') }}" class="font-medium text-blue-600 dark:text-blue">
+                              <a href="{{ route('admin.edit_course',$course->id) }}" class="font-medium text-blue-600 dark:text-blue">
                               <i class="fa-solid fa-file-pen text-lg"></i>
                               </a>
                               <a href="#" class="font-medium text-redpink">
