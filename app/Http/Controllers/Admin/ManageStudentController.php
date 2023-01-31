@@ -10,6 +10,11 @@ use Hash;
 class ManageStudentController extends Controller
 {
 
+    public function studentCount() {
+      $students = Student::all();
+      return view('Admin.Dashboard')->with('students', $students);
+    }
+
     public function studentList() {
       $students = Student::orderByDesc('created_at')->get();
 

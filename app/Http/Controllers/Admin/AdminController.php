@@ -32,10 +32,36 @@ class AdminController extends Controller
         return redirect()->back()->with('error', 'Login Failed');
     }
     }
-    //logout student
+    //Logout Admin
     public function logout() {
         Auth::guard('admin')->logout();
 
         return redirect('/');
+    }
+
+    //Change Admin Password view form
+    public function changePassword() {
+      return view('Admin.Settings.ChangePassword');
+    }
+
+    //Update Password
+    public function updatePassword(Request $request) {
+      //Validate
+      $request->validate([
+        'oldPassword'=>'required|min:6|max:15',
+        'new_password'=>'required|min:6|max:15|confirmed'
+      ]);
+
+      //Check if password match
+      if(!Hash::check($request->oldPassword, auth()->user()->password)) {
+        return back()->with('error', 'Old Password do not match!');
+      }
+
+      //Update the password
+      Admin::whereId(auth()->user()->id)->update([
+        'password' => Hash::make($request->new_password)
+      ]);
+
+      return back()->with('success', 'Password change successfully!');
     }
 }

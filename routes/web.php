@@ -48,6 +48,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::middleware(['auth:admin'])->group(function () {
       //Dashboard route
       Route::view('/dashboard', 'Admin.Dashboard')->name('dashboard');
+      Route::get('/dashboard', [ManageStudentController::class, 'studentCount'])->name('dashboard');
 
       //Students route
       Route::get('/students_list', [ManageStudentController::class, 'studentList'])->name('students_list');
@@ -85,6 +86,26 @@ Route::prefix('admin')->name('admin.')->group(function() {
       // Edit Subject
       Route::view('/edit_subject_combination', 'Admin.Subjects.Subject_Combination.editSubjectCombination')
             ->name('edit_subject_combination');
+
+      // Result Route
+      Route::view('/result_list', 'Admin.Results.result')->name('result_list');
+      //Add Result
+      Route::view('/create_result', 'Admin.Results.createResult')->name('create_result');
+      //Edit Result
+      Route::view('/edit_result', 'Admin.Results.editResult')->name('edit_result');
+
+      // Notice Route
+      Route::view('/notice_list', 'Admin.Notices.notice')->name('notice_list');
+      //Add Notice
+      Route::view('/create_notice', 'Admin.Notices.createNotice')->name('create_notice');
+      //Edit Notice
+      Route::view('/edit_notice', 'Admin.Notices.editNotice')->name('edit_notice');
+
+
+      //Change Password Route
+      Route::get('/change_password', [AdminController::class, 'changePassword'])->name('change_password');
+      //Update Password
+      Route::post('/update_password', [AdminController::class, 'updatePassword'])->name('update_password');
 
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });

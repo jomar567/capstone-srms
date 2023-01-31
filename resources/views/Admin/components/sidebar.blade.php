@@ -45,13 +45,13 @@
           </ul>
        </li>
         <li>
-           <a href="#" class="hover:bg-redpink flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+           <a href="{{ route('admin.result_list') }}" class="{{ (request()->is('admin/result_list', 'admin/create_result', 'admin/edit_result')) ? 'active' : '' }} hover:bg-redpink flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
             <i class="fa-solid fa-list-check text-icons justify-center flex"></i>
             <span class="flex-1 ml-3 whitespace-nowrap">Results</span>
            </a>
         </li>
         <li>
-           <a href="#" class="hover:bg-redpink flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+           <a href="{{ route('admin.notice_list') }}" class="{{ (request()->is('admin/notice_list', 'admin/create_notice', 'admin/edit_notice')) ? 'active' : '' }} hover:bg-redpink flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
             <svg class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="none" stroke="currentColor" fill="currentColor" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5"></path>
             </svg>
@@ -66,7 +66,7 @@
           </button>
           <ul id="settings" class="hidden py-2 space-y-2">
             <li>
-              <a href="#" class="hover:bg-redpink flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+              <a href="{{ route('admin.change_password') }}" class="{{ (request()->is('admin/notice_list')) ? 'active' : '' }} hover:bg-redpink flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                 <i class="fa-solid fa-key text-subIcons justify-center flex"></i>
                 <span class="ml-3">Change Password</span>
               </a>
