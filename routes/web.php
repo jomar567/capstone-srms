@@ -85,6 +85,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::view('/edit_subject_combination', 'Admin.Subjects.Subject_Combination.editSubjectCombination')
             ->name('edit_subject_combination');
 
+      // Result Route
+      Route::view('/result_list', 'Admin.Results.result')->name('result_list');
+
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
 });
