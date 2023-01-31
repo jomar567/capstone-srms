@@ -45,7 +45,7 @@
           </ul>
        </li>
         <li>
-           <a href="#" class="hover:bg-redpink flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+           <a href="{{ route('admin.result_list') }}" class="{{ (request()->is('admin/result_list', 'admin/create_result', 'admin/edit_result')) ? 'active' : '' }} hover:bg-redpink flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
             <i class="fa-solid fa-list-check text-icons justify-center flex"></i>
             <span class="flex-1 ml-3 whitespace-nowrap">Results</span>
            </a>
