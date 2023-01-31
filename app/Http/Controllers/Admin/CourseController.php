@@ -11,4 +11,8 @@ class CourseController extends Controller
         return view('Admin.Courses.course');
     }
 
+    public function createCourse(){
+        return view('Admin.Courses.createCourse');
+    }
+
 }
