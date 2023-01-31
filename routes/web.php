@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ManageStudentController;
+use App\Http\Controllers\Admin\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,7 +63,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::post('/update_student/{id}', [ManageStudentController::class, 'update'])->name('update_student');
 
       //Course Route
-      Route::view('/course_list', 'Admin.Courses.course')->name('course_list');
+      Route::get('/course_list', [CourseController::class,'course'])->name('course_list');
       //Add Course
       Route::view('/create_course', 'Admin.Courses.createCourse')->name('create_course');
       // Edit Course
