@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ManageStudentController;
-
+use App\Http\Controllers\Admin\SubjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,9 +68,11 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::view('/edit_course', 'Admin.Courses.editCourse')->name('edit_course');
 
       // Subject Route
-      Route::view('/subject_list', 'Admin.Subjects.subject')->name('subject_list');
-      //Add Subject
-      Route::view('/create_subject', 'Admin.Subjects.createSubject')->name('create_subject');
+      Route::get('/subject_list', [SubjectController::class, 'subjectlist'])->name('subject_list');
+      //Add Subject Form
+      Route::get('/create_subject', [SubjectController::class, 'createsubject'])->name('create_subject');
+      //Add New Subject
+      Route::post('/addNewSubject', [SubjectController::class, 'adding'])->name('addNewSubject');
       // Edit Subject
       Route::view('/edit_subject', 'Admin.Subjects.editSubject')->name('edit_subject');
 
