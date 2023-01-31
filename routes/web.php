@@ -101,7 +101,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
 
       //Change Password Route
-      Route::view('/change_password', 'Admin.Settings.ChangePassword')->name('change_password');
+      Route::get('/change_password', [AdminController::class, 'changePassword'])->name('change_password');
+      //Update Password
+      Route::post('/update_password', [AdminController::class, 'updatePassword'])->name('update_password');
 
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
