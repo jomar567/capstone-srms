@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
     public function course() {
-        $courses = Course::all();
+        $courses = Course::orderByDesc('created_at')->get();
         return view('Admin.Courses.course')->with('courses', $courses);
 
     }

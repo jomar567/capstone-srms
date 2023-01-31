@@ -68,21 +68,23 @@
                       </tr>
                   </thead>
                   <tbody>
+                    @if(count($courses) > 0 )
+                    @foreach($courses as $course)
                       <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                           <td class="px-6 py-4">
-                              1
+                              {{ $course->id }}
                           </td>
                           <td class="px-6 py-4">
-                              BSIT
+                            {{ $course->courseName }}
                           </td>
                           <td class="px-6 py-4">
-                            2
+                            {{ $course->courseYearNumeric }}
                           </td>
                           <td class="px-6 py-4">
-                              C
+                            {{ $course->section }}
                           </td>
                           <td class="px-6 py-4">
-                              2022-09-04
+                            {{ $course->created_at }}
                           </td>
                           <td class="flex px-6 py-4 gap-4">
                               <a href="{{ route('admin.edit_course') }}" class="font-medium text-blue-600 dark:text-blue">
@@ -93,33 +95,8 @@
                               </a>
                           </td>
                       </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                        <td class="px-6 py-4">
-                            2
-                        </td>
-                        <td class="px-6 py-4">
-                            ComScie
-                        </td>
-                        <td class="px-6 py-4">
-                          2
-                        </td>
-                        <td class="px-6 py-4">
-                          C
-                        </td>
-                        <td class="px-6 py-4">
-                          2022-09-05
-                        </td>
-                        <td class="flex px-6 py-4 gap-4">
-                            <a href="{{ route('admin.edit_course') }}" class="font-medium text-blue-600 dark:text-blue">
-                            <i class="fa-solid fa-file-pen text-lg"></i>
-                            </a>
-                            <a href="#" class="font-medium text-redpink">
-                              <i class="fa-solid fa-trash text-lg"></i>
-                            </a>
-                        </td>
-                    </tr>
-
-
+                      @endforeach
+                      @endif
                   </tbody>
               </table>
             </div>
