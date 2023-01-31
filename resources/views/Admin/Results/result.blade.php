@@ -85,7 +85,7 @@
                               2022-09-04
                           </td>
                           <td class="flex px-6 py-4 gap-4">
-                              <a href="{{ route('admin.edit_course') }}" class="font-medium text-blue-600 dark:text-blue">
+                              <a href="{{ route('admin.edit_result') }}" class="font-medium text-blue-600 dark:text-blue">
                               <i class="fa-solid fa-file-pen text-lg"></i>
                               </a>
                               <a href="#" class="font-medium text-redpink">
@@ -110,7 +110,7 @@
                             2022-09-04
                         </td>
                         <td class="flex px-6 py-4 gap-4">
-                            <a href="{{ route('admin.edit_course') }}" class="font-medium text-blue-600 dark:text-blue">
+                            <a href="{{ route('admin.edit_result') }}" class="font-medium text-blue-600 dark:text-blue">
                             <i class="fa-solid fa-file-pen text-lg"></i>
                             </a>
                             <a href="#" class="font-medium text-redpink">
