@@ -34,5 +34,14 @@ class CourseController extends Controller
         return view('Admin.Courses.editCourse')->with('course', $course);
     }
 
+    public function update(Request $request){
+        $courses = Course::findorFail($request->id);
+        $courses->courseName = $request->courseName;
+        $courses->courseYearNumeric = $request->courseYearNumeric;
+        $courses->section = $request->section;
+        $courses->save();
+
+        return redirect()->route('admin.course_list');
+    }
 
 }

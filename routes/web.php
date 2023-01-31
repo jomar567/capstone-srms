@@ -70,6 +70,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/edit_course/{id}',  [CourseController::class,'editCourse'])->name('edit_course');
       //Add course
       Route::post('/add_newCourse',  [CourseController::class,'addCourse'])->name('add_newCourse');
+     // update
+      Route::post('/update_course/{id}',  [CourseController::class,'update'])->name('update_course');
 
       // Subject Route
       Route::view('/subject_list', 'Admin.Subjects.subject')->name('subject_list');
