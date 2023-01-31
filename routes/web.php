@@ -99,6 +99,10 @@ Route::prefix('admin')->name('admin.')->group(function() {
       //Edit Notice
       Route::view('/edit_notice', 'Admin.Notices.editNotice')->name('edit_notice');
 
+
+      //Change Password Route
+      Route::view('/change_password', 'Admin.Settings.ChangePassword')->name('change_password');
+
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
 });
