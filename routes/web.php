@@ -92,6 +92,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
       //Edit Result
       Route::view('/edit_result', 'Admin.Results.editResult')->name('edit_result');
 
+      // Notice Route
+      Route::view('/notice_list', 'Admin.Notices.notice')->name('notice_list');
+
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     });
 });
