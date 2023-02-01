@@ -73,8 +73,10 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/edit_course/{id}',  [CourseController::class,'editCourse'])->name('edit_course');
       //Add course
       Route::post('/add_newCourse',  [CourseController::class,'addCourse'])->name('add_newCourse');
-     // update
+     // update course
       Route::post('/update_course/{id}',  [CourseController::class,'update'])->name('update_course');
+      // delete course
+      Route::post('/delete_course/{id}',  [CourseController::class,'destroy'])->name('delete_course');
 
       // Subject Route
       Route::get('/subject_list', [SubjectController::class, 'subjectlist'])->name('subject_list');
