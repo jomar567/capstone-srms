@@ -90,12 +90,23 @@
                               <a href="{{ route('admin.edit_course',$course->id) }}" class="font-medium text-blue-600 dark:text-blue">
                               <i class="fa-solid fa-file-pen text-lg"></i>
                               </a>
-                              <a href="#" class="font-medium text-redpink">
-                                <i class="fa-solid fa-trash text-lg"></i>
-                              </a>
+                              <form method="POST" action="{{ route('admin.delete_course', $course->id) }}">
+                                @csrf
+                                  <button class="font-medium text-redpink">
+                                    <i class="fa-solid fa-trash text-lg"></i>
+                                  </button>
+                              </form>
                           </td>
                       </tr>
+                      
                       @endforeach
+                      @else
+                      <tr>
+                          <td class="px-6 py-4 text-center" colspan="6">
+                              No courses found
+                          </td>
+                      </tr>
+                          
                       @endif
                   </tbody>
               </table>

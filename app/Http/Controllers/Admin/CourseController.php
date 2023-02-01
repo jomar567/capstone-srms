@@ -44,4 +44,10 @@ class CourseController extends Controller
         return redirect()->route('admin.course_list');
     }
 
+    public function destroy($id){
+        $course = Course::findorFail($id);
+        $course->delete();
+
+        return redirect()->route('admin.course_list');
+    }
 }
