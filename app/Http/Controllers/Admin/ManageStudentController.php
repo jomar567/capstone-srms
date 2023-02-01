@@ -57,4 +57,12 @@ class ManageStudentController extends Controller
 
       return redirect()->route('admin.students_list');
     }
+
+    //Delete Student
+    public function destroy(Request $request) {
+      $student = Student::findorFail($request->id);
+      $student->delete();
+
+      return redirect()->route('admin.students_list');
+    }
 }

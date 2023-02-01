@@ -61,6 +61,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/edit_student/{id}', [ManageStudentController::class, 'edit'])->name('edit_student');
       //Update student
       Route::post('/update_student/{id}', [ManageStudentController::class, 'update'])->name('update_student');
+      //Delete student
+      Route::post('/delete_student/{id}', [ManageStudentController::class, 'destroy'])->name('delete_student');
 
       //Course Route
       Route::get('/course_list', [CourseController::class,'course'])->name('course_list');

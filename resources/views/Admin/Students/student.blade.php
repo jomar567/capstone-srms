@@ -96,12 +96,26 @@
                               <a href="{{ route('admin.edit_student', $student->id) }}" class="font-medium text-blue-600 dark:text-blue">
                                 <i class="fa-solid fa-user-pen text-lg"></i>
                               </a>
-                              <a href="#" class="font-medium text-redpink">
-                                <i class="fa-solid fa-trash text-lg"></i>
-                              </a>
+                              {{-- Delete icon / button --}}
+
+                              <form method="POST" action="{{ route('admin.delete_student', $student->id) }}">
+                                @csrf
+                                <button class="font-medium text-redpink">
+                                  <i class="fa-solid fa-trash text-lg"></i>
+                                </button>
+                                {{-- <a href="#" class="font-medium text-redpink">
+                                  <i class="fa-solid fa-trash text-lg"></i>
+                                </a> --}}
+                              </form>
                           </td>
                       </tr>
                       @endforeach
+                      @else
+                      <tr>
+                        <td colspan="7" class="text-center">
+                          No Student Available
+                        </td>
+                      </tr>
                       @endif
 
                   </tbody>
