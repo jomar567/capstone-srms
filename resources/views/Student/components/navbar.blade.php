@@ -10,7 +10,9 @@
          </button>
         <a href="https://flowbite.com" class="flex ml-2 md:mr-24">
           {{-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" /> --}}
-          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">SRMS</span>
+          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+            SRMS | Student
+          </span>
         </a>
       </div>
       <div class="flex items-center justify-center">
@@ -45,12 +47,12 @@
           </ul>
         </div>
         <div class="ml-4 text-redpink">
-          <a class="flex justify-center items-center" href="{{ route('admin.logout') }}"
+          <a class="flex justify-center items-center" href="{{ route('student.logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
             <i class="fa-solid text-sm fa-arrow-right-from-bracket"></i>
             <p class="text-sm ml-2">Logout</p>
-            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="hidden">
+            <form id="logout-form" action="{{ route('student.logout') }}" method="POST" class="hidden">
               @csrf
             </form>
           </a>
