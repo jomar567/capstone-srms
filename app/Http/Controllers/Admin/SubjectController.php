@@ -27,7 +27,7 @@ class SubjectController extends Controller
         return redirect()->route('admin.subject_list');
     }
 
-      //Edit Method
+    //Edit Method
     public function editor($id) {
     $subject = Subject::findorFail($id);
 
@@ -43,5 +43,13 @@ class SubjectController extends Controller
 
         return redirect()->route('admin.subject_list');
     }
+
+    //Delete Student
+    public function destroying(Request $request) {
+        $subject = Subject::findorFail($request->id);
+        $subject->delete();
+  
+        return redirect()->route('admin.subject_list');
+      }
 
 }

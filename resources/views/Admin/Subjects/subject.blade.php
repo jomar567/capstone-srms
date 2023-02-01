@@ -85,12 +85,26 @@
                               <a href="{{ route('admin.edit_subject', $subject->id) }}" class="font-medium text-blue-600 dark:text-blue">
                                 <i class="fa-solid fa-user-pen text-lg"></i>
                               </a>
-                              <a href="#" class="font-medium text-redpink">
-                                <i class="fa-solid fa-trash text-lg"></i>
-                              </a>
+                              
+                              <!-- // Delete Icon -->
+                              <form method="POST" action="{{ route('admin.delete_subject', $subject->id) }}">
+                                @csrf
+                                <button class="font-medium text-redpink">
+                                  <i class="fa-solid fa-trash text-lg"></i>
+                                </button>
+                                {{-- <a href="#" class="font-medium text-redpink">
+                                  <i class="fa-solid fa-trash text-lg"></i>
+                                </a> --}}
+                              </form>
                           </td>
                       </tr>
                       @endforeach
+                      @else
+                      <tr>
+                        <td colspan="7" class="text-center">
+                          No Subjects Available
+                        </td>
+                      </tr>
                       @endif
 
                   </tbody>

@@ -86,6 +86,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/edit_subject/{id}', [SubjectController::class, 'editor'] )->name('edit_subject');
       //Update student
       Route::post('/update_subject/{id}', [SubjectController::class, 'updating'])->name('update_subject');
+      //Delete student
+      Route::post('/delete_subject/{id}', [SubjectController::class, 'destroying'])->name('delete_subject');
 
       // Subject Combination Route
       Route::view('/subject_combination_list', 'Admin.Subjects.Subject_Combination.subjectCombination')
