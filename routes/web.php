@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Student\StudentController;
+use App\Http\Controllers\Student\StudentAuthController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ManageStudentController;
 use App\Http\Controllers\Admin\SubjectController;
@@ -31,12 +32,12 @@ Route::prefix('student')->name('student.')->group(function() {
         Route::view('/register', 'auth.Student.register')->name('register');
         Route::view('/login', 'auth.Student.login')->name('login');
 
-        Route::post('/registerStudent', [StudentController::class, 'registerStudent'])->name('registerStudent');
-        Route::post('/loginStudent',[StudentController::class, 'loginStudent'])->name('loginStudent');
+        Route::post('/registerStudent', [StudentAuthController::class, 'registerStudent'])->name('registerStudent');
+        Route::post('/loginStudent',[StudentAuthController::class, 'loginStudent'])->name('loginStudent');
     });
     Route::middleware(['auth:student'])->group(function () {
         Route::view('/dashboard', 'Student.Dashboard')->name('dashboard');
-        Route::post('/logout', [StudentController::class, 'logout'])->name('logout');
+        Route::post('/logout', [StudentAuthController::class, 'logout'])->name('logout');
     });
 });
 
