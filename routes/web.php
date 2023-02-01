@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ManageStudentController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\SubjectCombinationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,6 +115,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::view('/create_notice', 'Admin.Notices.createNotice')->name('create_notice');
       //Edit Notice
       Route::view('/edit_notice', 'Admin.Notices.editNotice')->name('edit_notice');
+
+      //Subject Combination Routes
+      Route::get('/subject_combination_list', [SubjectCombinationController::class, 'subjectCombined_list'])->name('subject_combination_list');
 
 
       //Change Password Route

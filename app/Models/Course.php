@@ -16,4 +16,9 @@ class Course extends Model
        'courseYearNumeric',
         'section',
     ];
+
+    public function combinedSubjects()
+    {
+      return $this->hasMany(SubjectCombination::class);
+    }
 }
