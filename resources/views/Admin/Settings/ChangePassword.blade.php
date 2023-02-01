@@ -62,7 +62,7 @@
                   <label for="oldPassword" class="@error('oldPassword') text-redpink @enderror block mb-2 text-base font-medium text-gray-900 dark:text-white">
                     Old Password <span class="text-base text-redpink">*</span>
                   </label>
-                  <input type="text" id="oldPassword" name="oldPassword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <input type="password" id="oldPassword" name="oldPassword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   @error('oldPassword')
                     <p class="mt-2 text-sm text-redpink">
                       <span class="font-medium">{{ $message }}</span>
@@ -73,7 +73,7 @@
                   <label for="new_password" class="@error('new_password') text-redpink @enderror block mb-2 text-base font-medium text-gray-900 dark:text-white">
                     New Password <span class="text-base text-redpink">*</span>
                   </label>
-                  <input type="text" id="new_password" name="new_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <input type="password" id="new_password" name="new_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   @error('new_password')
                     <p class="mt-2 text-sm text-redpink">
                       <span class="font-medium">{{ $message }}</span>
@@ -84,7 +84,7 @@
                   <label for="new_password_confirmation" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                     Repeat New Password <span class="text-base text-redpink">*</span>
                   </label>
-                  <input type="text" id="new_password_confirmation" name="new_password_confirmation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <input type="password" id="new_password_confirmation" name="new_password_confirmation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   @error('new_password_confirmation')
                     <p class="mt-2 text-sm text-redpink">
                       <span class="font-medium">{{ $message }}</span>
