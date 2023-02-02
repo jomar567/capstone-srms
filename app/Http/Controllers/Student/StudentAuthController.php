@@ -49,7 +49,7 @@ class StudentAuthController extends Controller
       ]);
       $check = $request->only('student_ID','password');
       if (!Hash::check($password, $student->password)) {
-        return redirect()->back()->with('error', 'Login Failed, Please check password');
+        return redirect()->back()->with('error', 'Login failed, Please check your password');
       }
       if(Auth::guard('student')->attempt($check)) {
           return redirect()->route('student.dashboard')->with('success', 'You are now succesfully Login!');
