@@ -19,4 +19,11 @@ class SubjectCombinationController extends Controller
         ->with('subjects', $subject)
         ->with('courses', $course);
     }
+
+    public function createSubjectCombination() {
+      $subjects = Subject::all();
+      $courses = Course::all();
+      return view('Admin.Subjects.Subject_Combination.createSubjectCombination')->with('subjects', $subjects)
+            ->with('courses', $courses);
+    }
 }
