@@ -65,40 +65,20 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT - 3C
-                          </td>
-                          <td class="px-6 py-4">
-                            Programming
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                          <td class="flex px-6 py-4 gap-4">
-                              <a href="{{ route('admin.edit_subject_combination') }}" class="font-medium text-blue-600 dark:text-blue">
-                              <i class="fa-solid fa-file-pen text-lg"></i>
-                              </a>
-                              <a href="#" class="font-medium text-redpink">
-                                <i class="fa-solid fa-trash text-lg"></i>
-                              </a>
-                          </td>
-                      </tr>
+                    @if(count($subject_combinations) > 0)
+                      @foreach($subject_combinations as $combinedSubject)
                       <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                         <td class="px-6 py-4">
-                            2
+                            {{ $combinedSubject->id }}
                         </td>
                         <td class="px-6 py-4">
-                            ComScie - 2A
+                          {{ $combinedSubject->course->courseName }} - {{ $combinedSubject->course->courseYearNumeric }}{{ $combinedSubject->course->section }}
                         </td>
                         <td class="px-6 py-4">
-                          English
+                          {{ $combinedSubject->subject->subjectName }} - {{ $combinedSubject->subject->subjectCode }}
                         </td>
                         <td class="px-6 py-4">
-                          2022-09-05
+                            2022-09-04
                         </td>
                         <td class="flex px-6 py-4 gap-4">
                             <a href="{{ route('admin.edit_subject_combination') }}" class="font-medium text-blue-600 dark:text-blue">
@@ -109,8 +89,8 @@
                             </a>
                         </td>
                     </tr>
-
-
+                      @endforeach
+                    @endif
                   </tbody>
               </table>
             </div>

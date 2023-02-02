@@ -14,4 +14,9 @@ class Subject extends Model
         'subjectName',
         'subjectCode',
     ];
+
+    public function combinedSubjects()
+    {
+      return $this->hasMany(SubjectCombination::class);
+    }
 }

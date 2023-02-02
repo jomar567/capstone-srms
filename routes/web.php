@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ManageStudentController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\SubjectCombinationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +64,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/edit_student/{id}', [ManageStudentController::class, 'edit'])->name('edit_student');
       //Update student
       Route::post('/update_student/{id}', [ManageStudentController::class, 'update'])->name('update_student');
+      //Delete student
+      Route::post('/delete_student/{id}', [ManageStudentController::class, 'destroy'])->name('delete_student');
 
       //Course Route
       Route::get('/course_list', [CourseController::class,'course'])->name('course_list');
@@ -72,8 +75,10 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/edit_course/{id}',  [CourseController::class,'editCourse'])->name('edit_course');
       //Add course
       Route::post('/add_newCourse',  [CourseController::class,'addCourse'])->name('add_newCourse');
-     // update
+     // update course
       Route::post('/update_course/{id}',  [CourseController::class,'update'])->name('update_course');
+      // delete course
+      Route::post('/delete_course/{id}',  [CourseController::class,'destroy'])->name('delete_course');
 
       // Subject Route
       Route::get('/subject_list', [SubjectController::class, 'subjectlist'])->name('subject_list');
@@ -85,6 +90,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/edit_subject/{id}', [SubjectController::class, 'editor'] )->name('edit_subject');
       //Update student
       Route::post('/update_subject/{id}', [SubjectController::class, 'updating'])->name('update_subject');
+      //Delete student
+      Route::post('/delete_subject/{id}', [SubjectController::class, 'destroying'])->name('delete_subject');
 
       // Subject Combination Route
       Route::view('/subject_combination_list', 'Admin.Subjects.Subject_Combination.subjectCombination')
@@ -109,6 +116,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::view('/create_notice', 'Admin.Notices.createNotice')->name('create_notice');
       //Edit Notice
       Route::view('/edit_notice', 'Admin.Notices.editNotice')->name('edit_notice');
+
+      //Subject Combination Routes
+      Route::get('/subject_combination_list', [SubjectCombinationController::class, 'subjectCombined_list'])->name('subject_combination_list');
 
 
       //Change Password Route
