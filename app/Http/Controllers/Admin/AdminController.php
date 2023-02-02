@@ -24,7 +24,7 @@ class AdminController extends Controller
     ]);
     $check = $request->only('username','password');
     if (!Hash::check($password, $admin->password)) {
-      return redirect()->back()->with('error', 'Login Failed, Please check password');
+      return redirect()->back()->with('error', 'Login failed, Please check your password');
     }
     if(Auth::guard('admin')->attempt($check)) {
         return redirect()->route('admin.dashboard')->with('success', 'You are now succesfully Login!');
