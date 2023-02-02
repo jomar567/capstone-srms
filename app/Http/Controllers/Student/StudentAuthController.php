@@ -57,6 +57,31 @@ class StudentAuthController extends Controller
           return redirect()->back()->with('error', 'Login Failed');
       }
   }
+
+  //Change Admin Password view form
+  public function changePassword() {
+    return view('Student.Settings.ChangePassword');
+  }
+  //Update Password
+  public function updatePassword(Request $request) {
+    //Validate
+    $request->validate([
+      'oldPassword'=>'required|min:6|max:15',
+      'new_password'=>'required|min:6|max:15|confirmed'
+    ]);
+
+    //Check if password match
+    if(!Hash::check($request->oldPassword, auth()->user()->password)) {
+      return back()->with('error', 'Old Password do not match!');
+    }
+
+    //Update the password
+    Student::whereId(auth()->user()->id)->update([
+      'password' => Hash::make($request->new_password)
+    ]);
+
+    return back()->with('success', 'Password changed successfully!');
+  }
   //logout student
   public function logout() {
       Auth::guard('student')->logout();

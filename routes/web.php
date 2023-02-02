@@ -39,6 +39,10 @@ Route::prefix('student')->name('student.')->group(function() {
     Route::middleware(['auth:student'])->group(function () {
         Route::view('/dashboard', 'Student.Dashboard')->name('dashboard');
         Route::view('/view_result', 'Student.Result')->name('view_result');
+        //Change Password Route
+        Route::get('/change_password', [StudentAuthController::class, 'changePassword'])->name('change_password');
+        //Update Password
+        Route::post('/update_password', [StudentAuthController::class, 'updatePassword'])->name('update_password');
         Route::post('/logout', [StudentAuthController::class, 'logout'])->name('logout');
     });
 });
