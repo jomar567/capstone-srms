@@ -38,4 +38,15 @@ class SubjectCombinationController extends Controller
 
       return redirect()->route('admin.subject_combination_list')->with('success', 'Successfully Added Subject Combinations');
     }
+
+    //Edit Subject Combination
+    public function editSubjectCombination($id) {
+      $subjectCombinations = SubjectCombination::findorFail($id);
+      $subjects = Subject::all();
+      $courses = Course::all();
+
+      return view('Admin.Subjects.Subject_Combination.editSubjectCombination')->with('subjectCombinations', $subjectCombinations)
+          ->with('courses', $courses)
+          ->with('subjects', $subjects);
+    }
 }

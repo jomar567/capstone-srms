@@ -127,6 +127,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/create_subject_combination', [SubjectCombinationController::class, 'createSubjectCombination'])->name('create_subject_combination');
       //Add New Subject Combination
       Route::post('/add_subject_combination', [SubjectCombinationController::class, 'addSubjectCombination'])->name('add_subject_combination');
+      //Edit New Subject Combination Form
+      Route::get('/edit_subject_combination/{id}', [SubjectCombinationController::class, 'editSubjectCombination'])->name('edit_subject_combination');
 
       //Change Password Route
       Route::get('/change_password', [AdminController::class, 'changePassword'])->name('change_password');
