@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Subject;
 use Hash;
 
 class ManageStudentController extends Controller
@@ -12,7 +13,9 @@ class ManageStudentController extends Controller
 
     public function dashboardCount() {
       $students = Student::all();
-      return view('Admin.Dashboard')->with('students', $students);
+      $subjects = Subject::all();
+      return view('Admin.Dashboard')->with('students', $students)
+      ->with('subjects', $subjects);
     }
 
     public function studentList() {

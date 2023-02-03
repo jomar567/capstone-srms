@@ -8,7 +8,7 @@
             <svg class="lg:absolute lg:-left-2 lg:-bottom-2 md:block hidden mx-auto md:mb-0 mb-4 w-20 h-20 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path>
             </svg>
-            {{-- Count Students --}}
+            <!-- {{-- Count Students --}} -->
             @if(count($students) > 0 )
               <p class="mb-4 font-medium text-4xl text-right">{{ count($students) }}</p>
             @endif
@@ -21,7 +21,10 @@
             <svg class="lg:absolute lg:-left-2 lg:-bottom-2 md:block hidden mx-auto md:mb-0 mb-4 w-20 h-20 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="none" stroke="currentColor" fill="currentColor" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5m9 0h-9"></path>
             </svg>
-            <p class="mb-4 font-medium text-4xl text-right">7</p>
+            <!-- {{-- Count Subjects --}} -->
+            @if(count($subjects) > 0 )
+              <p class="mb-4 font-medium text-4xl text-right">{{ count($subjects) }}</p>
+            @endif
             <p class="font-normal text-right leading-5">Subjects Listed</p>
           </div>
         </div>
