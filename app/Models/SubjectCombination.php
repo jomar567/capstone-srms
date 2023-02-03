@@ -11,8 +11,8 @@ class SubjectCombination extends Model
     protected $table = "subject_combinations";
 
     protected $fillable = [
-       'course_id',
-       'subject_id',
+      'course_id',
+      'subject_id',
     ];
 
     public function course()

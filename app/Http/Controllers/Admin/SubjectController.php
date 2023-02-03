@@ -61,5 +61,4 @@ class SubjectController extends Controller
 
         return redirect()->route('admin.subject_list');
     }
-
 }
