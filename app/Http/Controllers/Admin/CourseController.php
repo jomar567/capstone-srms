@@ -19,13 +19,19 @@ class CourseController extends Controller
     }
 
     public function addCourse(Request $request){
+          //Validate
+        $request->validate([
+            'courseName'=>'required',
+            'courseYearNumeric'=>'required',
+            'section'=>'required',
+        ]);
         $courses = new Course;
         $courses->courseName = $request->courseName;
         $courses->courseYearNumeric = $request->courseYearNumeric;
         $courses->section = $request->section;
         $courses->save();
 
-        return redirect()->route('admin.course_list');
+        return redirect()->route('admin.course_list')->with('success', 'Course successfully added');
     }
 
 
