@@ -59,4 +59,12 @@ class SubjectCombinationController extends Controller
 
       return redirect()->route('admin.subject_combination_list')->with('success', 'Successfully Updated Subject Combinations');
     }
+
+    //Delete Subject Combination
+    public function deleteSubjectCombination(Request $request) {
+      $subjectCombinations = SubjectCombination::findorFail($request->id);
+      $subjectCombinations->delete();
+
+      return redirect()->route('admin.subject_combination_list')->with('success', 'Successfully Deleted Subject Combinations');
+    }
 }

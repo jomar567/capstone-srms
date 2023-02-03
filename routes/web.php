@@ -131,6 +131,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/edit_subject_combination/{id}', [SubjectCombinationController::class, 'editSubjectCombination'])->name('edit_subject_combination');
       //Edit New Subject Combination Form
       Route::post('/update_subject_combination/{id}', [SubjectCombinationController::class, 'updateSubjectCombination'])->name('update_subject_combination');
+      //Delete New Subject Combination Form
+      Route::post('/delete_subject_combination/{id}', [SubjectCombinationController::class, 'deleteSubjectCombination'])->name('delete_subject_combination');
 
       //Change Password Route
       Route::get('/change_password', [AdminController::class, 'changePassword'])->name('change_password');
