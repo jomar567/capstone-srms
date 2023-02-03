@@ -10,7 +10,7 @@ use Hash;
 class ManageStudentController extends Controller
 {
 
-    public function studentCount() {
+    public function dashboardCount() {
       $students = Student::all();
       return view('Admin.Dashboard')->with('students', $students);
     }
