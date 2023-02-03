@@ -19,7 +19,7 @@ class SubjectController extends Controller
 
     //Add New Subject Method
     public function adding(Request $request) {
-        //Validate
+    //Validate
     $request->validate([
         'subjectName'=>'required',
         'subjectCode'=>'required'
@@ -41,12 +41,17 @@ class SubjectController extends Controller
 
     //Update Student
     public function updating(Request $request) {
+    //Validate
+    $request->validate([
+        'subjectName'=>'required',
+        'subjectCode'=>'required'
+    ]);
         $subjects = Subject::findorFail($request->id);
         $subjects->subjectName = $request->subjectName;
         $subjects->subjectCode = $request->subjectCode;
         $subjects->save();
 
-        return redirect()->route('admin.subject_list');
+        return redirect()->route('admin.subject_list')->with('success', 'Subject Successfully Updated');
     }
 
     //Delete Student
