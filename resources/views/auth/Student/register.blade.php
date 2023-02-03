@@ -51,8 +51,6 @@
             </div>
 
 
-
-
             {{-- Email --}}
             <div class="mb-6">
               <label for="email" class="block mb-2 text-sm font-medium text-white dark:text-white">
@@ -91,6 +89,17 @@
                 </p>
               @enderror
             </div>
+
+            {{-- Course --}}
+            <div class="mb-6">
+              <label for="course" class="block mb-2 text-sm font-medium">Select an option</label>
+              <select id="course" class="border text-blue text-sm rounded-lg  block w-full p-2.5">
+                <option selected disabled>Select Course</option>
+                <option value="US">BSIT - 3C</option>
+                <option value="CA">ComScie</option>
+              </select>
+            </div>
+
 
             {{-- Password --}}
             <div class="mb-6">

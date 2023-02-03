@@ -10,6 +10,7 @@ use Auth;
 
 class StudentAuthController extends Controller
 {
+  //Register New Student
   public function registerStudent(Request $request) {
     $request->validate([
         'fullName'=>'required',
