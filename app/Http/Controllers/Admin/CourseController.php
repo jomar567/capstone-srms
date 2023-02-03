@@ -61,6 +61,7 @@ class CourseController extends Controller
         $course = Course::findorFail($id);
         $course->delete();
 
-        return redirect()->route('admin.course_list');
+        return redirect()->route('admin.course_list')->with('success', 'Course successfully deleted!');
     }
+
 }
