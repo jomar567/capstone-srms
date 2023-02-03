@@ -114,7 +114,7 @@
                                 </div>
                                 <!-- End of Modal Content-->
                               </div>
-                           </dialog>
+                          </dialog>
                         </td>
                     </tr>
                       @endforeach
