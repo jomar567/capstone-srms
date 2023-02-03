@@ -14,7 +14,6 @@ module.exports = {
         'redpink': '#ED0131',
         'blue': '#0A142F',
         'gray': '#9ca3af',
-        'gray-900': '#9ca3af',
         'student': '#427AA1',
         'subject': '#ED0131',
         'class': '#F77F00',
