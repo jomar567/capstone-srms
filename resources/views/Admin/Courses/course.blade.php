@@ -90,12 +90,36 @@
                               <a href="{{ route('admin.edit_course',$course->id) }}" class="font-medium text-blue-600 dark:text-blue">
                               <i class="fa-solid fa-file-pen text-lg"></i>
                               </a>
-                              <form method="POST" action="{{ route('admin.delete_course', $course->id) }}">
-                                @csrf
-                                  <button class="font-medium text-redpink">
-                                    <i class="fa-solid fa-trash text-lg"></i>
-                                  </button>
-                              </form>
+                                  {{-- Modal Button --}}
+                                <button onclick="document.getElementById('myModal{{$course->id}}').showModal()" data-target="#myModal{{$course->id}}" class="block text-redpink font-medium">
+                                  <i class="fa-solid fa-trash text-lg"></i>
+                                </button>
+
+                                {{-- Modal --}}
+                                <dialog id="myModal{{$course->id}}" value="{{$course->id}}" class=" w-11/12 md:w-4/12 p-8  bg-white rounded-md ">
+                                    <div class="flex flex-col w-full">
+                                      <!-- Header -->
+                                      <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                      <div class="flex w-full justify-center items-center">
+                                        <h3 class="mb-5 text-lg font-normal ">Are you sure you want to delete this record?</h3>
+                                      <!--Header End-->
+                                      </div>
+                                      <!-- Modal Content-->
+                                      <div class="p-4 text-center">
+                                        <form method="POST" action="{{ route('admin.delete_course',$course->id) }}" class="inline">
+                                          @csrf
+                                          <button onclick="document.getElementById('myModal{{$course->id}}').close();" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                              Delete
+                                          </button>
+                                        </form>
+
+                                        <button onclick="document.getElementById('myModal{{$course->id}}').close();" class="text-blue bg-light hover:bg-blue rounded-lg border text-sm font-medium px-5 py-2.5 hover:text-light focus:z-10">
+                                          Cancel
+                                        </button>
+                                      </div>
+                                    <!-- End of Modal Content-->
+                                  </div>
+                              </dialog>
                           </td>
                       </tr>
                       
