@@ -49,4 +49,14 @@ class SubjectCombinationController extends Controller
           ->with('courses', $courses)
           ->with('subjects', $subjects);
     }
+
+    //Update Subject Combination
+    public function updateSubjectCombination(Request $request) {
+      $subjectCombinations = SubjectCombination::findorFail($request->id);
+      $subjectCombinations->subject_id = $request->subject_id;
+      $subjectCombinations->course_id = $request->course_id;
+      $subjectCombinations->save();
+
+      return redirect()->route('admin.subject_combination_list')->with('success', 'Successfully Updated Subject Combinations');
+    }
 }
