@@ -59,6 +59,8 @@ class SubjectController extends Controller
         $subject = Subject::findorFail($request->id);
         $subject->delete();
 
-        return redirect()->route('admin.subject_list');
+        return redirect()->route('admin.subject_list')->with('success', 'Subject Successfully Deleted');
     }
+
+
 }
