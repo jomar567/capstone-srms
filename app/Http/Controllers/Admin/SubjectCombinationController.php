@@ -10,6 +10,7 @@ use App\Models\SubjectCombination;
 
 class SubjectCombinationController extends Controller
 {
+    //Subject Combination List
     public function subjectCombined_list() {
       $subject_combinations = SubjectCombination::orderByDesc('created_at')->get();
       $subject = Subject::all();
@@ -20,10 +21,21 @@ class SubjectCombinationController extends Controller
         ->with('courses', $course);
     }
 
+    //Subject Combination Create
     public function createSubjectCombination() {
       $subjects = Subject::all();
       $courses = Course::all();
       return view('Admin.Subjects.Subject_Combination.createSubjectCombination')->with('subjects', $subjects)
             ->with('courses', $courses);
+    }
+
+    //Subject Combination Add
+    public function addSubjectCombination(Request $request) {
+      $subjectCombinations = new SubjectCombination;
+      $subjectCombinations->subject_id = $request->subject_id;
+      $subjectCombinations->course_id = $request->course_id;
+      $subjectCombinations->save();
+
+      return redirect()->route('admin.subject_combination_list')->with('success', 'Successfully Added Subject Combinations');
     }
 }

@@ -36,12 +36,13 @@
           <div class="relative drop-shadow-lg w-full md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-xl text-center mb-10">Add New Subject Combination</p>
 
-            <form class="md:w-4/5 md:mx-auto">
+            <form method="POST" action="{{ route('admin.add_subject_combination') }}" class="md:w-4/5 md:mx-auto">
+              @csrf
               <div class="mb-6">
-                <label for="course" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                <label for="course_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                   Course
                 </label>
-                <select id="course" name="course" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select id="course_id" name="course_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option selected disabled>Select Course</option>
                   @foreach($courses as $course)
                     <option value="{{$course->id}}">{{$course->courseName}} - {{$course->courseYearNumeric}}{{$course->section}}</option>
@@ -49,14 +50,14 @@
                 </select>
               </div>
               <div class="mb-6">
-                <label for="class" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                <label for="subject_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                   Subject
                 </label>
 
-                <select id="class" name="class" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select id="subject_id" name="subject_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option selected disabled>Select Subject</option>
                   @foreach($subjects as $subject)
-                    <option value="{{$subject->id}}">{{$subject->subjectName}}</option>
+                    <option value="{{$subject->id}}">{{$subject->subjectName}} - {{$subject->subjectCode}}</option>
                   @endforeach
                   {{-- <option selected disabled>Select Subject</option>
                   <option value="bsit">Programming</option>
