@@ -11,6 +11,8 @@
             <!-- {{-- Count Students --}} -->
             @if(count($students) > 0 )
               <p class="mb-4 font-medium text-4xl text-right">{{ count($students) }}</p>
+            @else
+              <p class="mb-4 font-medium text-4xl text-right">0</p>
             @endif
 
             <p class="font-normal text-right leading-5">Registered Student</p>
@@ -24,6 +26,8 @@
             <!-- {{-- Count Subjects --}} -->
             @if(count($subjects) > 0 )
               <p class="mb-4 font-medium text-4xl text-right">{{ count($subjects) }}</p>
+            @else
+              <p class="mb-4 font-medium text-4xl text-right">0</p>
             @endif
             <p class="font-normal text-right leading-5">Subjects Listed</p>
           </div>
@@ -35,7 +39,9 @@
             </svg>
             @if(count($courses) > 0 )
             <p class="mb-4 font-medium text-4xl text-right">{{ count($courses) }}</p>
-          @endif
+            @else
+              <p class="mb-4 font-medium text-4xl text-right">0</p>
+            @endif
             <p class="font-normal text-right leading-5">Courses Listed</p>
           </div>
         </div>

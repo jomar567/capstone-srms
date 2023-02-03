@@ -84,18 +84,10 @@
                             <a href="{{ route('admin.edit_subject_combination', $combinedSubject->id) }}" class="font-medium text-blue-600 dark:text-blue">
                             <i class="fa-solid fa-file-pen text-lg"></i>
                             </a>
-
-
+                            {{-- Modal Button --}}
                             <button data-modal-target="delete" data-modal-toggle="delete" class="block text-redpink font-medium" type="button">
                               <i class="fa-solid fa-trash text-lg"></i>
                             </button>
-
-                            {{-- <form method="POST" action="{{ route('admin.delete_subject_combination', $combinedSubject->id) }}">
-                              @csrf
-                              <button class="font-medium text-redpink">
-                                  <i class="fa-solid fa-trash text-lg"></i>
-                                </button>
-                            </form> --}}
 
                         </td>
                     </tr>
@@ -116,6 +108,7 @@
      </div>
 </div>
 
+{{-- Modal --}}
 <div id="delete" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
   <div class="relative w-full h-full max-w-md md:h-auto">
       <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
