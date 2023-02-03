@@ -16,7 +16,7 @@ class ManageStudentController extends Controller
       $students = Student::all();
       $subjects = Subject::all();
       $courses = Course::all();
-      
+
       return view('Admin.Dashboard')->with('students', $students)
       ->with('subjects', $subjects)
       ->with('courses', $courses);
@@ -42,7 +42,7 @@ class ManageStudentController extends Controller
       $students->password = Hash::make($request->password);
       $students->save();
 
-      return redirect()->route('admin.students_list');
+      return redirect()->route('admin.students_list')->with('success', 'Student Added Successfully ');
     }
 
     //Edit Method
@@ -62,7 +62,7 @@ class ManageStudentController extends Controller
       $students->dob = $request->dob;
       $students->save();
 
-      return redirect()->route('admin.students_list');
+      return redirect()->route('admin.students_list')->with('success', 'Student Updated Successfully ');;
     }
 
     //Delete Student
@@ -70,6 +70,6 @@ class ManageStudentController extends Controller
       $student = Student::findorFail($request->id);
       $student->delete();
 
-      return redirect()->route('admin.students_list');
+      return redirect()->route('admin.students_list')->with('success', 'Student Deleted Successfully ');;
     }
 }
