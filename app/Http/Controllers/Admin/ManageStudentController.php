@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Subject;
+use App\Models\Course;
 use Hash;
 
 class ManageStudentController extends Controller
@@ -14,8 +15,11 @@ class ManageStudentController extends Controller
     public function dashboardCount() {
       $students = Student::all();
       $subjects = Subject::all();
+      $courses = Course::all();
+      
       return view('Admin.Dashboard')->with('students', $students)
-      ->with('subjects', $subjects);
+      ->with('subjects', $subjects)
+      ->with('courses', $courses);
     }
 
     public function studentList() {
