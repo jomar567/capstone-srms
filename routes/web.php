@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ManageStudentController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SubjectCombinationController;
+use Barryvdh\DomPDF\Facade\Pdf;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -140,5 +141,25 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::post('/update_password', [AdminController::class, 'updatePassword'])->name('update_password');
 
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+
+    
+
     });
 });
+
+//generate PDF
+Route::get('/generate-pdf', function() {
+    $courses = App\Models\Course::all();
+    $students = App\Models\Student::all();
+    $subjects = App\Models\Subject::all();
+    $data = [
+        'courses' => $courses,
+        'students' => $students,
+        'subjects' => $subjects,
+    ];
+
+    $pdf = PDF::loadView('Adminlist', $data);
+
+    return $pdf->stream('Adminlist.pdf');   
+
+})->name('generate-pdf');
