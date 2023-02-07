@@ -31,7 +31,8 @@ Route::get('/notice', function () {
 // Student Routes
 Route::prefix('student')->name('student.')->group(function() {
     Route::middleware(['guest:student'])->group(function () {
-        Route::view('/register', 'auth.Student.register')->name('register');
+       // Route::view('/register', 'auth.Student.register')->name('register');
+        Route::get('/register', [StudentAuthController::class, 'registerForm'])->name('register');
         Route::view('/login', 'auth.Student.login')->name('login');
 
         Route::post('/registerStudent', [StudentAuthController::class, 'registerStudent'])->name('registerStudent');
