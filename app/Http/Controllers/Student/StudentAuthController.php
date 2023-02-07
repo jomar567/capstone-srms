@@ -5,11 +5,17 @@ namespace App\Http\Controllers\Student;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Course;
 use Hash;
 use Auth;
 
 class StudentAuthController extends Controller
 {
+  public function registerForm() {
+    $courses = Course::all();
+    return view('auth.Student.register')->with('courses', $courses);
+  }
+
   //Register New Student
   public function registerStudent(Request $request) {
     $request->validate([
@@ -27,6 +33,7 @@ class StudentAuthController extends Controller
     $student->gender = $request->gender;
     $student->dob = $request->dob;
     $student->email = $request->email;
+    $student->course_id = $request->course_id;
     $student->password = Hash::make($request->password);
     $data = $student->save();
     if($data) {
@@ -89,4 +96,5 @@ class StudentAuthController extends Controller
 
       return redirect('/');
   }
+
 }
