@@ -92,11 +92,14 @@
 
             {{-- Course --}}
             <div class="mb-6">
-              <label for="course" class="block mb-2 text-sm font-medium">Select an option</label>
-              <select id="course" class="border text-blue text-sm rounded-lg  block w-full p-2.5">
+              <label for="course_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                Course
+              </label>
+              <select id="course_id" name="course_id" class="bg-dark-50 border text-blue border-blue-300 text-sm rounded-lg  block w-full p-2.5">
                 <option selected disabled>Select Course</option>
-                <option value="US">BSIT - 3C</option>
-                <option value="CA">ComScie</option>
+                @foreach($courses as $course)
+                  <option value="{{$course->id}}">{{$course->courseName}}{{$course->courseYearNumeric}} - {{$course->section}}</option>
+                @endforeach
               </select>
             </div>
 
