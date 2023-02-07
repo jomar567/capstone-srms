@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ManageStudentController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SubjectCombinationController;
+use App\Http\Controllers\Admin\NoticeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -116,7 +117,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::view('/edit_result', 'Admin.Results.editResult')->name('edit_result');
 
       // Notice Route
-      Route::view('/notice_list', 'Admin.Notices.notice')->name('notice_list');
+      Route::get('/notice_list', [NoticeController::class, 'noticeList'])->name('notice_list');
       //Add Notice
       Route::view('/create_notice', 'Admin.Notices.createNotice')->name('create_notice');
       //Edit Notice
