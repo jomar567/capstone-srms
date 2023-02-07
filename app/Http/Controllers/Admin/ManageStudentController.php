@@ -41,6 +41,7 @@ class ManageStudentController extends Controller
       $students->email = $request->email;
       $students->gender = $request->gender;
       $students->dob = $request->dob;
+      $students->course_id = $request->course_id;
       $students->password = Hash::make($request->password);
       $students->save();
 
