@@ -28,7 +28,9 @@ class ManageStudentController extends Controller
       return view('Admin.Students.student')->with('students', $students);
     }
     public function create() {
-      return view('Admin.Students.createStudent');
+      $courses = Course::all();
+
+      return view('Admin.Students.createStudent')->with('courses', $courses);
     }
 
     //Add New Student Method
