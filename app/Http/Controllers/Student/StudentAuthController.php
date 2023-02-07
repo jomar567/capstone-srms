@@ -33,6 +33,7 @@ class StudentAuthController extends Controller
     $student->gender = $request->gender;
     $student->dob = $request->dob;
     $student->email = $request->email;
+    $student->course_id = $request->course_id;
     $student->password = Hash::make($request->password);
     $data = $student->save();
     if($data) {
