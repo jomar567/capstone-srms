@@ -41,7 +41,10 @@ Route::prefix('student')->name('student.')->group(function() {
     Route::middleware(['auth:student'])->group(function () {
         Route::view('/dashboard', 'Student.Dashboard')->name('dashboard');
         Route::view('/view_result', 'Student.Result')->name('view_result');
-        //Change Password Route
+
+        //Generate PDF
+        Route::get('/generate_pdf', [StudentController::class, 'createPDF'])->name('generate_pdf');
+        
         Route::get('/change_password', [StudentAuthController::class, 'changePassword'])->name('change_password');
         //Update Password
         Route::post('/update_password', [StudentAuthController::class, 'updatePassword'])->name('update_password');
@@ -143,24 +146,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
 
-    
 
     });
 });
 
-//generate PDF
-Route::get('/generate-pdf', function() {
-    $courses = App\Models\Course::all();
-    $students = App\Models\Student::all();
-    $subjects = App\Models\Subject::all();
-    $data = [
-        'courses' => $courses,
-        'students' => $students,
-        'subjects' => $subjects,
-    ];
-
-    $pdf = PDF::loadView('Adminlist', $data);
-
-    return $pdf->stream('Adminlist.pdf');   
-
-})->name('generate-pdf');

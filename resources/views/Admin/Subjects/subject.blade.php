@@ -36,11 +36,6 @@
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-lg">View Subject</p>
 
-            <a target="_blank" href="{{route('generate-pdf')}}">
-              <button type="button" class="float-left text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-5">
-                Download PDF
-              </button>
-            </a>
 
             <a href="{{ route('admin.create_subject') }}">
               <button type="button" class="float-right text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-5">
