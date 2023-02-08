@@ -36,7 +36,7 @@
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-lg">View Notice</p>
 
-            <a href="{{ route('admin.create_notice') }}">
+            <a href="{{ route('admin.create_noticeform') }}">
               <button type="button" class="float-right text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-5">
                 Add Notice
               </button>
@@ -87,19 +87,18 @@
                               </a>
                           </td>
                       </tr>
-                      @foreach($notices as $notice)
                       <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                         <td class="px-6 py-4">
-                            {{ $notice->id }}
+                            1
                         </td>
                         <td class="px-6 py-4">
-                            {{ $notice->title }}
+                            BSIT Results
                         </td>
                         <td class="px-6 py-4">
-                            {{ $notice->description }}
+                          Result for BSIT - 3C are now out.
                         </td>
                         <td class="px-6 py-4">
-                            {{ $notice->created_at }}
+                            2022-09-04
                         </td>
                         <td class="flex px-6 py-4 gap-4">
                             <a href="{{ route('admin.edit_notice') }}" class="font-medium text-blue-600 dark:text-blue">
@@ -109,7 +108,6 @@
                               <i class="fa-solid fa-trash text-lg"></i>
                             </a>
                         </td>
-                        @endforeach
                     </tr>
                   </tbody>
               </table>

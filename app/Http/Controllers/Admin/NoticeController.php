@@ -18,5 +18,14 @@ class NoticeController extends Controller
     public function createNotice(){
         return view('Admin.Notices.createNotice');
     }
+    
+    public function addNotice(Request $request){
+        $notices = new Notice;
+        $notices->title = $request->title;
+        $notices->description = $request->description;
+        $notices->save();
+        
+        return redirect()->route('admin.notice_list');
+     }
 
 }

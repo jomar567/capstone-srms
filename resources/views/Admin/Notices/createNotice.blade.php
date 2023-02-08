@@ -36,7 +36,8 @@
           <div class="relative drop-shadow-lg w-full md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-xl text-center mb-10">Add New Notice</p>
 
-            <form class="md:w-4/5 md:mx-auto">
+            <form method="POST" action="{{ route('admin.add_Notice') }}" class="md:w-4/5 md:mx-auto">
+              @csrf
               <div class="mb-6">
                   <label for="title" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                     Notice Title
@@ -47,7 +48,7 @@
                   <label for="description" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                     Notice Description
                   </label>
-                  <textarea id="message" rows="8" class="block p-2.5 w-full text-sm text-blue bg-gray-50 rounded-lg border dark:placeholder-gray-400" placeholder="Insert notice here..."></textarea>
+                  <textarea id="description" name="description" rows="8" class="block p-2.5 w-full text-sm text-blue bg-gray-50 rounded-lg border dark:placeholder-gray-400" placeholder="Insert notice here..."></textarea>
               </div>
               <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
                 Add Notice

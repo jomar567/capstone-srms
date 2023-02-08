@@ -119,7 +119,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
       // Notice Route
       Route::get('/notice_list', [NoticeController::class, 'display'])->name('notice_list');
       //Add Notice
-      Route::get('/create_notice', [NoticeController::class, 'createNotice'])->name('create_notice');
+      Route::get('/create_noticeform', [NoticeController::class, 'createNotice'])->name('create_noticeform');
+        //add new notice
+      Route::post('/add_Notice', [NoticeController::class, 'addNotice'])->name('add_Notice');
       //Edit Notice
       Route::view('/edit_notice', 'Admin.Notices.editNotice')->name('edit_notice');
 
