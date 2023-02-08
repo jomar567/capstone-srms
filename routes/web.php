@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ManageStudentController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SubjectCombinationController;
+use App\Http\Controllers\Admin\ResultController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -98,18 +99,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       //Delete student
       Route::post('/delete_subject/{id}', [SubjectController::class, 'destroying'])->name('delete_subject');
 
-      // Subject Combination Route
-      Route::view('/subject_combination_list', 'Admin.Subjects.Subject_Combination.subjectCombination')
-            ->name('subject_combination_list');
-      //Add Subject Combination
-      Route::view('/create_subject_combination', 'Admin.Subjects.Subject_Combination.createSubjectCombination')
-            ->name('create_subject_combination');
-      // Edit Subject
-      Route::view('/edit_subject_combination', 'Admin.Subjects.Subject_Combination.editSubjectCombination')
-            ->name('edit_subject_combination');
-
       // Result Route
-      Route::view('/result_list', 'Admin.Results.result')->name('result_list');
+      Route::get('/result_list', [ResultController::class, 'result_list'])->name('result_list');
       //Add Result
       Route::view('/create_result', 'Admin.Results.createResult')->name('create_result');
       //Edit Result
