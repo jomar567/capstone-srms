@@ -36,7 +36,8 @@
           <div class="relative drop-shadow-lg w-full md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-xl text-center mb-10">Add New Result</p>
 
-            <form class="md:w-4/5 md:mx-auto">
+            <form method="POST" action="{{ route('admin.add_result') }}" class="md:w-4/5 md:mx-auto">
+              @csrf
               <div class="mb-6">
                 <label for="course_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                   Course
@@ -65,12 +66,14 @@
 
 
 
-              @foreach($subject_combinations as $subject)
-                <div class="mb-6 course-relation" data-parent="{{$subject->course_id}}" id="course_id">
-                  <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    {{$subject->subject->subjectName}}
+              @foreach($subject_combinations as $combinedSubject)
+                <div class="mb-6 course-relation" data-parent="{{$combinedSubject->course_id}}">
+                  <label for="subject_id"  class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                    {{$combinedSubject->subject->subjectName}}
                   </label>
-                  <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                  {{-- <input type="hidden" value="{{$combinedSubject->subject->id}}" id="subject_id" name="subject_id"> --}}
+                  {{-- <input type="text" id="grades_{{$combinedSubject->subject->id}}" name="grades_{{$combinedSubject->course_id.'_'.$combinedSubject->subject->id}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> --}}
+                  <input type="text" id="grades_{{$combinedSubject->subject->id}}" name="{{$combinedSubject->course_id.$combinedSubject->subject->id}}" class="bg-light border border-blue text-blue text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5">
                 </div>
               @endforeach
               <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">

@@ -101,8 +101,10 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
       // Result Route
       Route::get('/result_list', [ResultController::class, 'result_list'])->name('result_list');
-      //Add Result
+      //Create Result Form
       Route::get('/create_result', [ResultController::class, 'createResult'])->name('create_result');
+      //Add Result
+      Route::post('/add_result', [ResultController::class, 'addResult'])->name('add_result');
       //Edit Result
       Route::view('/edit_result', 'Admin.Results.editResult')->name('edit_result');
 
