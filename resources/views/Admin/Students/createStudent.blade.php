@@ -77,14 +77,16 @@
                 </div>
               </div>
               <div class="mb-6">
-                <label for="course" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                  Course
-                </label>
-                <select id="course" name="course" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                  <option selected disabled>Select Course</option>
-                  <option value="bsit">BSIT</option>
-                  <option value="comscie">ComScie</option>
-                </select>
+              <label for="course_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                Course
+              </label>
+              <select id="course_id" name="course_id" class="bg-dark-50 border text-blue border-blue-300 text-sm rounded-lg  block w-full p-2.5">
+                <option selected disabled>Select Course</option>
+                @foreach($courses as $course)
+                  <option value="{{$course->id}}">{{$course->courseName}}{{$course->courseYearNumeric}} - {{$course->section}}</option>
+                @endforeach
+              </select>
+                
               </div>
               <div class="mb-6">
                   <input type="password" id="password" value="Test123" name="password" class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>

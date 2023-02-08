@@ -101,7 +101,7 @@
                 </tr>
                 <tr class="bg-light border dark:bg-gray-800">
                   <td colspan="3" class="text-base font-semibold border text-center px-6 py-5">
-                    <a href="#">
+                    <a href="{{route('student.generate_pdf')}}">
                       <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center">
                         Download PDF
                       </button>
@@ -117,3 +117,4 @@
  </div>
 </div>
 @endsection
+
