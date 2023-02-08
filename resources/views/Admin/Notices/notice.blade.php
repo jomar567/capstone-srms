@@ -87,18 +87,20 @@
                               </a>
                           </td>
                       </tr>
+                      @if(count($notices) > 0 )
+                    @foreach($notices as $notice)
                       <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                         <td class="px-6 py-4">
-                            1
+                            {{ $notice->id }}
                         </td>
                         <td class="px-6 py-4">
-                            BSIT Results
+                          {{ $notice->title }}
                         </td>
                         <td class="px-6 py-4">
-                          Result for BSIT - 3C are now out.
+                          {{ $notice->description }}
                         </td>
                         <td class="px-6 py-4">
-                            2022-09-04
+                          {{ $notice->created_at }}
                         </td>
                         <td class="flex px-6 py-4 gap-4">
                             <a href="{{ route('admin.edit_notice') }}" class="font-medium text-blue-600 dark:text-blue">
@@ -109,6 +111,8 @@
                             </a>
                         </td>
                     </tr>
+                    @endforeach
+                    @endif
                   </tbody>
               </table>
             </div>
