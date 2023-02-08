@@ -28,7 +28,9 @@ class ManageStudentController extends Controller
       return view('Admin.Students.student')->with('students', $students);
     }
     public function create() {
-      return view('Admin.Students.createStudent');
+      $courses = Course::all();
+
+      return view('Admin.Students.createStudent')->with('courses', $courses);
     }
 
     //Add New Student Method
@@ -39,6 +41,7 @@ class ManageStudentController extends Controller
       $students->email = $request->email;
       $students->gender = $request->gender;
       $students->dob = $request->dob;
+      $students->course_id = $request->course_id;
       $students->password = Hash::make($request->password);
       $students->save();
 
