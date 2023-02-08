@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SubjectCombinationController;
 use App\Http\Controllers\Admin\ResultController;
+use Barryvdh\DomPDF\Facade\Pdf;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,11 +42,16 @@ Route::prefix('student')->name('student.')->group(function() {
     Route::middleware(['auth:student'])->group(function () {
         Route::view('/dashboard', 'Student.Dashboard')->name('dashboard');
         Route::view('/view_result', 'Student.Result')->name('view_result');
-        //Change Password Route
+
+        //Generate PDF
+        Route::get('/generate_pdf', [StudentController::class, 'createPDF'])->name('generate_pdf');
+        
         Route::get('/change_password', [StudentAuthController::class, 'changePassword'])->name('change_password');
         //Update Password
         Route::post('/update_password', [StudentAuthController::class, 'updatePassword'])->name('update_password');
         Route::post('/logout', [StudentAuthController::class, 'logout'])->name('logout');
+
+        Route::view('/profile', 'Student.Profile')->name('profile');
     });
 });
 
@@ -134,5 +140,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::post('/update_password', [AdminController::class, 'updatePassword'])->name('update_password');
 
       Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+
+
     });
 });
+
