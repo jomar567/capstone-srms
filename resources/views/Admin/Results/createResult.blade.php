@@ -38,47 +38,41 @@
 
             <form class="md:w-4/5 md:mx-auto">
               <div class="mb-6">
-                <label for="course" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                <label for="course_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                   Course
                 </label>
-                <select id="course" name="course" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select id="course_id" name="course_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option selected disabled>Select Course</option>
-                  <option value="bsit">BSIT - 3C</option>
-                  <option value="comscie">ComScie - 2A</option>
+                  @foreach($courses as $course)
+                    <option value="{{$course->id}}">{{$course->courseName}} - {{$course->courseYearNumeric}}{{$course->section}}</option>
+                  @endforeach
                 </select>
               </div>
               <div class="mb-6">
-                <label for="course" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                  Student Name
+                <label for="student_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                  Student
                 </label>
-                <select id="course" name="course" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                  <option selected disabled>Select Students</option>
-                  <option value="bsit">Jomar Clado</option>
-                  <option value="comscie">Alan Demol</option>
+                <select id="student_id" name="student_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected disabled>Select Student</option>
+                  @foreach($students as $student)
+                    <option class="course-relation" data-parent="{{$student->course_id}}" value="{{$student->id}}">{{$student->fullName}}</option>
+                  @endforeach
                 </select>
               </div>
 
               <hr class="my-9 border border-breadcrumb border-1">
               <p class="font-semibold text-xl mb-7">Subjects:</p>
 
-              <div class="mb-6">
+
+
+              @foreach($subject_combinations as $subject)
+                <div class="mb-6 course-relation" data-parent="{{$subject->course_id}}" id="course_id">
                   <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    Programming 1
+                    {{$subject->subject->subjectName}}
                   </label>
                   <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-              </div>
-              <div class="mb-6">
-                  <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    Software Engineering
-                  </label>
-                  <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-              </div>
-              <div class="mb-6">
-                  <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    English
-                  </label>
-                  <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-              </div>
+                </div>
+              @endforeach
               <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
                 Declare Result
               </button>
@@ -87,4 +81,14 @@
         </div>
      </div>
 </div>
+<script>
+  $(document).ready(function() {
+    $(".course-relation").hide();
+        $("#course_id").change(function() {
+            var parentId = $(this).val();
+            $(".course-relation").hide();
+            $(".course-relation[data-parent='" + parentId + "']").show();
+        });
+    });
+</script>
 @endsection

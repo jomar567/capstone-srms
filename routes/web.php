@@ -102,7 +102,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
       // Result Route
       Route::get('/result_list', [ResultController::class, 'result_list'])->name('result_list');
       //Add Result
-      Route::view('/create_result', 'Admin.Results.createResult')->name('create_result');
+      Route::get('/create_result', [ResultController::class, 'createResult'])->name('create_result');
       //Edit Result
       Route::view('/edit_result', 'Admin.Results.editResult')->name('edit_result');
 
