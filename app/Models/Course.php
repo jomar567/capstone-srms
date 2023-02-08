@@ -13,12 +13,20 @@ class Course extends Model
 
     protected $fillable = [
         'courseName',
-       'courseYearNumeric',
+        'courseYearNumeric',
         'section',
     ];
 
     public function combinedSubjects()
     {
       return $this->hasMany(SubjectCombination::class);
+    }
+    public function students()
+    {
+      return $this->hasMany(Student::class);
+    }
+    public function result()
+    {
+      return $this->hasMany(Result::class);
     }
 }

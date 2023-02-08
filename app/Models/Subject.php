@@ -19,4 +19,8 @@ class Subject extends Model
     {
       return $this->hasMany(SubjectCombination::class);
     }
+    public function result()
+    {
+      return $this->hasMany(Result::class);
+    }
 }
