@@ -34,7 +34,7 @@
           <p class="text-5xl font-semibold before:border-l-8 before:border-redpink before:mr-4">Notice Board</p>
           <p class="text-xl text-justify mt-10">
             @foreach($notices as $notice)
-            <a class="block" href={{url('notice')}}>
+            <a class="block" href="{{ route('notice', $notice->id) }}">
               {{$notice->title}}
             </a>
             @endforeach

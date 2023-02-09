@@ -24,9 +24,9 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 Route::get('/', [NoticeController::class, 'notice'])->name('index');
 
-Route::get('/notice', function () {
-    return view('notice');
-});
+Route::get('/notice/{id}', [NoticeController::class, 'noticeDetails'])->name('notice');
+
+
 
 
 // Student Routes

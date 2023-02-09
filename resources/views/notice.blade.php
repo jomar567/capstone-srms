@@ -24,14 +24,14 @@
     <div class="container mx-auto px-4 py-44 ">
     <div>
         <div class="text-center text-4xl"><strong class="border-l-8 border-red-600">
-            BSIT 3-C Result
+            {{ $notice->title }}
         </strong>
         </div>
     </div>
 
     <div>
         <div class="text-justify text-xl"><strong class="mt-8">
-            Date Posted:</strong><span class="ml-5">2023-09-29 10:00 AM</span>
+            Date Posted:</strong><span class="ml-5"> {{ $notice->created_at }}</span>
         </div>
     </div>
     
@@ -41,7 +41,7 @@
 
     <div>
         <div class="text-justify mt-8">
-            <p>Results for BSIT 3 Section C are posted. Check your email or login to your account to view your respective result.</p>
+            <p> {{ $notice->description }}</p>
         </div>
     </div>
 </div>
