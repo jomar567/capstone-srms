@@ -35,6 +35,15 @@ class ManageStudentController extends Controller
 
     //Add New Student Method
     public function store(Request $request) {
+    //Validate
+    $request->validate([
+      'fullName'=>'required',
+      'student_ID'=>'required',
+      'email'=>'required',
+      'gender'=>'required',
+      'dob'=>'required',
+      'course_id'=>'required'
+  ]);
       $students = new Student;
       $students->fullName = $request->fullName;
       $students->student_ID = $request->student_ID;
@@ -57,6 +66,14 @@ class ManageStudentController extends Controller
 
     //Update Student
     public function update(Request $request) {
+      //Validate
+    $request->validate([
+      'fullName'=>'required',
+      'student_ID'=>'required',
+      'email'=>'required',
+      'gender'=>'required',
+      'dob'=>'required'
+  ]);
       $students = Student::findorFail($request->id);
       $students->fullName = $request->fullName;
       $students->student_ID = $request->student_ID;
