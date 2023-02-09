@@ -60,27 +60,26 @@
                   @endforeach
                 </select>
               </div>
-              {{-- @if ($errors->has('student_id'))
-              <p style="color: red;">{{ $errors->first('student_id') }}</p>
-              @endif --}}
               <div id="message"></div>
 
               <div id="subjectWrapper">
                 <hr class="my-9 border border-breadcrumb border-1">
                 <p class="font-semibold text-xl mb-7">Subjects:</p>
 
-
-
                 @foreach($subject_combinations as $combinedSubject)
                   <div class="mb-6 course-relation" data-parent="{{$combinedSubject->course_id}}">
                     <label for="subject_id"  class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                       {{$combinedSubject->subject->subjectName}}
                     </label>
-                    {{-- <input type="hidden" value="{{$combinedSubject->subject->id}}" id="subject_id" name="subject_id"> --}}
-                    {{-- <input type="text" id="grades_{{$combinedSubject->subject->id}}" name="grades_{{$combinedSubject->course_id.'_'.$combinedSubject->subject->id}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> --}}
-                    <input type="text" id="grades_{{$combinedSubject->subject->id}}" name="{{$combinedSubject->course_id.$combinedSubject->subject->id}}" class="bg-light border border-blue text-blue text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5">
+                    <input type="text" id="grades_{{$combinedSubject->course_id.$combinedSubject->subject->id}}" name="grades_{{$combinedSubject->course_id.$combinedSubject->subject->id}}" class="bg-light border border-blue text-blue text-sm rounded-lg block w-full p-2.5" required>
+                    @error('grades_{{$combinedSubject->course_id.$combinedSubject->subject->id}}')
+                      <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                        <span class="font-medium">{{ $message }}</span>
+                      </p>
+                    @enderror
                   </div>
                 @endforeach
+
                 <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
                   Declare Result
                 </button>
@@ -93,31 +92,33 @@
 <script>
   $(document).ready(function() {
     $(".course-relation").hide();
-        $("#course_id").change(function() {
-            var parentId = $(this).val();
-            $(".course-relation").hide();
-            $(".course-relation[data-parent='" + parentId + "']").show();
-        });
+    $('#subjectWrapper').hide();
 
-        $('#student_id').change(function() {
+    $("#course_id").change(function() {
+        var parentId = $(this).val();
+        $(".course-relation").hide();
+        $(".course-relation[data-parent='" + parentId + "']").show();
+    });
 
-            $.ajax({
-                url: "{{ route('admin.search_student') }}",
-                type: 'post',
-                data: {
-                  student_id: $('#student_id').val(),
-                  _token: "{{ csrf_token() }}"
-                },
-                success: function(data) {
-                    $('#message').html('<p></p>');
-                    $('#subjectWrapper').show();
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    $('#message').html('<p class="text-redpink">' + jqXHR.responseJSON.message + '</p>');
-                    $('#subjectWrapper').hide();
-                }
-            });
+    $('#student_id').change(function() {
+
+        $.ajax({
+            url: "{{ route('admin.search_student') }}",
+            type: 'post',
+            data: {
+              student_id: $('#student_id').val(),
+              _token: "{{ csrf_token() }}"
+            },
+            success: function(data) {
+                $('#message').html('<p></p>');
+                $('#subjectWrapper').show();
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $('#message').html('<p class="text-redpink">' + jqXHR.responseJSON.message + '</p>');
+                $('#subjectWrapper').hide();
+            }
         });
     });
+  });
 </script>
 @endsection
