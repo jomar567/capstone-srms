@@ -22,9 +22,8 @@ use Barryvdh\DomPDF\Facade\Pdf;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [NoticeController::class, 'notice'])->name('index');
+
 Route::get('/notice', function () {
     return view('notice');
 });

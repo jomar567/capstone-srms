@@ -33,9 +33,11 @@
         <div class="mt-8">
           <p class="text-5xl font-semibold before:border-l-8 before:border-redpink before:mr-4">Notice Board</p>
           <p class="text-xl text-justify mt-10">
-            <a href={{url('notice')}}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            @foreach($notices as $notice)
+            <a class="block" href={{url('notice')}}>
+              {{$notice->title}}
             </a>
+            @endforeach
           </p>
           </div>
         <img class="hidden md:block" src="{{URL('images/notice.png')}}" alt="">
