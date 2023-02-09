@@ -123,7 +123,14 @@
                               </button>
                             </form> --}}
                     </tr>
-                    @endforeach
+                    @endforeach    
+                    @else
+                    <tr>
+                        <td class="px-6 py-4 text-center" colspan="6">
+                            No notice found
+                        </td>
+                    </tr>
+                        
                     @endif
                   </tbody>
               </table>
