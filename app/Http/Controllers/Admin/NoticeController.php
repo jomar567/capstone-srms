@@ -28,18 +28,19 @@ class NoticeController extends Controller
         return redirect()->route('admin.notice_list');
      }
 
-     public function editNotice($id){
+     public function editnotice($id){
         $notice = Notice::findOrFail($id);
 
         return view('Admin.Notices.editNotice')->with('notice', $notice);
      }
 
-//      public function updateNotice(Request $request){
-//         $notices = Notice::findOrFail($request->id);
-//         $notices->title = $request->title;
-//         $notices->description = $request->description;
-//         $notices->save();
+     public function updateNotice(Request $request){
+        $notices = Notice::findOrFail($request->id);
+        $notices->title = $request->title;
+        $notices->description = $request->description;
+        $notices->save();
 
-//         return redirect()->route('admin.notice_list');
-//      }
+        return redirect()->route('admin.notice_list');
+     }
+
  }

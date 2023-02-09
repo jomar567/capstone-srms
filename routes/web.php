@@ -129,11 +129,11 @@ Route::prefix('admin')->name('admin.')->group(function() {
       // add notice
       Route::post('/add_Notice', [NoticeController::class, 'addNotice'])->name('add_Notice');
       //edit notice
-      Route::get('/editNotice/{id}', [NoticeController::class, 'editNotice'])->name('editNotice');
+      Route::get('/editNotice/{id}', [NoticeController::class, 'editnotice'])->name('editNotice');
       //update notice
       Route::post('/update_notice/{id}', [NoticeController::class, 'updateNotice'])->name('update_notice');
       //delete notice
-      Route::view('/edit_notice', 'Admin.Notices.editNotice')->name('edit_notice');
+    
 
       //Subject Combination Routes
       Route::get('/subject_combination_list', [SubjectCombinationController::class, 'subjectCombined_list'])->name('subject_combination_list');

@@ -57,7 +57,7 @@
                                 Notice Description
                             </label>
                             <textarea id="description" name="description" rows="8"
-                                class="block p-2.5 w-full text-sm text-blue bg-gray-50 rounded-lg border dark:placeholder-gray-400">
+                                class="block p-2.5 w-full text-sm text-blue bg-gray-50 rounded-lg border">
                                 {{ $notice->description }}
                             </textarea>
                         </div>
