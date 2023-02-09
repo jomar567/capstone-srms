@@ -46,9 +46,7 @@ class ResultController extends Controller
             'message' => 'Record already exists',
             'status' => 'error'
         ], 400);
-          // return back()->withErrors(['student_id' => 'Record already exists']);
       }
-      // return back()->withSuccess(['student_id' => 'No Record']);;
     }
 
     //Subject Combination Add
@@ -71,13 +69,25 @@ class ResultController extends Controller
     //Edit Method
     public function editResult(Request $request) {
       $results = Result::where('student_id', $request->student_id)->get();
-      // $subject = Subjectfind($request->student_id);
       $student = Student::find($request->student_id);
       $course = $student->course;
-      // dd($results);
       return view('Admin.Results.editResult')->with('results', $results)
-        // ->with('subject', $subject)
         ->with('student', $student)
         ->with('course', $course);
+    }
+
+      //Update Result
+      public function updateResult(Request $request) {
+        $student = Student::find($request->student_id);
+        $course = $student->course;
+        foreach($course->combinedSubjects as $subject) {
+          $result = Result::where('course_id', $course->id)
+             ->where('student_id', $student->id)
+             ->where('subject_id', $subject->subject_id)
+             ->first();
+          $result->grades = $request->input('grades_'.$subject->subject_id);
+          $result->save();
+        }
+        return redirect()->route('admin.result_list')->with('success', 'Successfully Updated Result');
       }
 }

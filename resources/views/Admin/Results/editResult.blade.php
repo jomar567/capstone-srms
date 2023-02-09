@@ -36,7 +36,8 @@
           <div class="relative drop-shadow-lg w-full md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-xl text-center mb-10">Edit Result</p>
 
-            <form class="md:w-4/5 md:mx-auto">
+            <form method="POST" action="{{ route('admin.update_result', $student->id) }}" class="md:w-4/5 md:mx-auto">
+              @csrf
               <div class="mb-6">
                 <label for="course_id" class="block mb-2 text-lg font-semibold">
                   Course
@@ -44,10 +45,10 @@
                 <p class="text-lg font-medium" name="course_id" id="course_id">{{$course->courseName}} - {{$course->courseYearNumeric}}{{$course->section}}</p>
               </div>
               <div class="mb-6">
-                <label for="course" class="block mb-2 text-lg font-semibold">
+                <label for="student" class="block mb-2 text-lg font-semibold">
                   Student Name
                 </label>
-                <p class="text-lg font-medium">{{$student->fullName}}</p>
+                <p class="text-lg font-medium" name="student_id" id="student_id">{{$student->fullName}}</p>
               </div>
 
 
