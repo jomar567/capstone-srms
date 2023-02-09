@@ -1,6 +1,7 @@
 <nav class="fixed top-0 z-50 w-full bg-light drop-shadow-lg">
   <div class="px-3 py-3 lg:px-5 lg:pl-3">
     <div class="flex items-center justify-between">
+
       <div class="flex items-center justify-start">
         <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
             <span class="sr-only">Open sidebar</span>
@@ -25,10 +26,10 @@
         <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
           <div class="px-4 py-3" role="none">
             <p class="text-sm text-gray-900 dark:text-white" role="none">
-              Neil Sims
+            {{Auth::guard('student')->user()->fullName}}
             </p>
             <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-              neil.sims@flowbite.com
+            {{Auth::guard('student')->user()->email}}
             </p>
           </div>
           <ul class="py-1" role="none">

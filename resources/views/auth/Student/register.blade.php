@@ -68,8 +68,12 @@
             <div class="mb-6">
               <label for="gender" class="block mb-2 text-sm font-medium text-white dark:text-white">
                 Gender <span class="text-base text-redpink">*</span>
+                <select id="gender" name="gender" class="bg-gray-50 text-blue border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700">
+                  <option value="male" selected>Male</option>
+                  <option value="female">Female</option>
+                  <option value="others">Others</option>
+                </select>
               </label>
-              <input type="text" id="gender" name="gender" value="{{ old('gender') }}" class="shadow-sm border text-blue text-sm rounded-lg block w-full p-2.5 dark:shadow-sm-light">
               @error('gender')
                 <p class="mt-2 text-sm text-red-600 dark:text-red-500">
                   <span class="font-medium">{{ $message }}</span>

@@ -36,7 +36,7 @@
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-lg">View Notice</p>
 
-            <a href="{{ route('admin.create_notice') }}">
+            <a href="{{ route('admin.create_noticeform') }}">
               <button type="button" class="float-right text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-5">
                 Add Notice
               </button>
@@ -65,50 +65,73 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT Results
-                          </td>
-                          <td class="px-6 py-4">
-                            Result for BSIT - 3C are now out.
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                          <td class="flex px-6 py-4 gap-4">
-                              <a href="{{ route('admin.edit_notice') }}" class="font-medium text-blue-600 dark:text-blue">
-                              <i class="fa-solid fa-file-pen text-lg"></i>
-                              </a>
-                              <a href="#" class="font-medium text-redpink">
-                                <i class="fa-solid fa-trash text-lg"></i>
-                              </a>
-                          </td>
-                      </tr>
+                      
+                      @if(count($notices) > 0 )
+                    @foreach($notices as $notice)
                       <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                         <td class="px-6 py-4">
-                            1
+                            {{ $notice->id }}
                         </td>
                         <td class="px-6 py-4">
-                            BSIT Results
+                          {{ $notice->title }}
                         </td>
                         <td class="px-6 py-4">
-                          Result for BSIT - 3C are now out.
+                          {{ $notice->description }}
                         </td>
                         <td class="px-6 py-4">
-                            2022-09-04
+                          {{ $notice->created_at }}
                         </td>
                         <td class="flex px-6 py-4 gap-4">
-                            <a href="{{ route('admin.edit_notice') }}" class="font-medium text-blue-600 dark:text-blue">
+                            <a href="{{ route('admin.editNotice', $notice->id) }}" class="font-medium text-blue-600 dark:text-blue">
                             <i class="fa-solid fa-file-pen text-lg"></i>
                             </a>
-                            <a href="#" class="font-medium text-redpink">
+                             {{-- Modal Button --}}
+                             <button onclick="document.getElementById('myModal{{$notice->id}}').showModal()" data-target="#myModal{{$notice->id}}" class="block text-redpink font-medium">
                               <i class="fa-solid fa-trash text-lg"></i>
-                            </a>
+                            </button>
+
+                            {{-- Modal --}}
+                            <dialog id="myModal{{$notice->id}}" value="{{$notice->id}}" class=" w-11/12 md:w-4/12 p-8  bg-white rounded-md ">
+                                <div class="flex flex-col w-full">
+                                  <!-- Header -->
+                                  <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                  <div class="flex w-full justify-center items-center">
+                                    <h3 class="mb-5 text-lg font-normal ">Are you sure you want to delete this record?</h3>
+                                  <!--Header End-->
+                                  </div>
+                                  <!-- Modal Content-->
+                                  <div class="p-4 text-center">
+                                    <form method="POST" action="{{ route('admin.deleteNotice',$notice->id) }}" class="inline">
+                                      @csrf
+                                      <button onclick="document.getElementById('myModal{{$notice->id}}').close();" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                        Delete
+                                      </button>
+                                    </form>
+
+                                    <button onclick="document.getElementById('myModal{{$notice->id}}').close();" class="text-blue bg-light hover:bg-blue rounded-lg border text-sm font-medium px-5 py-2.5 hover:text-light focus:z-10">
+                                      Cancel
+                                    </button>
+                                  </div>
+                                <!-- End of Modal Content-->
+                              </div>
+                          </dialog>
+
+                            {{-- <form method="POST" action="{{ route('admin.deleteNotice',$notice->id) }}" class="inline">
+                              @csrf
+                              <button onclick="document.getElementById('myModal{{$notice->id}}').close();" class="font-medium text-redpink">
+                                <i class="fa-solid fa-trash text-lg"></i>
+                              </button>
+                            </form> --}}
+                    </tr>
+                    @endforeach    
+                    @else
+                    <tr>
+                        <td class="px-6 py-4 text-center" colspan="6">
+                            No notice found
                         </td>
                     </tr>
+                        
+                    @endif
                   </tbody>
               </table>
             </div>

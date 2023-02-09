@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ManageStudentController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SubjectCombinationController;
+use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\ResultController;
 use Barryvdh\DomPDF\Facade\Pdf;
 /*
@@ -117,11 +118,17 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/edit_result/{id}', [ResultController::class, 'editResult'])->name('edit_result');
 
       // Notice Route
-      Route::view('/notice_list', 'Admin.Notices.notice')->name('notice_list');
-      //Add Notice
-      Route::view('/create_notice', 'Admin.Notices.createNotice')->name('create_notice');
-      //Edit Notice
-      Route::view('/edit_notice', 'Admin.Notices.editNotice')->name('edit_notice');
+      Route::get('/notice_list', [NoticeController::class, 'display'])->name('notice_list');
+      //Add Noticeform
+      Route::get('/create_noticeform', [NoticeController::class, 'createNotice'])->name('create_noticeform');
+      // add notice
+      Route::post('/add_Notice', [NoticeController::class, 'addNotice'])->name('add_Notice');
+      //edit notice
+      Route::get('/editNotice/{id}', [NoticeController::class, 'editnotice'])->name('editNotice');
+      //update notice
+      Route::post('/update_notice/{id}', [NoticeController::class, 'updateNotice'])->name('update_notice');
+      //delete notice
+      Route::post('/deleteNotice/{id}',  [NoticeController::class,'destroynotice'])->name('deleteNotice');
 
       //Subject Combination Routes
       Route::get('/subject_combination_list', [SubjectCombinationController::class, 'subjectCombined_list'])->name('subject_combination_list');
