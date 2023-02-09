@@ -117,6 +117,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/edit_result/{student_id}', [ResultController::class, 'editResult'])->name('edit_result');
       //Update Result
       Route::post('/update_result/{student_id}', [ResultController::class, 'updateResult'])->name('update_result');
+      //Update Result
+      Route::post('/delete_result/{student_id}', [ResultController::class, 'deleteResult'])->name('delete_result');
 
       // Notice Route
       Route::get('/notice_list', [NoticeController::class, 'display'])->name('notice_list');

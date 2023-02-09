@@ -90,4 +90,13 @@ class ResultController extends Controller
         }
         return redirect()->route('admin.result_list')->with('success', 'Successfully Updated Result');
       }
+
+      //Delete Student
+      public function deleteResult(Request $request) {
+        $student = Student::find($request->student_id);
+        $result = Result::where('student_id', $student->id);
+        $result->delete();
+
+        return redirect()->route('admin.result_list')->with('success', 'Result Successfully Deleted');
+      }
 }
