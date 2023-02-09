@@ -21,18 +21,6 @@
           </span>
         </div>
     </header>
-
-    {{-- <div class="grid container gap-4 mx-auto px-4 py-44 md:grid-cols-2">
-        <div class="mt-8">
-          <p class="text-5xl font-semibold before:border-l-8 before:border-redpink before:mr-4">Notice Board</p>
-          <p class="text-xl text-justify mt-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            </p>
-          </div>
-        <img class="hidden md:block" src="{{URL('images/notice.png')}}" alt="">
-    </div> --}}
-
-    
-
     <div class="container mx-auto px-4 py-44 ">
     <div>
         <div class="text-center text-4xl"><strong class="border-l-8 border-red-600">

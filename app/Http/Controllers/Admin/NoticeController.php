@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class NoticeController extends Controller
 {
+
+    public function notice(){
+        $notices = Notice::all();
+
+        return view('index')->with('notices', $notices);
+
+    }
     public function display(){
         $notices = Notice::orderByDesc('created_at')->get();
 
