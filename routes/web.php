@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ManageStudentController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SubjectCombinationController;
+use App\Http\Controllers\Admin\ResultController;
 use Barryvdh\DomPDF\Facade\Pdf;
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,7 @@ Route::prefix('student')->name('student.')->group(function() {
 
         //Generate PDF
         Route::get('/generate_pdf', [StudentController::class, 'createPDF'])->name('generate_pdf');
-        
+
         Route::get('/change_password', [StudentAuthController::class, 'changePassword'])->name('change_password');
         //Update Password
         Route::post('/update_password', [StudentAuthController::class, 'updatePassword'])->name('update_password');
@@ -104,20 +105,14 @@ Route::prefix('admin')->name('admin.')->group(function() {
       //Delete student
       Route::post('/delete_subject/{id}', [SubjectController::class, 'destroying'])->name('delete_subject');
 
-      // Subject Combination Route
-      Route::view('/subject_combination_list', 'Admin.Subjects.Subject_Combination.subjectCombination')
-            ->name('subject_combination_list');
-      //Add Subject Combination
-      Route::view('/create_subject_combination', 'Admin.Subjects.Subject_Combination.createSubjectCombination')
-            ->name('create_subject_combination');
-      // Edit Subject
-      Route::view('/edit_subject_combination', 'Admin.Subjects.Subject_Combination.editSubjectCombination')
-            ->name('edit_subject_combination');
-
       // Result Route
-      Route::view('/result_list', 'Admin.Results.result')->name('result_list');
+      Route::get('/result_list', [ResultController::class, 'result_list'])->name('result_list');
+      //Create Result Form
+      Route::get('/create_result', [ResultController::class, 'createResult'])->name('create_result');
       //Add Result
-      Route::view('/create_result', 'Admin.Results.createResult')->name('create_result');
+      Route::post('/add_result', [ResultController::class, 'addResult'])->name('add_result');
+      //Search Student Data
+      Route::post('/search_student', [ResultController::class, 'searchStudent'])->name('search_student');
       //Edit Result
       Route::view('/edit_result', 'Admin.Results.editResult')->name('edit_result');
 

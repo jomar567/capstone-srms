@@ -68,21 +68,23 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
+                    @if(count($results) > 0)
+                      @foreach($results as $result)
+                        <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
                           <td class="px-6 py-4">
-                              1
+                              {{$result->id}}
                           </td>
                           <td class="px-6 py-4">
-                              Jomar Clado
+                              {{$result->student->fullName}}
                           </td>
                           <td class="px-6 py-4">
-                            21223
+                            {{$result->student->student_ID}}
                           </td>
                           <td class="px-6 py-4">
-                              BSIT - 3C
+                            {{$result->course->courseName}} - {{$result->course->courseYearNumeric}}{{$result->course->section}}
                           </td>
                           <td class="px-6 py-4">
-                              2022-09-04
+                            {{date_format(new DateTime($result->created_at), "F j, Y")}}
                           </td>
                           <td class="flex px-6 py-4 gap-4">
                               <a href="{{ route('admin.edit_result') }}" class="font-medium text-blue-600 dark:text-blue">
@@ -92,32 +94,15 @@
                                 <i class="fa-solid fa-trash text-lg"></i>
                               </a>
                           </td>
-                      </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                        <td class="px-6 py-4">
-                            2
-                        </td>
-                        <td class="px-6 py-4">
-                            Jomar Clado
-                        </td>
-                        <td class="px-6 py-4">
-                          11122
-                        </td>
-                        <td class="px-6 py-4">
-                            BSIT - 3C
-                        </td>
-                        <td class="px-6 py-4">
-                            2022-09-04
-                        </td>
-                        <td class="flex px-6 py-4 gap-4">
-                            <a href="{{ route('admin.edit_result') }}" class="font-medium text-blue-600 dark:text-blue">
-                            <i class="fa-solid fa-file-pen text-lg"></i>
-                            </a>
-                            <a href="#" class="font-medium text-redpink">
-                              <i class="fa-solid fa-trash text-lg"></i>
-                            </a>
-                        </td>
+                        </tr>
+                      @endforeach
+                    @else
+                    <tr>
+                      <td colspan="5" class="text-center">
+                        No Result Found
+                      </td>
                     </tr>
+                    @endif
                   </tbody>
               </table>
             </div>
