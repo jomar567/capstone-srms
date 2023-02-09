@@ -42,13 +42,23 @@
                   <label for="title" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                     Notice Title
                   </label>
-                  <input type="text" id="title" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                  <input type="text" id="title" value="{{ old('title') }}" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  @error('title')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                @enderror
               </div>
               <div class="mb-6">
                   <label for="description" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                     Notice Description
                   </label>
-                  <textarea id="description" name="description" rows="8" class="block p-2.5 w-full text-sm text-blue bg-gray-50 rounded-lg border dark:placeholder-gray-400" placeholder="Insert notice here..."></textarea>
+                  <textarea id="description" name="description" rows="8" class="block p-2.5 w-full text-sm text-blue bg-gray-50 rounded-lg border dark:placeholder-gray-400" placeholder="Insert notice here...">{{ old('description') }}</textarea>
+                  @error('description')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                @enderror
               </div>
               <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
                 Add Notice
