@@ -1,12 +1,13 @@
 
-<footer class="container mx-auto bg-blue m-5 p-5">
-    <div class="grid grid-cols-2">
-        <div class=" flex flex-col mb-6 px-10 md:mb-0 lg:my-8">
-            <a href="#" class="flex items-center">
+<footer class="bg-blue">
+    <div class="container mx-auto py-20">
+      <div class="grid md:grid-cols-2 px-4">
+        <div class="flex justify-center md:justify-start md:items-start items-center flex-col mb-6">
+            <a href="#" class="pb-5">
                 <span class=" dark:text-white mb-8">LOGO</span>
             </a>
-            <p class="mb-8">SRMS is created using Laravel<br>and MySQL</p>
-            <div class="flex flex-row ">
+            <p class="py-5">SRMS is created using Laravel<br>and MySQL</p>
+            <div class="flex flex-row py-5">
                 <a href="#">
                     <svg class="w-5 h-5 hover:text-redpink" fill="currentColor"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
                     <span class="sr-only">Facebook page</span>
@@ -22,7 +23,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-2 sm:gap-6 sm:grid-cols-3 pr-8">
+        <div class="grid md:grid-cols-2 gap-2 sm:gap-6 pr-8">
             <div>
                 <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Navigation</h2>
                 <ul class="text-gray-600 dark:text-gray-400">
@@ -54,22 +55,35 @@
                     </li>
                 </ul>
             </div>
-            <div class="flex flex-col flex-row px-10 pr-0">
-                <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Subscribe</h2>
-                <div class="flex mt-3 space-x--4 sm:justify-center font-thin">
-                    <input type="text" class="form-control w-full px-1 text-bg-dark text-xs text-black rounded"  placeholder="Get product updates">
-                    <a href="" class="mr-1">
-                        <button type="submit" class="bg-redpink text-white font-bold py-2 px-2 rounded">➜</button>
-                    </a>
-                </div>
-            </div>
         </div>
+
+        <div class="grid md:grid-cols flex flex-col flex-row">
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 dark:text-white">Subscribe</h2>
+          <div data-element="fields" data-stacked="false" class="flex items-center w-full max-w-md mb-3 seva-fields formkit-fields">
+            <div class="relative w-full mr-3 formkit-field">
+                <label for="member_email" class="hidden block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                </div>
+                <input id="member_email" class="formkit-input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="email_address" aria-label="Email Address" placeholder="Your email address..." required="" type="email">
+            </div>
+            <button data-element="submit" class="formkit-submit">
+                <div class="formkit-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <span class="px-5 py-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg cursor-pointer hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Subscribe</span>
+            </button>
+        </div>
+      </div>
     </div>
     <hr class=" lg:my-8" />
-    <div class="sm:flex sm:items-center sm:justify-between mb-4 px-10">
+    <div class="sm:flex sm:items-center sm:justify-between px-10">
         <p><small>Created by Group 6</small></p>
         <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0 pr-1">
             <p> <small>Copyright © Student Result Management System 2023</small></p>
         </div>
+    </div>
     </div>
 </footer>
