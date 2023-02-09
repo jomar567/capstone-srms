@@ -12,13 +12,16 @@ class NoticeController extends Controller
 
     public function notice(){
         $notices = Notice::all();
-
         return view('index')->with('notices', $notices);
-
     }
+
+    public function noticeDetails($id){
+         $notice = Notice::findorFail($id);
+         return view('notice')->with('notice', $notice);
+    }
+
     public function display(){
         $notices = Notice::orderByDesc('created_at')->get();
-
         return view('Admin.Notices.notice')->with('notices', $notices);
     }
 
