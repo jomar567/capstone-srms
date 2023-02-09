@@ -20,6 +20,12 @@ class NoticeController extends Controller
     }
     
     public function addNotice(Request $request){
+         //Validate
+         $request->validate([
+            'title'=>'required',
+            'description'=>'required',
+         ]);
+
         $notices = new Notice;
         $notices->title = $request->title;
         $notices->description = $request->description;
@@ -35,6 +41,12 @@ class NoticeController extends Controller
      }
 
      public function updateNotice(Request $request){
+        //Validate
+        $request->validate([
+            'title'=>'required',
+            'description'=>'required',
+         ]);
+
         $notices = Notice::findOrFail($request->id);
         $notices->title = $request->title;
         $notices->description = $request->description;
