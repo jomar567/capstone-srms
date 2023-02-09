@@ -118,11 +118,15 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
       // Notice Route
       Route::get('/notice_list', [NoticeController::class, 'display'])->name('notice_list');
-      //Add Notice
+      //Add Noticeform
       Route::get('/create_noticeform', [NoticeController::class, 'createNotice'])->name('create_noticeform');
-        //add new notice
+      // add notice
       Route::post('/add_Notice', [NoticeController::class, 'addNotice'])->name('add_Notice');
-      //Edit Notice
+      //edit notice
+      Route::get('/editNotice/{id}', [NoticeController::class, 'editNotice'])->name('editNotice');
+      //update notice
+      Route::post('/update_notice/{id}', [NoticeController::class, 'updateNotice'])->name('update_notice');
+      //delete notice
       Route::view('/edit_notice', 'Admin.Notices.editNotice')->name('edit_notice');
 
       //Subject Combination Routes

@@ -65,28 +65,7 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT Results
-                          </td>
-                          <td class="px-6 py-4">
-                            Result for BSIT - 3C are now out.
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                          <td class="flex px-6 py-4 gap-4">
-                              <a href="{{ route('admin.edit_notice') }}" class="font-medium text-blue-600 dark:text-blue">
-                              <i class="fa-solid fa-file-pen text-lg"></i>
-                              </a>
-                              <a href="#" class="font-medium text-redpink">
-                                <i class="fa-solid fa-trash text-lg"></i>
-                              </a>
-                          </td>
-                      </tr>
+                      
                       @if(count($notices) > 0 )
                     @foreach($notices as $notice)
                       <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
@@ -103,7 +82,7 @@
                           {{ $notice->created_at }}
                         </td>
                         <td class="flex px-6 py-4 gap-4">
-                            <a href="{{ route('admin.edit_notice') }}" class="font-medium text-blue-600 dark:text-blue">
+                            <a href="{{ route('admin.editNotice', $notice->id) }}" class="font-medium text-blue-600 dark:text-blue">
                             <i class="fa-solid fa-file-pen text-lg"></i>
                             </a>
                             <a href="#" class="font-medium text-redpink">
