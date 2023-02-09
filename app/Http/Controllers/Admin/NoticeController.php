@@ -25,7 +25,7 @@ class NoticeController extends Controller
         $notices->description = $request->description;
         $notices->save();
         
-        return redirect()->route('admin.notice_list');
+        return redirect()->route('admin.notice_list')->with('success', 'Notice successfully added!');
      }
 
      public function editnotice($id){
