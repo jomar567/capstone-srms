@@ -45,7 +45,7 @@ Route::prefix('student')->name('student.')->group(function() {
 
         //Generate PDF
         Route::get('/generate_pdf', [StudentController::class, 'createPDF'])->name('generate_pdf');
-        
+
         Route::get('/change_password', [StudentAuthController::class, 'changePassword'])->name('change_password');
         //Update Password
         Route::post('/update_password', [StudentAuthController::class, 'updatePassword'])->name('update_password');
@@ -111,6 +111,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::get('/create_result', [ResultController::class, 'createResult'])->name('create_result');
       //Add Result
       Route::post('/add_result', [ResultController::class, 'addResult'])->name('add_result');
+      //Search Student Data
+      Route::post('/search_student', [ResultController::class, 'searchStudent'])->name('search_student');
       //Edit Result
       Route::view('/edit_result', 'Admin.Results.editResult')->name('edit_result');
 

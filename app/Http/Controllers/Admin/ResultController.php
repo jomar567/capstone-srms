@@ -37,8 +37,29 @@ class ResultController extends Controller
       ->with('students', $students);
     }
 
+    public function searchStudent(Request $request) {
+      $selectedItem = $request->input('student_id');
+      $record = Result::where('student_id', $selectedItem)->first();
+
+      if ($record) {
+        return response()->json([
+            'message' => 'Record already exists',
+            'status' => 'error'
+        ], 400);
+          // return back()->withErrors(['student_id' => 'Record already exists']);
+      }
+
+      return response()->json([
+          'message' => 'Record added successfully',
+          'status' => 'success'
+      ], 200);
+      // return back()->withSuccess(['student_id' => 'No Record']);;
+    }
+
     //Subject Combination Add
     public function addResult(Request $request) {
+
+
       $course = Course::find($request->course_id);
       foreach($course->combinedSubjects as $subject) {
         $results = new Result;
@@ -49,6 +70,6 @@ class ResultController extends Controller
         $results->save();
       }
 
-      return redirect()->route('admin.result_list')->with('success', 'Successfully Added Result');
+      return redirect()->route('admin.create_result')->with('success', 'Successfully Added Result');
     }
 }
