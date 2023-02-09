@@ -43,4 +43,10 @@ class NoticeController extends Controller
         return redirect()->route('admin.notice_list');
      }
 
+     public function destroynotice($id){
+        $notice = Notice::findorFail($id);
+        $notice->delete();
+
+        return redirect()->route('admin.notice_list');
+     }
  }

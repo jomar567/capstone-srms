@@ -85,10 +85,13 @@
                             <a href="{{ route('admin.editNotice', $notice->id) }}" class="font-medium text-blue-600 dark:text-blue">
                             <i class="fa-solid fa-file-pen text-lg"></i>
                             </a>
-                            <a href="#" class="font-medium text-redpink">
-                              <i class="fa-solid fa-trash text-lg"></i>
-                            </a>
-                        </td>
+
+                            <form method="POST" action="{{ route('admin.deleteNotice',$notice->id) }}" class="inline">
+                              @csrf
+                              <button onclick="document.getElementById('myModal{{$notice->id}}').close();" class="font-medium text-redpink">
+                                <i class="fa-solid fa-trash text-lg"></i>
+                              </button>
+                            </form>
                     </tr>
                     @endforeach
                     @endif

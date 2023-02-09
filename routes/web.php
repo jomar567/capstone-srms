@@ -133,7 +133,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
       //update notice
       Route::post('/update_notice/{id}', [NoticeController::class, 'updateNotice'])->name('update_notice');
       //delete notice
-    
+      Route::post('/deleteNotice/{id}',  [NoticeController::class,'destroynotice'])->name('deleteNotice');
 
       //Subject Combination Routes
       Route::get('/subject_combination_list', [SubjectCombinationController::class, 'subjectCombined_list'])->name('subject_combination_list');
