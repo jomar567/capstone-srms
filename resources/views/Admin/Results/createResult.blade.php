@@ -36,55 +36,88 @@
           <div class="relative drop-shadow-lg w-full md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-xl text-center mb-10">Add New Result</p>
 
-            <form class="md:w-4/5 md:mx-auto">
+            <form id="form" method="POST" action="{{ route('admin.add_result') }}" class="md:w-4/5 md:mx-auto">
+              @csrf
               <div class="mb-6">
-                <label for="course" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                <label for="course_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                   Course
                 </label>
-                <select id="course" name="course" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select id="course_id" name="course_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option selected disabled>Select Course</option>
-                  <option value="bsit">BSIT - 3C</option>
-                  <option value="comscie">ComScie - 2A</option>
+                  @foreach($courses as $course)
+                    <option value="{{$course->id}}">{{$course->courseName}} - {{$course->courseYearNumeric}}{{$course->section}}</option>
+                  @endforeach
                 </select>
               </div>
               <div class="mb-6">
-                <label for="course" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                  Student Name
+                <label for="student_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                  Student
                 </label>
-                <select id="course" name="course" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                  <option selected disabled>Select Students</option>
-                  <option value="bsit">Jomar Clado</option>
-                  <option value="comscie">Alan Demol</option>
+                <select id="student_id" name="student_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected disabled>Select Student</option>
+                  @foreach($students as $student)
+                    <option class="course-relation" data-parent="{{$student->course_id}}" value="{{$student->id}}">{{$student->fullName}}</option>
+                  @endforeach
                 </select>
               </div>
+              {{-- @if ($errors->has('student_id'))
+              <p style="color: red;">{{ $errors->first('student_id') }}</p>
+              @endif --}}
+              <div id="message"></div>
 
-              <hr class="my-9 border border-breadcrumb border-1">
-              <p class="font-semibold text-xl mb-7">Subjects:</p>
+              <div id="subjectWrapper">
+                <hr class="my-9 border border-breadcrumb border-1">
+                <p class="font-semibold text-xl mb-7">Subjects:</p>
 
-              <div class="mb-6">
-                  <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    Programming 1
-                  </label>
-                  <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+
+
+                @foreach($subject_combinations as $combinedSubject)
+                  <div class="mb-6 course-relation" data-parent="{{$combinedSubject->course_id}}">
+                    <label for="subject_id"  class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                      {{$combinedSubject->subject->subjectName}}
+                    </label>
+                    {{-- <input type="hidden" value="{{$combinedSubject->subject->id}}" id="subject_id" name="subject_id"> --}}
+                    {{-- <input type="text" id="grades_{{$combinedSubject->subject->id}}" name="grades_{{$combinedSubject->course_id.'_'.$combinedSubject->subject->id}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> --}}
+                    <input type="text" id="grades_{{$combinedSubject->subject->id}}" name="{{$combinedSubject->course_id.$combinedSubject->subject->id}}" class="bg-light border border-blue text-blue text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5">
+                  </div>
+                @endforeach
+                <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
+                  Declare Result
+                </button>
               </div>
-              <div class="mb-6">
-                  <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    Software Engineering
-                  </label>
-                  <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-              </div>
-              <div class="mb-6">
-                  <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    English
-                  </label>
-                  <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-              </div>
-              <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
-                Declare Result
-              </button>
             </form>
           </div>
         </div>
      </div>
 </div>
+<script>
+  $(document).ready(function() {
+    $(".course-relation").hide();
+        $("#course_id").change(function() {
+            var parentId = $(this).val();
+            $(".course-relation").hide();
+            $(".course-relation[data-parent='" + parentId + "']").show();
+        });
+
+        $('#student_id').change(function() {
+
+            $.ajax({
+                url: "{{ route('admin.search_student') }}",
+                type: 'post',
+                data: {
+                  student_id: $('#student_id').val(),
+                  _token: "{{ csrf_token() }}"
+                },
+                success: function(data) {
+                    $('#message').html('<p></p>');
+                    $('#subjectWrapper').show();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    $('#message').html('<p class="text-redpink">' + jqXHR.responseJSON.message + '</p>');
+                    $('#subjectWrapper').hide();
+                }
+            });
+        });
+    });
+</script>
 @endsection
