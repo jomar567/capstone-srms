@@ -47,6 +47,6 @@ class NoticeController extends Controller
         $notice = Notice::findorFail($id);
         $notice->delete();
 
-        return redirect()->route('admin.notice_list');
+        return redirect()->route('admin.notice_list')->with('success', 'Notice successfully deleted!');
      }
  }
