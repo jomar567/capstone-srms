@@ -69,14 +69,14 @@ class ResultController extends Controller
     }
 
     //Edit Method
-    public function editResult($id) {
-      $result = Result::findorFail($id);
-      $subject = Subject::all();
-      $course = Course::all();
-      $student = Student::all();
-      // dd($result);
-      return view('Admin.Results.editResult')->with('result', $result)
-        ->with('subject', $subject)
+    public function editResult(Request $request) {
+      $results = Result::where('student_id', $request->student_id)->get();
+      // $subject = Subjectfind($request->student_id);
+      $student = Student::find($request->student_id);
+      $course = $student->course;
+      // dd($results);
+      return view('Admin.Results.editResult')->with('results', $results)
+        // ->with('subject', $subject)
         ->with('student', $student)
         ->with('course', $course);
       }

@@ -38,39 +38,34 @@
 
             <form class="md:w-4/5 md:mx-auto">
               <div class="mb-6">
-                <label for="course" class="block mb-2 text-lg font-semibold">
+                <label for="course_id" class="block mb-2 text-lg font-semibold">
                   Course
                 </label>
-                <p class="text-lg font-medium">{{$result->course->courseName}} - {{$result->course->courseYearNumeric}}{{$result->course->section}}</p>
+                <p class="text-lg font-medium" name="course_id" id="course_id">{{$course->courseName}} - {{$course->courseYearNumeric}}{{$course->section}}</p>
               </div>
               <div class="mb-6">
                 <label for="course" class="block mb-2 text-lg font-semibold">
                   Student Name
                 </label>
-                <p class="text-lg font-medium">{{$result->student->fullName}}</p>
+                <p class="text-lg font-medium">{{$student->fullName}}</p>
               </div>
+
 
               <hr class="my-9 border border-breadcrumb border-1">
               <p class="font-semibold text-xl mb-7">Subjects:</p>
 
-              <div class="mb-6">
-                  <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    Programming 1
-                  </label>
-                  <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-              </div>
-              <div class="mb-6">
-                  <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    Software Engineering
-                  </label>
-                  <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-              </div>
-              <div class="mb-6">
-                  <label for="section" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                    English
-                  </label>
-                  <input type="text" id="section" name="section" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-              </div>
+              {{-- {{$results->subject->subjectName}} --}}
+              @foreach($results as $result)
+                  <div class="mb-6 course-relation">
+                    <label for="subject_id"  class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                      {{$result->subject->subjectName}}
+                    </label>
+                    {{-- <input type="hidden" value="{{$combinedSubject->subject->id}}" id="subject_id" name="subject_id"> --}}
+                    {{-- <input type="text" id="grades_{{$combinedSubject->subject->id}}" name="grades_{{$combinedSubject->course_id.'_'.$combinedSubject->subject->id}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> --}}
+                    <input type="text" value="{{$result->grades}}" id="grades_{{$result->subject->id}}" name="grades_{{$result->subject->id}}" class="bg-light border border-blue text-blue text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5">
+                  </div>
+                @endforeach
+
               <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
                 Update Result
               </button>
