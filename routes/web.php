@@ -100,7 +100,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
       //Add New Subject
       Route::post('/addNewSubject', [SubjectController::class, 'adding'])->name('addNewSubject');
       // Edit Subject
-      Route::get('/edit_subject/{id}', [SubjectController::class, 'editor'] )->name('edit_subject');
+      Route::get('/edit_subject/{id}', [SubjectController::class, 'editSubject'] )->name('edit_subject');
       //Update student
       Route::post('/update_subject/{id}', [SubjectController::class, 'updating'])->name('update_subject');
       //Delete student
@@ -115,7 +115,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
       //Search Student Data
       Route::post('/search_student', [ResultController::class, 'searchStudent'])->name('search_student');
       //Edit Result
-      Route::view('/edit_result', 'Admin.Results.editResult')->name('edit_result');
+      Route::get('/edit_result/{student_id}', [ResultController::class, 'editResult'])->name('edit_result');
+      //Update Result
+      Route::post('/update_result/{student_id}', [ResultController::class, 'updateResult'])->name('update_result');
 
       // Notice Route
       Route::get('/notice_list', [NoticeController::class, 'display'])->name('notice_list');
