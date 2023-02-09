@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Subject;
 use App\Models\Course;
+use App\Models\Result;
 use Hash;
 
 class ManageStudentController extends Controller
@@ -16,10 +17,13 @@ class ManageStudentController extends Controller
       $students = Student::all();
       $subjects = Subject::all();
       $courses = Course::all();
+      $results = Result::all();
+      $results = $results->unique('student_id');
 
       return view('Admin.Dashboard')->with('students', $students)
       ->with('subjects', $subjects)
-      ->with('courses', $courses);
+      ->with('courses', $courses)
+      ->with('results', $results);
     }
 
     public function studentList() {
