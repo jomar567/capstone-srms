@@ -43,20 +43,35 @@
                       <label for="fullName" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                         Full Name
                       </label>
-                      <input type="text" id="fullName" name="fullName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                      <input value="{{old('fullName')}}" type="text" id="fullName" name="fullName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                      @error('fullName')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                      @enderror
                   </div>
                   <div>
                       <label for="student_ID" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                         Student ID
                       </label>
-                      <input type="text" id="student_ID" name="student_ID" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                      <input value="{{old('student_ID')}}" type="text" id="student_ID" name="student_ID" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                      @error('student_ID')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                      @enderror
                   </div>
               </div>
               <div class="mb-6">
                   <label for="email" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                     Email address
                   </label>
-                  <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                  <input value="{{old('email')}}" type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  @error('email')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                  @enderror
               </div>
               <div class="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
@@ -64,16 +79,27 @@
                     Gender
                   </label>
                   <select id="gender" name="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="male" selected>Male</option>
+                    <option selected disabled>Select Gender</option>
+                    <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="others">Others</option>
                   </select>
+                  @error('gender')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                  @enderror
                 </div>
                 <div>
                     <label for="dob" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                       Date of Birth
                     </label>
-                    <input type="date" id="dob" name="dob" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    <input value="{{old('dob')}}" type="date" id="dob" name="dob" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                    @error('dob')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                @enderror
                 </div>
               </div>
               <div class="mb-6">
@@ -86,6 +112,11 @@
                   <option value="{{$course->id}}">{{$course->courseName}}{{$course->courseYearNumeric}} - {{$course->section}}</option>
                 @endforeach
               </select>
+              @error('course_id')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                  @enderror
                 
               </div>
               <div class="mb-6">
