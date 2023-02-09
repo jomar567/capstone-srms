@@ -83,98 +83,38 @@
                               Course
                           </th>
                           <th scope="col" class="px-6 py-3">
-                              Registration Date
+                              Creation Date
                           </th>
                       </tr>
                   </thead>
                   <tbody>
+                    @if(count($results) > 0)
+                    @foreach($results as $result)
                       <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
+                        <td class="px-6 py-4">
+                            {{$result->id}}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{$result->student->fullName}}
+                        </td>
+                        <td class="px-6 py-4">
+                          {{$result->student->student_ID}}
+                        </td>
+                        <td class="px-6 py-4">
+                          {{$result->course->courseName}} - {{$result->course->courseYearNumeric}}{{$result->course->section}}
+                        </td>
+                        <td class="px-6 py-4">
+                          {{date_format(new DateTime($result->created_at), "F j, Y")}}
+                        </td>
                       </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                      </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                      </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                      </tr>
-                      <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
-                          <td class="px-6 py-4">
-                              1
-                          </td>
-                          <td class="px-6 py-4">
-                              Jomar Clado
-                          </td>
-                          <td class="px-6 py-4">
-                            2023-01-001
-                          </td>
-                          <td class="px-6 py-4">
-                              BSIT-3C
-                          </td>
-                          <td class="px-6 py-4">
-                              2022-09-04
-                          </td>
-                      </tr>
-
-
+                        @endforeach
+                    @else
+                    <tr>
+                      <td colspan="5" class="text-center">
+                        No Result Found
+                      </td>
+                    </tr>
+                    @endif
                   </tbody>
               </table>
             </div>
