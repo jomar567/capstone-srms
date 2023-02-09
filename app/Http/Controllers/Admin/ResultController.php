@@ -48,11 +48,6 @@ class ResultController extends Controller
         ], 400);
           // return back()->withErrors(['student_id' => 'Record already exists']);
       }
-
-      return response()->json([
-          'message' => 'Record added successfully',
-          'status' => 'success'
-      ], 200);
       // return back()->withSuccess(['student_id' => 'No Record']);;
     }
 
@@ -70,6 +65,19 @@ class ResultController extends Controller
         $results->save();
       }
 
-      return redirect()->route('admin.create_result')->with('success', 'Successfully Added Result');
+      return redirect()->route('admin.result_list')->with('success', 'Successfully Added Result');
     }
+
+    //Edit Method
+    public function editResult($id) {
+      $result = Result::findorFail($id);
+      $subject = Subject::all();
+      $course = Course::all();
+      $student = Student::all();
+      // dd($result);
+      return view('Admin.Results.editResult')->with('result', $result)
+        ->with('subject', $subject)
+        ->with('student', $student)
+        ->with('course', $course);
+      }
 }

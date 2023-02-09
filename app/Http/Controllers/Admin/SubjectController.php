@@ -33,7 +33,7 @@ class SubjectController extends Controller
     }
 
     //Edit Method
-    public function editor($id) {
+    public function editSubject($id) {
     $subject = Subject::findorFail($id);
 
     return view('Admin.Subjects.editSubject')->with('subject', $subject);
