@@ -42,19 +42,27 @@
                   </tr>
               </thead>
               <tbody>
-                @foreach($results as $result)
-                  <tr class="bg-light border-b dark:bg-gray-800 dark:border-gray-700">
-                    <td class="px-6 py-4">
-                      {{$result->id}}
-                    </th>
-                    <td class="px-6 py-4">
-                      {{$result->subject->subjectName}}
+                @if(count($results) > 0)
+                  @foreach($results as $result)
+                    <tr class="bg-light border-b dark:bg-gray-800 dark:border-gray-700">
+                      <td class="px-6 py-4">
+                        {{$result->id}}
+                      </th>
+                      <td class="px-6 py-4">
+                        {{$result->subject->subjectName}}
+                      </td>
+                      <td class="px-6 py-4">
+                        {{$result->grades}}
+                      </td>
+                  </tr>
+                  @endforeach
+                  @else
+                  <tr>
+                    <td colspan="3" class="text-center px-6 py-4">
+                      No results found
                     </td>
-                    <td class="px-6 py-4">
-                      {{$result->grades}}
-                    </td>
-                </tr>
-                @endforeach
+                  </tr>
+                @endif
                 <tr class="bg-light border dark:bg-gray-800">
                   <td colspan="2" class="text-base font-semibold border text-center px-6 py-4">
                     Total Score
@@ -78,7 +86,13 @@
                     Remarks
                   </td>
                   <td class="px-6 py-4 text-center">
-                      <p class="text-base font-semibold">{{$formatted_average >= 75 ? 'PASSED' : 'FAILED'}}</p>
+                    <p class="text-base font-semibold">
+                      @if($formatted_average > 0)
+                        {{$formatted_average >= 75 ? 'PASSED' : 'FAILED'}}
+                      @else
+                        N/A
+                      @endif
+                    </p>
                   </td>
                 </tr>
                 <tr class="bg-light border dark:bg-gray-800">
