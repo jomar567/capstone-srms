@@ -32,11 +32,16 @@ class StudentController extends Controller
       $results = Result::where('student_id', $students->id)->get();
 
       $totalScore = Result::where('student_id', $students->id)->count()*100;
-      // dd($count);
+      $sum = Result::where('student_id', $students->id)->sum('grades');
+      $average = ($sum / $totalScore) * 100;
+      $formatted_average = number_format($average, 1);
+      // dd($sum);
 
       return view('Student.Result')->with('students', $students)
         ->with('courses', $courses)
         ->with('totalScore', $totalScore)
+        ->with('sum', $sum)
+        ->with('formatted_average', $formatted_average)
         ->with('results', $results);
     }
 }

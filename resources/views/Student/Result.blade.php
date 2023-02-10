@@ -60,7 +60,7 @@
                     Total Score
                   </td>
                   <td class="px-6 py-4 text-center">
-                      <span class="text-base font-semibold">360</span>
+                      <span class="text-base font-semibold">{{$sum}}</span>
                       out of
                       <span class="text-base font-semibold">{{$totalScore}}</span>
                   </td>
@@ -70,7 +70,7 @@
                     Percentage
                   </td>
                   <td class="px-6 py-4 text-center">
-                      <p class="text-base font-semibold">90%</p>
+                      <p class="text-base font-semibold">{{$formatted_average}}%</p>
                   </td>
                 </tr>
                 <tr class="bg-light border dark:bg-gray-800">
@@ -78,7 +78,7 @@
                     Remarks
                   </td>
                   <td class="px-6 py-4 text-center">
-                      <p class="text-base font-semibold">PASSED</p>
+                      <p class="text-base font-semibold">{{$formatted_average >= 75 ? 'PASSED' : 'FAILED'}}</p>
                   </td>
                 </tr>
                 <tr class="bg-light border dark:bg-gray-800">
