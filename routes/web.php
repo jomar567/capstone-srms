@@ -40,8 +40,8 @@ Route::prefix('student')->name('student.')->group(function() {
         Route::post('/loginStudent',[StudentAuthController::class, 'loginStudent'])->name('loginStudent');
     });
     Route::middleware(['auth:student'])->group(function () {
-        Route::view('/dashboard', 'Student.Dashboard')->name('dashboard');
-        Route::view('/view_result', 'Student.Result')->name('view_result');
+        Route::get('/dashboard', [StudentController::class, 'dashboardResult'])->name('dashboard');
+        Route::get('/view_result', [StudentController::class, 'studentResult'])->name('view_result');
 
         //Generate PDF
         Route::get('/generate_pdf', [StudentController::class, 'createPDF'])->name('generate_pdf');
