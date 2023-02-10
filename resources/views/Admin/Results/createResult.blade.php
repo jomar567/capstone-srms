@@ -71,7 +71,7 @@
                     <label for="subject_id"  class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                       {{$combinedSubject->subject->subjectName}}
                     </label>
-                    <input type="text" id="{{$combinedSubject->course_id.$combinedSubject->subject->id}}" name="{{$combinedSubject->course_id.$combinedSubject->subject->id}}" class="bg-light border border-blue text-blue text-sm rounded-lg block w-full p-2.5">
+                    <input type="number" id="{{$combinedSubject->course_id.$combinedSubject->subject->id}}" max="100" name="{{$combinedSubject->course_id.$combinedSubject->subject->id}}" placeholder="Enter grade out of 100" class="bg-light border border-blue text-blue text-sm rounded-lg block w-full p-2.5">
 
                   </div>
                 @endforeach
