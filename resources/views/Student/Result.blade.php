@@ -8,18 +8,18 @@
         <div class="grid md:grid-cols-2 mb-9">
           <div class="mb-2">
             <p class="text-base font-semibold mb-2">
-              Name: <span class="text-base font-normal">Jomar Clado</span>
+              Name: <span class="text-base font-normal">{{$students->fullName}}</span>
             </p>
             <p class="text-base font-semibold">
-              Student ID: <span class="text-base font-normal">112</span>
+              Student ID: <span class="text-base font-normal">{{$students->student_ID}}</span>
             </p>
           </div>
           <div class="mb-10">
             <p class="text-base font-semibold mb-2">
-              Course: <span class="text-base font-normal">BSIT</span>
+              Course: <span class="text-base font-normal">{{$students->course->courseName}}</span>
             </p>
             <p class="text-base font-semibold">
-              Year & Section: <span class="text-base font-normal">3 - C</span>
+              Year & Section: <span class="text-base font-normal">{{$students->course->courseYearNumeric}} - {{$students->course->section}}</span>
             </p>
           </div>
         </div>
@@ -42,37 +42,19 @@
                   </tr>
               </thead>
               <tbody>
-                <tr class="bg-light border-b dark:bg-gray-800 dark:border-gray-700">
+                @foreach($results as $result)
+                  <tr class="bg-light border-b dark:bg-gray-800 dark:border-gray-700">
                     <td class="px-6 py-4">
-                      1
+                      {{$result->id}}
                     </th>
                     <td class="px-6 py-4">
-                        Sliver
+                      {{$result->subject->subjectName}}
                     </td>
                     <td class="px-6 py-4">
-                        Laptop
-                    </td>
-                </tr>
-                <tr class="bg-light border-b dark:bg-gray-800 dark:border-gray-700">
-                    <td class="px-6 py-4">
-                      2
-                    <td class="px-6 py-4">
-                        White
-                    </td>
-                    <td class="px-6 py-4">
-                        Laptop PC
+                      {{$result->grades}}
                     </td>
                 </tr>
-                <tr class="bg-light border-b dark:bg-gray-800 dark:border-gray-700">
-                    <td class="px-6 py-4">
-                      3
-                    <td class="px-6 py-4">
-                        Black
-                    </td>
-                    <td class="px-6 py-4">
-                        Accessories
-                    </td>
-                </tr>
+                @endforeach
                 <tr class="bg-light border dark:bg-gray-800">
                   <td colspan="2" class="text-base font-semibold border text-center px-6 py-4">
                     Total Score
@@ -80,7 +62,7 @@
                   <td class="px-6 py-4 text-center">
                       <span class="text-base font-semibold">360</span>
                       out of
-                      <span class="text-base font-semibold">400</span>
+                      <span class="text-base font-semibold">{{$totalScore}}</span>
                   </td>
                 </tr>
                 <tr class="bg-light border dark:bg-gray-800">
