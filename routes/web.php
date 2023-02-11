@@ -51,7 +51,8 @@ Route::prefix('student')->name('student.')->group(function() {
         Route::post('/update_password', [StudentAuthController::class, 'updatePassword'])->name('update_password');
         Route::post('/logout', [StudentAuthController::class, 'logout'])->name('logout');
 
-        Route::view('/profile', 'Student.Profile')->name('profile');
+        //Route::view('/profile', 'Student.Profile')->name('profile');
+        Route::get('/profile', [StudentController::class, 'profileInfo'])->name('profile');
     });
 });
 

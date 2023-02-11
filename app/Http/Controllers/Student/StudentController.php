@@ -62,4 +62,9 @@ class StudentController extends Controller
 
       return view('Student.Result', $data);
     }
+
+    public function profileInfo() {
+      $data = getResult::resultDetails();
+      return view('Student.profile', $data);
+    }
 }
