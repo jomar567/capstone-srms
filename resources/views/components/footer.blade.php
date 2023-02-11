@@ -4,7 +4,9 @@
       <div class="grid md:grid-cols-2 px-4">
         <div class="flex justify-center md:justify-start md:items-start items-center flex-col mb-6">
             <a href="#" class="pb-5">
-                <span class=" dark:text-white mb-8">LOGO</span>
+                <span class=" dark:text-white mb-8">
+                <img src="{{URL('images/GroupW.png')}}" alt="" class="h-8 mr-3"/> 
+                </span>
             </a>
             <p class="py-5">SRMS is created using Laravel<br>and MySQL</p>
             <div class="flex flex-row py-5">
