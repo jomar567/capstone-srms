@@ -65,6 +65,19 @@ class StudentController extends Controller
 
     public function profileInfo() {
       $data = getResult::resultDetails();
-      return view('Student.profile', $data);
+      return view('Student.Profile.profile', $data);
     }
+
+    public function display_Profile() {
+      $students = Student::find(auth()->user()->id);
+      $courses = Course::where('id', $students->course_id)->get();
+      return view('Student.Profile.editprofile')->with('courses', $courses)->with('students', $students);
+    }
+
+    public function edit_profile($id){
+      $courses = Course::findOrFail($id);
+      $students = Student::findOrFail($id);
+
+      return view('Student.Profile.profile')->with('courses', $courses)->with('students', $students);
+   }
 }
