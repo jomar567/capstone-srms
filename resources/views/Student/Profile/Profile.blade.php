@@ -11,7 +11,7 @@
    <div class="flex justify-end">
         <button type="button">
         <span class="text-xl">
-            <a href="{{ route('student.displayprofile') }}">
+            <a href="{{ route('student.edit_profile', $students->id) }}">
                 <i class="fa-solid fa-pen-to-square"></i>
             </a>
         </span>

@@ -55,9 +55,9 @@ Route::prefix('student')->name('student.')->group(function() {
         //Route::view('/profile', 'Student.Profile')->name('profile');
         Route::get('/profile', [StudentController::class, 'profileInfo'])->name('profile');
         //display edit
-        Route::get('/displayprofile', [StudentController::class, 'display_Profile'])->name('displayprofile');
+        // Route::get('/displayprofile', [StudentController::class, 'display_Profile'])->name('displayprofile');
        //edit profile
-        Route::post('/editProfile/{id}', [StudentController::class, 'edit_profile'])->name('editProfile');
+        Route::get('/edit_profile/{id}', [StudentController::class, 'editProfile'])->name('edit_profile');
         //update profile
         Route::post('/updateprofile/{id}', [StudentController::class, 'update_profile'])->name('updateprofile');
     });
