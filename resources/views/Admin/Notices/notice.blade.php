@@ -83,11 +83,11 @@
                         <td class="px-6 py-4">
                           {{ $notice->title }}
                         </td>
-                        <td class="px-6 py-4">
+                        <td class="px-6 py-4 w-96">
                           {{ $notice->description }}
                         </td>
                         <td class="px-6 py-4">
-                          {{ $notice->created_at }}
+                          {{date_format(new DateTime($notice->created_at), "F j, Y - g:i A")}}
                         </td>
                         <td class="flex px-6 py-4 gap-4">
                             <a href="{{ route('admin.editNotice', $notice->id) }}" class="font-medium text-blue-600 dark:text-blue">

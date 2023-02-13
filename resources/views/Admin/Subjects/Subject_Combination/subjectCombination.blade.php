@@ -78,7 +78,7 @@
                           {{ $combinedSubject->subject->subjectName }} - {{ $combinedSubject->subject->subjectCode }}
                         </td>
                         <td class="px-6 py-4">
-                            2022-09-04
+                          {{date_format(new DateTime($combinedSubject->created_at), "F j, Y")}}
                         </td>
                         <td class="flex px-6 py-4 gap-4">
                             <a href="{{ route('admin.edit_subject_combination', $combinedSubject->id) }}" class="font-medium text-blue-600 dark:text-blue">
