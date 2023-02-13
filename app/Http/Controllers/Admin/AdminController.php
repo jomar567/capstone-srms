@@ -5,11 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin;
-use Auth;
-use Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+
+  //login form
+  public function login() {
+    return view('auth.Admin.login');
+  }
    //login admin
    public function loginAdmin(Request $request) {
     $username = $request->input('username');
