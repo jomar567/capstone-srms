@@ -109,7 +109,7 @@
               <select id="course_id" name="course_id" class="bg-dark-50 border text-blue border-blue-300 text-sm rounded-lg  block w-full p-2.5">
                 <option selected disabled>Select Course</option>
                 @foreach($courses as $course)
-                  <option value="{{$course->id}}">{{$course->courseName}}{{$course->courseYearNumeric}} - {{$course->section}}</option>
+                  <option value="{{$course->id}}">{{$course->courseName}} - {{$course->courseYearNumeric}} {{$course->section}}</option>
                 @endforeach
               </select>
                 @error('course_id')
