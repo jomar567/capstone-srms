@@ -36,14 +36,22 @@
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-lg">View Notice</p>
 
-            <a href="{{ route('admin.create_noticeform') }}">
-              <button type="button" class="float-right text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-5">
-                Add Notice
-              </button>
-            </a>
+            <div class="flex justify-between items-center py-8">
+              <a href="{{ route('admin.email') }}">
+                <button type="button" class="text-white bg-redpink hover:bg-blue font-medium rounded-lg text-base px-6 py-2.5 text-center">
+                  Send Email
+                </button>
+              </a>
+
+              <a href="{{ route('admin.create_noticeform') }}">
+                <button type="button" class="text-white bg-redpink hover:bg-blue font-medium rounded-lg text-base px-6 py-2.5 text-center">
+                  Add Notice
+                </button>
+              </a>
+            </div>
 
             {{-- Data Table --}}
-            <div class="relative overflow-x-auto sm:rounded-lg mt-20">
+            <div class="relative overflow-x-auto sm:rounded-lg">
               <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="studentTable">
                   <thead class="text-xs text-gray-700 uppercase bg-blue/90 text-white">
                       <tr>
@@ -65,7 +73,7 @@
                       </tr>
                   </thead>
                   <tbody>
-                      
+
                       @if(count($notices) > 0 )
                     @foreach($notices as $notice)
                       <tr class="bg-slate-50 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-blue/50 hover:text-white dark:hover:bg-blue/50">
@@ -123,14 +131,14 @@
                               </button>
                             </form> --}}
                     </tr>
-                    @endforeach    
+                    @endforeach
                     @else
                     <tr>
                         <td class="px-6 py-4 text-center" colspan="6">
                             No notice found
                         </td>
                     </tr>
-                        
+
                     @endif
                   </tbody>
               </table>
