@@ -34,9 +34,9 @@
                                 Gender
                             </label>
                             <select id="gender" name="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
-                                <option value="male" {{$students->gender == 'male' ? 'selected' : ''}} >Male</option>
-                                <option value="female" {{$students->gender == 'female' ? 'selected' : ''}}>Female</option>
-                                <option value="others" {{$students->gender == 'others' ? 'selected' : ''}}>Others</option>
+                                <option value="Male" {{$students->gender == 'Male' ? 'selected' : ''}} >Male</option>
+                                <option value="Female" {{$students->gender == 'Female' ? 'selected' : ''}}>Female</option>
+                                <option value="Others" {{$students->gender == 'Others' ? 'selected' : ''}}>Others</option>
                               </select>
                         </div>
                         <div>
@@ -50,12 +50,7 @@
                         <label for="courseName" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                             Course
                         </label>
-                        <select id="course_id" name="course_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            
-                            @foreach($courses as $course)
-                              <option {{ $students->courseName == $course->id ? 'selected' : ''}} value="{{$course->id}}" >{{$course->courseName}}</option>
-                            @endforeach 
-                          </select>
+                        <input type="text" id="fullName" name="fullName" value="{{$students->course->courseName}} - {{$students->course->courseYearNumeric}}{{$students->course->section}}" class="bg-gray/20 border text-sm rounded-lg block w-full p-2.5" disabled>
                     <button type="submit"
                             class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
                             Update profile

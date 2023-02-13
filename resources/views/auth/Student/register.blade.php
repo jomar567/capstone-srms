@@ -69,9 +69,10 @@
               <label for="gender" class="block mb-2 text-sm font-medium text-white dark:text-white">
                 Gender <span class="text-base text-redpink">*</span>
                 <select id="gender" name="gender" class="bg-gray-50 text-blue border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700">
-                  <option value="male" selected>Male</option>
-                  <option value="female">Female</option>
-                  <option value="others">Others</option>
+                  <option value="" disabled selected>Select Gender:</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Others">Others</option>
                 </select>
               </label>
               @error('gender')
