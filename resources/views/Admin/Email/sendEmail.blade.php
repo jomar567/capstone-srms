@@ -33,16 +33,16 @@
 
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
-          <div class="relative drop-shadow-lg md:w-1/4 md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
+          <div class="relative drop-shadow-lg lg:w-96 md:w-4/5 w-full md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
             <p class="font-semibold text-xl text-center mb-10">Send Email Notification</p>
 
             <form method="POST" action="{{ route('admin.sendEmail') }}" class="w-full md:mx-auto">
               @csrf
-              <label for="course_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+              <label for="course_id" class="block mb-2 text-lg font-semibold text-gray-900 dark:text-white">
                 Course
               </label>
-              <select id="course_id" name="course_id" class="bg-light border border-blue text-blue text-sm rounded-lg block w-full p-2.5">
-                <option selected disabled>Select Course</option>
+              <select id="course_id" name="course_id" class="bg-light border border-blue text-blue text-sm rounded-lg block w-full p-2.5" required>
+                <option selected disabled value="">Select Course</option>
                 @foreach($courses as $course)
                   <option value="{{$course->id}}">{{$course->courseName}} - {{$course->courseYearNumeric}}{{$course->section}}</option>
                 @endforeach
