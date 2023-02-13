@@ -56,7 +56,9 @@ Route::prefix('student')->name('student.')->group(function() {
         //display edit
         Route::get('/displayprofile', [StudentController::class, 'display_Profile'])->name('displayprofile');
        //edit profile
-        Route::post('/editProfile', [StudentController::class, 'edit_profile'])->name('editProfile');
+        Route::post('/editProfile/{id}', [StudentController::class, 'edit_profile'])->name('editProfile');
+        //update profile
+        Route::post('/updateprofile/{id}', [StudentController::class, 'update_profile'])->name('updateprofile');
     });
 });
 

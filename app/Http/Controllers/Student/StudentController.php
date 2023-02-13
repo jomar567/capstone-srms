@@ -80,4 +80,18 @@ class StudentController extends Controller
 
       return view('Student.Profile.profile')->with('courses', $courses)->with('students', $students);
    }
+
+    public function update_profile(Request $request){
+      $students = Student::findOrFail($request->id);
+      $students->fullName = $request->fullName;
+      $students->student_ID = $request->student_ID;
+      $students->email = $request->email;
+      $students->gender = $request->gender;
+      $students->dob = $request->dob;
+      $students->courseName = $request->courseName;
+      $students->save();
+
+      return view('Student.Profile.profile')->with('success', ' Profile successfully updated!');
+    }
+
 }
