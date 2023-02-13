@@ -29,7 +29,7 @@
           </li>
         </ol>
       </nav>
-      <hr class="mb-12 border border-breadcrumb border-2">
+      <hr class="mb-12 border-breadcrumb border-2">
 
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
@@ -44,12 +44,22 @@
                         Full Name
                       </label>
                       <input type="text" id="fullName" name="fullName" value="{{ $student->fullName}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                      @error('fullName')
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                          <span class="font-medium">{{ $message }}</span>
+                        </p>
+                      @enderror
                   </div>
                   <div>
-                      <label for="student_ID" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
-                        Student ID
-                      </label>
-                      <input type="text" id="student_ID" name="student_ID" value="{{ $student->student_ID}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    <label for="student_ID" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                      Student ID
+                    </label>
+                    <input type="text" id="student_ID" name="student_ID" value="{{ $student->student_ID}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    @error('student_ID')
+                      <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                        <span class="font-medium">{{ $message }}</span>
+                      </p>
+                    @enderror
                   </div>
               </div>
               <div class="mb-6">
@@ -57,16 +67,21 @@
                     Email address
                   </label>
                   <input type="email" id="email" name="email" value="{{ $student->email}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-              </div>
+                  @error('email')
+                    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                      <span class="font-medium">{{ $message }}</span>
+                    </p>
+                  @enderror
+                </div>
               <div class="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
                   <label for="gender" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                     Gender
                   </label>
                   <select id="gender" name="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="male" {{$student->gender == 'male' ? 'selected' : ''}} >Male</option>
-                    <option value="female" {{$student->gender == 'female' ? 'selected' : ''}}>Female</option>
-                    <option value="others" {{$student->gender == 'others' ? 'selected' : ''}}>Others</option>
+                    <option value="Male" {{$student->gender == 'Male' ? 'selected' : ''}} >Male</option>
+                    <option value="Female" {{$student->gender == 'Female' ? 'selected' : ''}}>Female</option>
+                    <option value="Others" {{$student->gender == 'Others' ? 'selected' : ''}}>Others</option>
                   </select>
                 </div>
                 <div>
@@ -76,16 +91,17 @@
                     <input type="date" id="dob" name='dob' value="{{ $student->dob}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                 </div>
               </div>
-              {{-- <div class="mb-6">
-                <label for="class" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+              <div class="mb-6">
+                <label for="course_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                   Course
                 </label>
-                <select id="class" name="class" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select id="course_id" name="course_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option selected disabled>Select Course</option>
-                  <option value="bsit">BSIT</option>
-                  <option value="comscie">ComScie</option>
+                  @foreach($courses as $course)
+                    <option {{ $student->course_id == $course->id ? 'selected' : ''}} value="{{$course->id}}" >{{$course->courseName}} - {{$course->courseYearNumeric}}{{$course->section}}</option>
+                  @endforeach
                 </select>
-              </div> --}}
+              </div>
               <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
                 Update Student
               </button>

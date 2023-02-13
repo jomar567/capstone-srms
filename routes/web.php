@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\SubjectCombinationController;
 use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\ResultController;
+use App\Http\Controllers\Admin\MailController;
 use Barryvdh\DomPDF\Facade\Pdf;
 /*
 |--------------------------------------------------------------------------
@@ -152,6 +153,10 @@ Route::prefix('admin')->name('admin.')->group(function() {
       Route::post('/update_subject_combination/{id}', [SubjectCombinationController::class, 'updateSubjectCombination'])->name('update_subject_combination');
       //Delete New Subject Combination Form
       Route::post('/delete_subject_combination/{id}', [SubjectCombinationController::class, 'deleteSubjectCombination'])->name('delete_subject_combination');
+
+      //Email Route
+      Route::get('/email', [MailController::class, 'email'])->name('email');
+      Route::post('/sendEmail', [MailController::class, 'sendEmail'])->name('sendEmail');
 
       //Change Password Route
       Route::get('/change_password', [AdminController::class, 'changePassword'])->name('change_password');

@@ -29,7 +29,7 @@
           </li>
         </ol>
       </nav>
-      <hr class="mb-12 border border-breadcrumb border-2">
+      <hr class="mb-12 border-2 border-breadcrumb">
 
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
@@ -55,6 +55,9 @@
                           </th>
                           <th scope="col" class="px-6 py-3">
                               Student ID
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Course, Year & Section
                           </th>
                           <th scope="col" class="px-6 py-3">
                               Email
@@ -84,10 +87,15 @@
                             {{ $student->student_ID}}
                           </td>
                           <td class="px-6 py-4">
+                            {{ $student->course->courseName}} -
+                            {{ $student->course->courseYearNumeric}}
+                            {{ $student->course->section}}
+                          </td>
+                          <td class="px-6 py-4">
                             {{ $student->email}}
                           </td>
                           <td class="px-6 py-4">
-                            {{ $student->dob}}
+                            {{date_format(new DateTime($student->dob), "F j, Y")}}
                           </td>
                           <td class="px-6 py-4">
                             {{ $student->gender}}

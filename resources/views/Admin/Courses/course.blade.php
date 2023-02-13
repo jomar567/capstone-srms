@@ -29,7 +29,7 @@
           </li>
         </ol>
       </nav>
-      <hr class="mb-12 border border-breadcrumb border-2">
+      <hr class="mb-12 border-breadcrumb border-2">
 
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
@@ -84,7 +84,7 @@
                             {{ $course->section }}
                           </td>
                           <td class="px-6 py-4">
-                            {{ $course->created_at }}
+                            {{date_format(new DateTime($course->created_at), "F j, Y")}}
                           </td>
                           <td class="flex px-6 py-4 gap-4">
                               <a href="{{ route('admin.edit_course',$course->id) }}" class="font-medium text-blue-600 dark:text-blue">
@@ -122,7 +122,7 @@
                               </dialog>
                           </td>
                       </tr>
-                      
+
                       @endforeach
                       @else
                       <tr>
@@ -130,7 +130,7 @@
                               No courses found
                           </td>
                       </tr>
-                          
+
                       @endif
                   </tbody>
               </table>

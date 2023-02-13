@@ -130,6 +130,7 @@ dialog[open] {
     transform: translateX(0);
   }
 }
-#toast-container > .toast-success {
+#toast-container > .toast-success,
+#toast-container > .toast-error {
   opacity: 10;
 }

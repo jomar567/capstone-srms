@@ -29,7 +29,7 @@
           </li>
         </ol>
       </nav>
-      <hr class="mb-12 border border-breadcrumb border-2">
+      <hr class="mb-12 border-breadcrumb border-2">
 
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
@@ -79,14 +79,14 @@
                               {{ $subject->subjectCode}}
                           </td>
                           <td class="px-6 py-4">
-                              {{ $subject->created_at}}
+                            {{date_format(new DateTime($subject->created_at), "F j, Y")}}
                           </td>
-                          
+
                           <td class="flex px-6 py-4 gap-4">
                               <a href="{{ route('admin.edit_subject', $subject->id) }}" class="font-medium text-blue-600 dark:text-blue">
                                 <i class="fa-solid fa-user-pen text-lg"></i>
                               </a>
-                              
+
                               <!-- // Delete Icon -->
                               {{-- Modal Button --}}
                             <button onclick="document.getElementById('myModal{{$subject->id}}').showModal()" data-target="#myModal{{$subject->id}}" class="block text-redpink font-medium">
