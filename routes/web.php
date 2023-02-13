@@ -59,7 +59,7 @@ Route::prefix('student')->name('student.')->group(function() {
        //edit profile
         Route::get('/edit_profile/{id}', [StudentController::class, 'editProfile'])->name('edit_profile');
         //update profile
-        Route::post('/updateprofile/{id}', [StudentController::class, 'update_profile'])->name('updateprofile');
+        Route::post('/update_profile/{id}', [StudentController::class, 'updateProfile'])->name('update_profile');
     });
 });
 
