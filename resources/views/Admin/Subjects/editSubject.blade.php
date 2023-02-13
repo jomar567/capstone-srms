@@ -29,7 +29,7 @@
           </li>
         </ol>
       </nav>
-      <hr class="mb-12 border border-breadcrumb border-2">
+      <hr class="mb-12 border border-breadcrumb">
 
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
