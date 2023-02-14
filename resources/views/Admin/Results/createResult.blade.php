@@ -53,8 +53,8 @@
                 <label for="student_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                   Student
                 </label>
-                <select id="student_id" name="student_id" class="bg-light border border-blue text-blue text-sm rounded-lg block w-full p-2.5">
-                  <option selected disabled>Select Student</option>
+                <select id="student_id" name="student_id" class="bg-light border border-blue text-blue text-sm rounded-lg block w-full p-2.5" required>
+                  <option selected disabled value="">Select Student</option>
                   @foreach($students as $student)
                     <option class="course-relation" data-parent="{{$student->course_id}}" value="{{$student->id}}">{{$student->fullName}}</option>
                   @endforeach
@@ -95,6 +95,9 @@
         var parentId = $(this).val();
         $(".course-relation").hide();
         $(".course-relation[data-parent='" + parentId + "']").show();
+        let parent = $(".course-relation[data-parent='" + parentId + "']");
+        parent.find("input").attr("required", true);
+
     });
 
     $('#student_id').change(function() {

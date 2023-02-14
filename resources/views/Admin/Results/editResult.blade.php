@@ -63,7 +63,7 @@
                     </label>
                     {{-- <input type="hidden" value="{{$combinedSubject->subject->id}}" id="subject_id" name="subject_id"> --}}
                     {{-- <input type="text" id="grades_{{$combinedSubject->subject->id}}" name="grades_{{$combinedSubject->course_id.'_'.$combinedSubject->subject->id}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> --}}
-                    <input type="text" value="{{$result->grades}}" id="grades_{{$result->subject->id}}" name="grades_{{$result->subject->id}}" class="bg-light border border-blue text-blue text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5">
+                    <input type="text" value="{{$result->grades}}" id="grades_{{$result->subject->id}}" name="grades_{{$result->subject->id}}" class="bg-light border border-blue text-blue text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5" required>
                   </div>
                 @endforeach
 
