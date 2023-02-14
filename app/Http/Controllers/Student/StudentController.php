@@ -62,4 +62,32 @@ class StudentController extends Controller
 
       return view('Student.Result', $data);
     }
+
+    public function profileInfo() {
+      $data = getResult::resultDetails();
+      return view('Student.Profile.Profile', $data);
+    }
+
+    public function editProfile($id){
+      $students = Student::find(auth()->user()->id);
+      $courses = Course::all();
+      
+
+      return view('Student.Profile.editProfile')->with('students', $students)
+        ->with('courses', $courses);
+   }
+
+    public function updateProfile(Request $request){
+      $students = Student::find(auth()->user()->id);
+      $students->fullName = $request->fullName;
+      $students->student_ID = $request->student_ID;
+      $students->email = $request->email;
+      $students->gender = $request->gender;
+      $students->dob = $request->dob;
+      $students->course_id = $request->course_id;
+      $students->save();
+
+      return redirect()->route('student.profile')->with('success', ' Profile successfully updated!');
+    }
+
 }

@@ -15,9 +15,14 @@
 <body>
   @include('../components/toastr')
   <div class="relative">
-    <span class="absolute h-screen w-screen bg-login bg-center bg-cover bg-no-repeat blur-sm"></span>
-      <div class="content flex items-center justify-center h-screen">
-        <div class="z-10 bg-blue w-5/12 p-8 rounded-3xl">
+    <span class="absolute h-full w-screen bg-fixed bg-login bg-center bg-cover bg-no-repeat blur-sm"></span>
+      <div class="content min-h-auth flex items-center justify-center py-10 px-4">
+        <div class="z-10 bg-blue xl:w-5/12 lg:w-8/12 md:w-10/12 w-full md:p-8 p-4 rounded-3xl">
+          <a href="{{ route('index') }}" class="flex justify-center p-5 items-center">
+            <span class="self-center md:hover:text-blue-700 text-xl font-semibold whitespace-nowrap text-white">
+                <img src="{{URL('images/GroupW.png')}}" alt="Logo" class="h-10 mr-3"/>
+            </span>
+          </a>
           <div class="text-2xl mb-5 text-center">Student Register</div>
           <form method="POST" action="{{ route('student.registerStudent') }}" autocomplete="off">
             @csrf
@@ -64,34 +69,37 @@
               @enderror
             </div>
 
-            {{-- Gender --}}
-            <div class="mb-6">
-              <label for="gender" class="block mb-2 text-sm font-medium text-white dark:text-white">
-                Gender <span class="text-base text-redpink">*</span>
-                <select id="gender" name="gender" class="bg-gray-50 text-blue border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700">
-                  <option value="male" selected>Male</option>
-                  <option value="female">Female</option>
-                  <option value="others">Others</option>
-                </select>
-              </label>
-              @error('gender')
-                <p class="mt-2 text-sm text-red-600 dark:text-red-500">
-                  <span class="font-medium">{{ $message }}</span>
-                </p>
-              @enderror
-            </div>
+            <div class="grid md:grid-cols-2 md:gap-6">
+              {{-- Gender --}}
+              <div class="mb-6">
+                <label for="gender" class="block mb-2 text-sm font-medium text-white dark:text-white">
+                  Gender <span class="text-base text-redpink">*</span>
+                  <select id="gender" name="gender" class="bg-gray-50 text-blue border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700">
+                    <option value="" disabled selected>Select Gender:</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                  </select>
+                </label>
+                @error('gender')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                @enderror
+              </div>
 
-            {{-- Date of Birth --}}
-            <div class="mb-6">
-              <label for="dob" class="block mb-2 text-sm font-medium text-white dark:text-white">
-                Date of Birth <span class="text-base text-redpink">*</span>
-              </label>
-              <input type="date" id="dob" name="dob" value="{{ old('dob') }}" class="shadow-sm border text-blue text-sm rounded-lg block w-full p-2.5 dark:shadow-sm-light">
-              @error('dob')
-                <p class="mt-2 text-sm text-red-600 dark:text-red-500">
-                  <span class="font-medium">{{ $message }}</span>
-                </p>
-              @enderror
+              {{-- Date of Birth --}}
+              <div class="mb-6">
+                <label for="dob" class="block mb-2 text-sm font-medium text-white dark:text-white">
+                  Date of Birth <span class="text-base text-redpink">*</span>
+                </label>
+                <input type="date" id="dob" name="dob" value="{{ old('dob') }}" class="shadow-sm border text-blue text-sm rounded-lg block w-full p-2.5 dark:shadow-sm-light">
+                @error('dob')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                @enderror
+              </div>
             </div>
 
             {{-- Course --}}

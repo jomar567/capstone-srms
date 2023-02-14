@@ -42,12 +42,12 @@ class ManageStudentController extends Controller
     //Validate
     $request->validate([
       'fullName'=>'required',
-      'student_ID'=>'required',
-      'email'=>'required',
+      'student_ID'=>'required|unique:students,student_ID',
+      'email'=>'required|email|unique:students,email',
       'gender'=>'required',
       'dob'=>'required',
       'course_id'=>'required'
-  ]);
+    ]);
       $students = new Student;
       $students->fullName = $request->fullName;
       $students->student_ID = $request->student_ID;
@@ -64,8 +64,10 @@ class ManageStudentController extends Controller
     //Edit Method
     public function edit($id) {
       $student = Student::findorFail($id);
+      $courses = Course::all();
 
-      return view('Admin.Students.editStudent')->with('student', $student);
+      return view('Admin.Students.editStudent')->with('student', $student)
+      ->with('courses', $courses);
     }
 
     //Update Student
@@ -74,16 +76,18 @@ class ManageStudentController extends Controller
     $request->validate([
       'fullName'=>'required',
       'student_ID'=>'required',
-      'email'=>'required',
+      'email'=>'required|email:students,email',
       'gender'=>'required',
-      'dob'=>'required'
-  ]);
+      'dob'=>'required',
+      'course_id'=>'required'
+    ]);
       $students = Student::findorFail($request->id);
       $students->fullName = $request->fullName;
       $students->student_ID = $request->student_ID;
       $students->email = $request->email;
       $students->gender = $request->gender;
       $students->dob = $request->dob;
+      $students->course_id = $request->course_id;
       $students->save();
 
       return redirect()->route('admin.students_list')->with('success', 'Student Updated Successfully ');;

@@ -78,61 +78,57 @@
                   </tr>
               </thead>
               <tbody>
-                <tr>
-                    <td>
-                      1
-                    </th>
-                    <td>
-                        Sliver
+              @if(count($results) > 0)
+                  @foreach($results as $result)
+                    <tr class="bg-light border-b dark:bg-gray-800 dark:border-gray-700">
+                      <td class="px-6 py-4">
+                        {{$result->id}}
+                      </th>
+                      <td class="px-6 py-4">
+                        {{$result->subject->subjectName}}
+                      </td>
+                      <td class="px-6 py-4">
+                        {{$result->grades}}
+                      </td>
+                  </tr>
+                  @endforeach
+                  @else
+                  <tr>
+                    <td colspan="3" class="text-center px-6 py-4">
+                      No results found
                     </td>
-                    <td>
-                        Laptop
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                      2
-                    <td>
-                        White
-                    </td>
-                    <td>
-                        Laptop PC
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                      3
-                    <td>
-                        Black
-                    </td>
-                    <td>
-                        Accessories
-                    </td>
-                </tr>
-                <tr>
-                  <td class="center" colspan="2">
+                  </tr>
+                @endif
+                <tr class="bg-light border dark:bg-gray-800">
+                  <td colspan="2" class="text-base font-semibold border text-center px-6 py-4">
                     Total Score
                   </td>
-                  <td>
-                      <span>360</span>
+                  <td class="px-6 py-4 text-center">
+                      <span class="text-base font-semibold">{{$sum}}</span>
                       out of
-                      <span>400</span>
+                      <span class="text-base font-semibold">{{$totalScore}}</span>
                   </td>
                 </tr>
-                <tr>
-                  <td class="center" colspan="2">
+                <tr class="bg-light border dark:bg-gray-800">
+                  <td colspan="2" class="text-base font-semibold border text-center px-6 py-4">
                     Percentage
                   </td>
-                  <td>
-                      <p>90%</p>
+                  <td class="px-6 py-4 text-center">
+                      <p class="text-base font-semibold">{{$formatted_average}}%</p>
                   </td>
                 </tr>
-                <tr>
-                  <td class="center" colspan="2">
+                <tr class="bg-light border dark:bg-gray-800">
+                  <td colspan="2" class="text-base font-semibold border text-center px-6 py-4">
                     Remarks
                   </td>
-                  <td>
-                      <p>PASSED</p>
+                  <td class="px-6 py-4 text-center">
+                    <p class="text-base font-semibold">
+                      @if($formatted_average > 0)
+                        {{$formatted_average >= 75 ? 'PASSED' : 'FAILED'}}
+                      @else
+                        N/A
+                      @endif
+                    </p>
                   </td>
                 </tr>
               </tbody>

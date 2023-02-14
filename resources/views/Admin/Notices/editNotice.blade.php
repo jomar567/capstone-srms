@@ -6,7 +6,7 @@
         <nav class="flex my-4 text-breadcrumb" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="inline-flex items-center justify-center">
-                    <a href="#" class="flex items-center justify-center text-sm font-medium">
+                    <a href="{{route('admin.dashboard')}}" class="flex items-center justify-center text-sm font-medium">
                         <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -19,7 +19,7 @@
                 <li>
                     <div class="flex items-center">
                         <span class="mx-2">/</span>
-                        <a href="#"
+                        <a href="{{route('admin.notice_list')}}"
                             class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">
                             Notice
                         </a>
@@ -35,7 +35,7 @@
                 </li>
             </ol>
         </nav>
-        <hr class="mb-12 border border-breadcrumb border-2">
+        <hr class="mb-12 border border-breadcrumb">
 
         <div class=" mb-4">
             <div class="flex items-center justify-center text-blue">
