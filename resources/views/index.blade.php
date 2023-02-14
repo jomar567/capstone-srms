@@ -69,13 +69,13 @@
             <p class="text-redpink font-semibold text-xl">Alan Demol</p>
             <p class="font-medium text-lg">Fullstack Developer</p>
             <span class="text-lg gap-2 grid grid-flow-col">
-              <a href="">
+              <a href="https://github.com/alandemol2022">
                 <i class="text-xl fa-brands fa-github"></i>
               </a>
-              <a href="">
+              <a href="https://www.facebook.com/alan.demol.5">
                 <i class="text-xl fa-brands fa-facebook"></i>
               </a>
-              <a href="">
+              <a href="https://www.linkedin.com/in/alan-demol-92b119173/">
                 <i class="text-xl fa-brands fa-linkedin"></i>
               </a>
             </span>
@@ -93,10 +93,10 @@
             <p class="text-redpink font-semibold text-xl">Zann Buce</p>
             <p class="font-medium text-lg">Fullstack Developer</p>
             <span class="text-lg gap-2 grid grid-flow-col">
-              <a href="">
+              <a href="https://github.com/ZannBuce">
                 <i class="text-xl fa-brands fa-github"></i>
               </a>
-              <a href="">
+              <a href="https://www.facebook.com/zann.buce?mibextid=ZbWKwL">
                 <i class="text-xl fa-brands fa-facebook"></i>
               </a>
               <a href="">
@@ -117,13 +117,13 @@
             <p class="text-redpink font-semibold text-xl">Jomar Clado</p>
             <p class="font-medium text-lg">Fullstack Developer</p>
             <span class="text-lg gap-2 grid grid-flow-col">
-              <a href="">
+              <a href="https://github.com/jomar567">
                 <i class="text-xl fa-brands fa-github"></i>
               </a>
-              <a href="">
+              <a href="https://www.facebook.com/jomar.clado.79/">
                 <i class="text-xl fa-brands fa-facebook"></i>
               </a>
-              <a href="">
+              <a href="https://www.linkedin.com/in/jomarclado/">
                 <i class="text-xl fa-brands fa-linkedin"></i>
               </a>
             </span>
