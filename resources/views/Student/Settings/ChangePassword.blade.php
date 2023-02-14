@@ -29,33 +29,11 @@
           </li>
         </ol>
       </nav>
-      <hr class="mb-12 border border-breadcrumb border-2">
+      <hr class="mb-12 border border-breadcrumb">
 
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
           <div class="relative drop-shadow-lg w-full md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
-            {{-- SUCCESS MESSAGE --}}
-          @if(Session::has('success'))
-          <div class="flex p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" role="alert">
-            <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-            <span class="sr-only">Info</span>
-            <div>
-              <span class="font-medium">{{Session::get('success')}}
-            </div>
-          </div>
-          @endif
-
-          {{-- ERROR MESSAGE --}}
-          @if(Session::has('error'))
-          <div class="flex p-4 mb-4 text-sm text-redpink border border-redpink rounded-lg" role="alert">
-            <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-            <span class="sr-only">Info</span>
-            <div>
-              <span class="font-medium text-redpink">{{Session::get('error')}}
-            </div>
-          </div>
-          @endif
-
             <form method="POST" action="{{ route('student.update_password') }}" class="md:w-4/5 md:mx-auto">
               @csrf
               <div class="mb-6">
