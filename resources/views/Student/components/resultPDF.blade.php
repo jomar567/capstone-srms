@@ -1,62 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Students Result</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
-    body {
-      background-color: #EFF6EE;
+    *,
+    *:before,
+    *:after {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
     }
-
-    table {
-      border: 2px solid #000;
+    html {
+      position: relative;
       width: 100%;
-      padding: 25px;
+      height: 100%;
     }
-
-    tbody tr td,
-    thead tr th {
-      padding: 10px;
-      border: 1px solid #000;
+    .studentDetails {
+      display: inline-block;
+      vertical-align: middle
+      color: red;
     }
-
-    tbody tr .center {
-      text-align: center;
-    }
-
-    thead tr th {
-      text-align: justify;
-      color: #fff;
-      padding: 10px;
-      }
-
-
-    .wrapper .row1 {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: initial;
-    }
-    </style>
+  </style>
 </head>
 <body>
 
-<div>
-          
-            <div class="wrapper">
-            @foreach($courses as $course)
-            <div class="row1">
-            Name: <span>{{$students->fullName}}</span>
-            Course: <span>{{$course->courseName}}</span>
-            </div>
-              
-              Student ID: <span>{{$students->student_ID}}</span>
-              Year & Section: <span>{{$course->courseYearNumeric}}{{$course->section}}</span>
+  <div class="studentDetails">
+    <p>asdad</p>
+    <p>asdad</p>
+  </div>
 
-            @endforeach
-            </div>
+    <div class="wrapper text-redpink">
+    @foreach($courses as $course)
+    <div class="row1">
+    Name: <span>{{$students->fullName}}</span>
+    Course: <span>{{$course->courseName}}</span>
+    </div>
+
+      Student ID: <span>{{$students->student_ID}}</span>
+      Year & Section: <span>{{$course->courseYearNumeric}}{{$course->section}}</span>
+
+    @endforeach
+    </div>
 
 
 
@@ -134,7 +120,6 @@
               </tbody>
           </table>
         </div>
-</div>
-  
+
 </body>
 </html>
