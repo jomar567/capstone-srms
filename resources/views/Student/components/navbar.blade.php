@@ -11,7 +11,7 @@
          </button>
         <a class="flex ml-2 md:mr-24">
           <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-            <img src="{{URL('images/GroupB.png')}}" alt="" class="h-8 mr-3"/> 
+            <img src="{{URL('images/GroupB.png')}}" alt="" class="h-8 mr-3"/>
           </span>
         </a>
       </div>
@@ -38,7 +38,7 @@
             </li>
           </ul>
         </div>
-        <div class="ml-4 text-redpink">
+        {{-- <div class="ml-4 text-redpink">
           <a class="flex justify-center items-center" href="{{ route('student.logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
@@ -48,7 +48,7 @@
               @csrf
             </form>
           </a>
-        </div>
+        </div> --}}
       </div>
     </div>
   </div>

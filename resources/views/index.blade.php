@@ -52,7 +52,7 @@
 
     {{-- Team Section --}}
 
-    <section class="container gap-4 mx-auto px-4 md:py-32 py-28">
+    <section class="container gap-4 mx-auto px-4 md:pb-32 pt-20 pb-28">
       <p class="md:text-4xl text-3xl font-semibold before:border-l-4 before:border-redpink before:mr-4 pb-16">
         OUR TEAM
       </p>

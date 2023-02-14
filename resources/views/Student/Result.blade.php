@@ -4,7 +4,7 @@
 <div class="p-4 sm:ml-64 mt-16">
   <div class=" mb-4">
     <div class="flex items-center justify-center text-blue">
-      <div class="relative drop-shadow-lg w-10/12 md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
+      <div class="relative drop-shadow-lg lg:w-9/12 md:w-11/12 w-full md:px-6 px-3 py-10 bg-light rounded-lg shadow-xl ">
         <div class="grid md:grid-cols-2 mb-9">
           <div class="mb-2">
             <p class="text-base font-semibold mb-2">
