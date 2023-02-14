@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
       //Admin
       Admin::create([
         'username' => 'admin',
-        'password' => 'admin123'
+        'password' => '$2y$10$hem7D6i3F9MBxqFnlr8cW.8wQjFYJ820PVZOTDcyQ5fLmQowy6QU.'
       ]);
 
       //Course

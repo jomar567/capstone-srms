@@ -98,19 +98,19 @@
                                 </button>
 
                                 {{-- Modal --}}
-                                <dialog id="myModal{{$course->id}}" value="{{$course->id}}" class=" w-11/12 md:w-4/12 p-8  bg-white rounded-md ">
+                                <dialog id="myModal{{$course->id}}" value="{{$course->id}}" class="w-full lg:max-w-[500px] max-w-modal md:max-w-[360px] md:p-8 p-4  bg-white rounded-md">
                                     <div class="flex flex-col w-full">
                                       <!-- Header -->
                                       <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                       <div class="flex w-full justify-center items-center">
-                                        <h3 class="mb-5 text-lg font-normal ">Are you sure you want to delete this record?</h3>
+                                        <h3 class="mb-5 text-lg font-normal text-center">Are you sure you want to delete this record?</h3>
                                       <!--Header End-->
                                       </div>
                                       <!-- Modal Content-->
-                                      <div class="p-4 text-center">
+                                      <div class="md:p-4 px-2 text-center flex justify-between items-center flex-row lg:w-7/12 md:w-10/12 w-[90%] mx-auto">
                                         <form method="POST" action="{{ route('admin.delete_course',$course->id) }}" class="inline">
                                           @csrf
-                                          <button onclick="document.getElementById('myModal{{$course->id}}').close();" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                          <button onclick="document.getElementById('myModal{{$course->id}}').close();" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
                                               Delete
                                           </button>
                                         </form>

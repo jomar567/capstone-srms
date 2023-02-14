@@ -40,6 +40,9 @@ module.exports = {
         'lg': '700px',
         'sm': '530px',
         'auth': '100vh'
+      },
+      maxWidth: {
+        'modal': '300px'
       }
     },
   },
