@@ -38,7 +38,8 @@ module.exports = {
       },
       minHeight: {
         'lg': '800px',
-        'sm': '600px'
+        'sm': '600px',
+        'auth': '100vh'
       }
     },
   },
