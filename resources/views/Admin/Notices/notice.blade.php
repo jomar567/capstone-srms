@@ -34,9 +34,9 @@
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
-            <p class="font-semibold text-lg">View Notice</p>
+            <p class="font-semibold text-lg md:text-left text-center">View Notice</p>
 
-            <div class="flex justify-between items-center py-8">
+            <div class="flex md:justify-between md:flex-row gap-4 flex-col justify-center items-center py-8">
               <a href="{{ route('admin.email') }}">
                 <button type="button" class="text-white bg-redpink hover:bg-blue font-medium rounded-lg text-base px-6 py-2.5 text-center">
                   Send Email

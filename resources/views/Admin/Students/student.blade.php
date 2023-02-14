@@ -34,13 +34,15 @@
      <div class=" mb-4">
         <div class="flex items-center justify-center text-blue">
           <div class="relative drop-shadow-lg w-full md:p-6 p-3 bg-light rounded-lg shadow-xl ">
-            <p class="font-semibold text-lg">View Students</p>
+            <div class="flex md:justify-between md:flex-row gap-4 flex-col justify-center items-center">
+              <p class="font-semibold text-lg">View Students</p>
 
-            <a href="{{ route('admin.create_studentForm') }}">
-              <button type="button" class="float-right text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-5">
-                Add New Student
-              </button>
-            </a>
+              <a href="{{ route('admin.create_studentForm') }}">
+                <button type="button" class="float-right text-white bg-redpink hover:bg-blue font-medium rounded-lg text-base px-6 py-2.5 text-center">
+                  Add New Student
+                </button>
+              </a>
+            </div>
 
             {{-- Data Table --}}
             <div class="relative overflow-x-auto sm:rounded-lg mt-20">

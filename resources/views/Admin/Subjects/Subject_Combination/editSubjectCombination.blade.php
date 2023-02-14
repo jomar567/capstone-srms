@@ -61,7 +61,7 @@
                 </select>
               </div>
               <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
-                Update Subject Combination
+                Update Combination
               </button>
             </form>
           </div>

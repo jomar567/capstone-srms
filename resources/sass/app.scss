@@ -87,6 +87,23 @@ html, body {
   border-bottom: 4px solid #fff !important;
 }
 .dataTable-wrapper {
+  .dataTable-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    &::after {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      .dataTable-search {
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
   .dataTable-table {
     tbody > tr > td,
     thead > tr > th  {
