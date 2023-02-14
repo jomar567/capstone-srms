@@ -6,8 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Course;
-use Hash;
-use Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
 
 class StudentAuthController extends Controller
 {
@@ -25,7 +26,8 @@ class StudentAuthController extends Controller
         'dob'=>'required',
         'email'=>'required|email|unique:students,email',
         'password'=>'required|min:6|max:15',
-        'password_confirmation'=>'required|same:password'
+        'password_confirmation'=>'required|same:password',
+        'course_id'=>'required'
     ]);
     $student = new Student();
     $student->fullName = $request->fullName;

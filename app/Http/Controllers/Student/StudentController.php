@@ -71,7 +71,7 @@ class StudentController extends Controller
     public function editProfile($id){
       $students = Student::find(auth()->user()->id);
       $courses = Course::all();
-      
+
 
       return view('Student.Profile.editProfile')->with('students', $students)
         ->with('courses', $courses);

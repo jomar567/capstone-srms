@@ -74,13 +74,13 @@
               <div class="mb-6">
                 <label for="gender" class="block mb-2 text-sm font-medium text-white dark:text-white">
                   Gender <span class="text-base text-redpink">*</span>
-                  <select id="gender" name="gender" class="bg-gray-50 text-blue border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700">
-                    <option value="" disabled selected>Select Gender:</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Others">Others</option>
-                  </select>
                 </label>
+                <select id="gender" name="gender" class="bg-gray-50 text-blue border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700">
+                  <option value="" disabled selected>Select Gender:</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Others">Others</option>
+                </select>
                 @error('gender')
                   <p class="mt-2 text-sm text-red-600 dark:text-red-500">
                     <span class="font-medium">{{ $message }}</span>
@@ -113,6 +113,11 @@
                   <option value="{{$course->id}}">{{$course->courseName}}{{$course->courseYearNumeric}} - {{$course->section}}</option>
                 @endforeach
               </select>
+              @error('course_id')
+                <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                  <span class="font-medium">{{ $message }}</span>
+                </p>
+              @enderror
             </div>
 
 
