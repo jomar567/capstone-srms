@@ -47,10 +47,10 @@
                         </div>
                     </div>
                     <div class="mb-6">
-                        <label for="courseName" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
+                        <label for="course_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
                             Course
                         </label>
-                        <input type="text" id="fullName" name="fullName" value="{{$students->course->courseName}} - {{$students->course->courseYearNumeric}}{{$students->course->section}}" class="bg-gray/20 border text-sm rounded-lg block w-full p-2.5" disabled>
+                        <input type="text" id="course_id" name="course_id" value="{{$students->course->courseName}} - {{$students->course->courseYearNumeric}}{{$students->course->section}}" class="bg-gray/20 border text-sm rounded-lg block w-full p-2.5" disabled>
                     <button type="submit"
                             class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
                             Update profile

@@ -94,7 +94,7 @@
               <a href="https://www.facebook.com/zann.buce?mibextid=ZbWKwL">
                 <i class="text-xl fa-brands fa-facebook"></i>
               </a>
-              <a href="">
+              <a href="https://www.linkedin.com/in/zann-buce/">
                 <i class="text-xl fa-brands fa-linkedin"></i>
               </a>
             </span>

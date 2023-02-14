@@ -84,7 +84,6 @@ class StudentController extends Controller
       $students->email = $request->email;
       $students->gender = $request->gender;
       $students->dob = $request->dob;
-      $students->course_id = $request->course_id;
       $students->save();
 
       return redirect()->route('student.profile')->with('success', ' Profile successfully updated!');
