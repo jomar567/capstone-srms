@@ -1,8 +1,8 @@
 <nav class="bg-blue px-4 py-1 absolute w-screen z-10">
-    <div class="container mx-auto flex flex-wrap justify-between mx-auto">
+    <div class="container flex flex-wrap justify-between mx-auto">
         <a href="{{ url('/') }}" class="flex items-center">
             <span class="self-center md:hover:text-blue-700 text-xl font-semibold whitespace-nowrap text-white">
-                <img src="{{URL('images/GroupW.png')}}" alt="" class="h-8 mr-3"/> 
+                <img src="{{URL('images/GroupW.png')}}" alt="" class="h-8 mr-3"/>
             </span>
         </a>
         <button data-collapse-toggle="navbar-default"  class="inline-flex items-center p-2 ml-3 text-sm text-light-500 rounded-lg md:hidden hover:bg-gray-100   ">
