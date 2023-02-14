@@ -32,7 +32,9 @@
 
     <div class="grid container gap-4 mx-auto px-4 md:py-32 py-28 md:grid-cols-2">
         <div class="mt-8">
-          <p class="md:text-5xl text-3xl font-semibold before:border-l-4 before:border-redpink before:mr-4">Notice Board</p>
+          <p class="md:text-4xl text-3xl font-semibold before:border-l-4 before:border-redpink before:mr-4">
+            Notice Board
+          </p>
           <p class="text-xl text-justify mt-10">
             @if(count($notices) > 0)
               @foreach($notices as $notice)
@@ -50,30 +52,84 @@
 
     {{-- Team Section --}}
 
-    {{-- <section class="py-44">
-      <div class="grid gap-4 lg:grid-cols-3 md:grid-cols-2 place-items-center">
-        <div class="relative w-80 h-80 bg-gray/20 rounded-full shadow-teamShadow flex justify-center items-center
-                    before:absolute before:top-9 before:left-20 before:w-5
+    <section class="container gap-4 mx-auto px-4 md:py-32 py-28">
+      <p class="md:text-4xl text-3xl font-semibold before:border-l-4 before:border-redpink before:mr-4 pb-16">
+        OUR TEAM
+      </p>
+      <div class="grid gap-4 lg:grid-cols-3 place-items-center">
+        <div class="h-full">
+          <div class="relative w-64 h-64  bg-gray/20 rounded-full shadow-teamShadow flex justify-center items-center
+                    before:absolute before:top-9 before:left-12 before:w-5
                     before:h-5 before:rounded-full before:bg-light
-                    after:absolute after:top-16 after:left-14 after:w-3 after:h-3
+                    after:absolute after:top-16 after:left-8 after:w-3 after:h-3
                     after:rounded-full after:bg-light">
-          <img src="{{URL('images/jomar.jpg')}}" alt="Jomar Image" class="w-52 h-52 rounded-full">
+            <img src="{{URL('images/demolAlan.png')}}" alt="Alan Image" class="lg:w-44 lg:h-44 w-36 h-36 rounded-full">
+          </div>
+          <div class="grid place-items-center py-8">
+            <p class="text-redpink font-semibold text-xl">Alan Demol</p>
+            <p class="font-medium text-lg">Fullstack Developer</p>
+            <span class="text-lg gap-2 grid grid-flow-col">
+              <a href="">
+                <i class="text-xl fa-brands fa-github"></i>
+              </a>
+              <a href="">
+                <i class="text-xl fa-brands fa-facebook"></i>
+              </a>
+              <a href="">
+                <i class="text-xl fa-brands fa-linkedin"></i>
+              </a>
+            </span>
+          </div>
         </div>
-        <div class="relative w-80 h-80 bg-gray/20 rounded-full shadow-teamShadow flex justify-center items-center
-                    before:absolute before:top-9 before:left-20 before:w-5
+        <div class="h-full">
+          <div class="relative w-64 h-64  bg-gray/20 rounded-full shadow-teamShadow flex justify-center items-center
+                    before:absolute before:top-9 before:left-12 before:w-5
                     before:h-5 before:rounded-full before:bg-light
-                    after:absolute after:top-16 after:left-14 after:w-3 after:h-3
+                    after:absolute after:top-16 after:left-8 after:w-3 after:h-3
                     after:rounded-full after:bg-light">
-          <img src="{{URL('images/jomar.jpg')}}" alt="Jomar Image" class="w-52 h-52 rounded-full">
+            <img src="{{URL('images/zannBuce.jpg')}}" alt="Zann Image" class="lg:w-44 lg:h-44 w-36 h-36 rounded-full">
+          </div>
+          <div class="grid place-items-center py-8">
+            <p class="text-redpink font-semibold text-xl">Zann Buce</p>
+            <p class="font-medium text-lg">Fullstack Developer</p>
+            <span class="text-lg gap-2 grid grid-flow-col">
+              <a href="">
+                <i class="text-xl fa-brands fa-github"></i>
+              </a>
+              <a href="">
+                <i class="text-xl fa-brands fa-facebook"></i>
+              </a>
+              <a href="">
+                <i class="text-xl fa-brands fa-linkedin"></i>
+              </a>
+            </span>
+          </div>
         </div>
-        <div class="relative w-80 h-80 bg-gray/20 rounded-full shadow-teamShadow flex justify-center items-center
-                    before:absolute before:top-9 before:left-20 before:w-5
+        <div class="h-full">
+          <div class="relative w-64 h-64  bg-gray/20 rounded-full shadow-teamShadow flex justify-center items-center
+                    before:absolute before:top-9 before:left-12 before:w-5
                     before:h-5 before:rounded-full before:bg-light
-                    after:absolute after:top-16 after:left-14 after:w-3 after:h-3
+                    after:absolute after:top-16 after:left-8 after:w-3 after:h-3
                     after:rounded-full after:bg-light">
-          <img src="{{URL('images/jomar.jpg')}}" alt="Jomar Image" class="w-52 h-52 rounded-full">
+            <img src="{{URL('images/jomar.jpg')}}" alt="Jomar Image" class="lg:w-44 lg:h-44 w-36 h-36 rounded-full">
+          </div>
+          <div class="grid place-items-center py-8">
+            <p class="text-redpink font-semibold text-xl">Jomar Clado</p>
+            <p class="font-medium text-lg">Fullstack Developer</p>
+            <span class="text-lg gap-2 grid grid-flow-col">
+              <a href="">
+                <i class="text-xl fa-brands fa-github"></i>
+              </a>
+              <a href="">
+                <i class="text-xl fa-brands fa-facebook"></i>
+              </a>
+              <a href="">
+                <i class="text-xl fa-brands fa-linkedin"></i>
+              </a>
+            </span>
+          </div>
         </div>
       </div>
-    </section> --}}
+    </section>
 
 @endsection
