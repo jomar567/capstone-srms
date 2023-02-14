@@ -18,9 +18,9 @@
     <span class="absolute h-full w-screen bg-loginAdmin bg-fixed bg-center bg-cover bg-no-repeat blur-sm"></span>
       <div class="content min-h-auth flex items-center justify-center py-10 px-4">
         <div class="z-10 bg-blue w-96 md:p-8 p-4 rounded-3xl">
-          <a href="{{ url('/') }}" class="flex justify-center p-5 items-center">
+          <a href="{{ route('index') }}" class="flex justify-center p-5 items-center">
               <span class="self-center md:hover:text-blue-700 text-xl font-semibold whitespace-nowrap text-white">
-                  <img src="{{URL('images/GroupW.png')}}" alt="" class="h-10 mr-3"/>
+                  <img src="{{URL('images/GroupW.png')}}" alt="Logo" class="h-10 mr-3"/>
               </span>
           </a>
           <div class="text-2xl mb-5 text-center">Admin Login</div>

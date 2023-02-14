@@ -37,7 +37,7 @@ module.exports = {
         'teamShadow': 'inset 10px 10px 10px rgba(0,0,0,0.05), 15px 25px 10px rgba(0,0,0,0.05), 15px 20px 10px rgba(0,0,0,0.05), inset -10px -10px 15px rgba(255,255,255,0.9)'
       },
       minHeight: {
-        'lg': '800px',
+        'lg': '700px',
         'sm': '530px',
         'auth': '100vh'
       }

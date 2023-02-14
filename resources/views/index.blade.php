@@ -9,11 +9,6 @@
         <p class="md:text-6xl text-2xl font-bold tracking-wide md:tracking-wider md:mb-3 mb-1">RESULT</p>
         <p class="md:text-4xl text-xl font-medium md:mb-3 mb-1 tracking-normal md:tracking-wide">MANAGEMENT</p>
         <p class="md:text-4xl text-xl font-medium md:mb-3 mb-1 tracking-normal md:tracking-widest">SYSTEM</p>
-        {{-- <a href={{url('notice')}}> --}}
-          <button type="button" class="text-white bg-red hover:bg-blue focus:ring-4 focus:outline-none focus:ring-blue font-semibold rounded-lg md:text-base text-xs mt-6 md:px-10 px-5 md:py-3.5 py-2 text-center dark:bg-blue dark:hover:bg-blue dark:focus:ring-blue">
-            Learn More
-          </button>
-        {{-- </a> --}}
         <span class="absolute left-0 flex flex-col ml-4">
           <a href="#">
             <i class="fa-brands fa-facebook md:text-2xl text-l hover:text-redpink cursor-pointer mb-6"></i>
