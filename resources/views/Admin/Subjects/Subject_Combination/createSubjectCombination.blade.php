@@ -48,6 +48,11 @@
                     <option value="{{$course->id}}">{{$course->courseName}} - {{$course->courseYearNumeric}}{{$course->section}}</option>
                   @endforeach
                 </select>
+                @error('course_id')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                @enderror
               </div>
               <div class="mb-6">
                 <label for="subject_id" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">
@@ -59,10 +64,12 @@
                   @foreach($subjects as $subject)
                     <option value="{{$subject->id}}">{{$subject->subjectName}} - {{$subject->subjectCode}}</option>
                   @endforeach
-                  {{-- <option selected disabled>Select Subject</option>
-                  <option value="bsit">Programming</option>
-                  <option value="comscie">English</option> --}}
                 </select>
+                @error('subject_id')
+                  <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">{{ $message }}</span>
+                  </p>
+                @enderror
               </div>
               <button type="submit" class="block mx-auto text-white bg-redpink hover:bg-blue focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-6 py-2.5 text-center  mt-7">
                 Add Combination

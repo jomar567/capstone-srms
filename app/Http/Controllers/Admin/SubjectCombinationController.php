@@ -31,6 +31,12 @@ class SubjectCombinationController extends Controller
 
     //Subject Combination Add
     public function addSubjectCombination(Request $request) {
+      //Validate
+      $request->validate([
+        'subject_id'=>'required',
+        'course_id'=>'required',
+     ]);
+
       $subjectCombinations = new SubjectCombination;
       $subjectCombinations->subject_id = $request->subject_id;
       $subjectCombinations->course_id = $request->course_id;
