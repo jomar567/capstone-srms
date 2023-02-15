@@ -79,7 +79,6 @@ class ManageStudentController extends Controller
       'email'=>'required|email:students,email',
       'gender'=>'required',
       'dob'=>'required',
-      'course_id'=>'required'
     ]);
       $students = Student::findorFail($request->id);
       $students->fullName = $request->fullName;
@@ -87,7 +86,6 @@ class ManageStudentController extends Controller
       $students->email = $request->email;
       $students->gender = $request->gender;
       $students->dob = $request->dob;
-      $students->course_id = $request->course_id;
       $students->save();
 
       return redirect()->route('admin.students_list')->with('success', 'Student Updated Successfully ');;
