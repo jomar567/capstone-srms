@@ -73,7 +73,7 @@ class StudentController extends Controller
       $courses = Course::all();
 
 
-      return view('Student.Profile.editProfile')->with('students', $students)
+      return view('Student.Profile.editprofile')->with('students', $students)
         ->with('courses', $courses);
    }
 
