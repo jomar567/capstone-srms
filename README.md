@@ -3,7 +3,7 @@
 ## 💻 Tech Stack
 > - Laravel
 > - MySQL
-> - TailwindCss
+> - TailwindCSS
 > - XAMPP Server
 
 ## 👨‍🏫 Instructor
