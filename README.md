@@ -3,6 +3,8 @@
 ## 💻 Tech Stack
 > - Laravel
 > - MySQL
+> - TailwindCss
+> - XAMPP Server
 
 ## 👨‍🏫 Instructor
 > PocketDevs CEO & Co-founder **[Bryl Lim](https://github.com/bryllim)**
