@@ -25,7 +25,7 @@
               </span>
           </a>
           <div class="text-2xl mb-5 text-center">Admin Login</div>
-          <form method="POST" action="{{ route('admin.loginAdmin') }}" autocomplete="off">
+          <form method="POST" action="{{ secure_url(route('admin.loginAdmin')) }}" autocomplete="off">
             @csrf
             <div class="mb-6">
               <label for="username" class="block mb-2 text-sm font-medium @error('username') text-redpink @enderror">
