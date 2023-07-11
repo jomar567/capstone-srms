@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Document</title>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     {{-- Toaster CSS --}}
@@ -25,7 +24,7 @@
               </span>
           </a>
           <div class="text-2xl mb-5 text-center">Admin Login</div>
-          <form method="POST" action="{{ secure(route('admin.loginAdmin')) }}" autocomplete="off">
+          <form method="POST" action="{{ route('admin.loginAdmin') }}" autocomplete="off">
             @csrf
             <div class="mb-6">
               <label for="username" class="block mb-2 text-sm font-medium @error('username') text-redpink @enderror">
